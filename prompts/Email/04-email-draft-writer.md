@@ -1,12 +1,12 @@
-PROMPT 04 — Draft Writer
+PROMPT 04 — Email Draft Writer
 
 INPUTS:
-- Paste the SEO brief from Step 01: [paste here]
-- Paste the outline from Step 02: [paste here]
+- Paste the email brief from Step 01: [paste here]
+- Paste the sequence plan from Step 02: [paste here]
 - Paste the research pack from Step 03: [paste here]
 
 TASK:
-Write a complete first draft of this article.
+Write complete first drafts of all emails in this sequence.
 
 RULES (follow all of these):
 - Enterprise maritime B2B tone. No generic filler. No buzzwords.
@@ -19,11 +19,13 @@ RULES (follow all of these):
     "need" not "require", "about" not "regarding", "get in touch" not "reach out"
 - If a claim has not been verified, mark it [VERIFY] and use
   cautious language around it.
-- Follow the H2/H3 outline exactly — do not restructure.
-- Respect the word count per section set in the outline.
-- Insert internal link placeholders exactly as shown in the outline.
-- End the article with the CTA defined in the brief.
-- Do not invent statistics or customer outcomes.
+- Follow the sequence plan exactly — do not restructure or merge emails.
+- Each email must have one CTA only — as defined in the brief.
+- Keep emails concise: prospecting emails max 150 words body copy,
+  nurture emails max 250 words, loyalty emails max 300 words.
+- Do not invent statistics, customer outcomes, or product capabilities.
+- Write subject lines and preview text for every email.
 
 OUTPUT:
-The full article draft, ready for human review.
+All email drafts, organised by sequence position, ready for human review.
+Each email must include: Subject line / Preview text / Body copy / CTA.

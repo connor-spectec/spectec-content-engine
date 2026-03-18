@@ -4,6 +4,12 @@
 [Date] — [Action] — [File name] — [Reason]
 
 ## Log
+18 March 2026 — Added — prompts/Email/01-email-brief-builder.md — New email brief builder prompt for prospecting, nurture, and loyalty workflows
+18 March 2026 — Added — prompts/Email/02-email-sequence-planner.md — New email sequence planner prompt
+18 March 2026 — Added — prompts/Email/03-email-research-evidence-pack.md — New email research and evidence pack prompt
+18 March 2026 — Added — prompts/Email/04-email-draft-writer.md — New email draft writer prompt
+18 March 2026 — Added — prompts/Email/05-email-optimiser.md — New email optimiser and repurposer prompt
+18 March 2026 — Updated — prompts/Master Prompts/01-05 — Strengthened all master prompts with rules, tone guidance, and output improvements
 18 March 2026 — Added — AMOS-stats.md — Compiled all AMOS statistics and proof points from knowledge base and tone example PDFs
 18 March 2026 — Added — prompts/Social Prompts/01-social-media-brief-builder.md — New social media brief builder prompt mirroring structure of Master Prompt 01
 18 March 2026 — Added — prompts/Social Prompts/02-social-content-planner.md — New social content planner prompt mirroring structure of Master Prompt 02
