@@ -4,11 +4,12 @@ This folder contains the brand documents connected to the
 SpecTec SEO Content Engine Claude Project.
 
 ## Contents (Version 1)
-- brand-messaging.pdf
-- amos-solution-overview.pdf
-- proof-points-and-evidence.pdf
+- spectect-amos-tier-brochure-(march-26)
+- spectec-ideal-customer-profile-text
+- spectec-value-proposition-text
 - tone-examples/example-article-1.pdf
 - tone-examples/example-article-2.pdf
+- tone-examples/example-article-3.pdf
 
 ## Notes
 - Update this list when files are added or removed
