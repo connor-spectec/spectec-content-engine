@@ -1,4 +1,4 @@
-ROMPT 01 — SEO Brief Builder 
+PROMPT 01 — SEO Brief Builder 
  
 INPUTS (fill these in before sending): 
 - Primary keyword: [paste here] 
