@@ -1,0 +1,95 @@
+Maritime Asset Management Software: The 2026 Buyer’s Guide
+Choosing the right asset management software is not just a technology decision. For most fleets, it is a decision about how control, compliance, and operational consistency are managed across vessels.
+This guide covers the capability areas that separate platforms worth investing in from those that will cost you more than they save. It includes the questions worth putting to any vendor, and one section you should read before you get to vendor conversations at all.
+Maintenance Management: What Good Actually Looks Like
+An asset management system schedules tasks, records completions, and holds maintenance history. At a basic level, most platforms do this. Most also stop there.
+What separates a capable system from an adequate one is what it connects to and what it produces.
+A capable maritime asset management platform delivers:
+•	Full, timestamped audit trail for every asset across every vessel
+•	Automatic linking between scheduled tasks and spare parts availability before a job starts
+•	Class-aligned workflows that produce records structured the way surveyors expect
+•	Fleet-wide visibility of maintenance status without chasing updates by email
+The fleets we work with that run disconnected systems tell us the same thing: the schedule gets managed, and everything else gets handled manually. Maintenance data in one place, procurement data in another, compliance records in a third. No single source of truth. Over time, that fragmentation creates operational and regulatory exposure that grows with every vessel you add.
+The question is straightforward: can this system show me the live maintenance status of every vessel in my fleet right now, without asking anyone?
+Preventive vs. Predictive Maintenance: What the Difference Actually Requires
+These terms get used interchangeably in vendor conversations. They are not the same thing, and the gap between them matters for how you evaluate platforms.
+Preventive maintenance
+Preventive maintenance runs on fixed schedules regardless of equipment condition. It is reliable and audit-friendly, but imprecise: components get replaced before they need to be, and failures still occur between intervals.
+Predictive maintenance
+Predictive maintenance uses condition data trends to anticipate failure before it happens. In maritime, this requires:
+•	Integration between the platform and condition monitoring systems, IoT sensors, and analytics platforms
+•	A clean, consistent foundation of historical maintenance data across the fleet
+Most vendor conversations about predictive maintenance start with the capability. What they tend to skip is this: if your current system has not been producing structured, consistent maintenance records, the predictive layer has nothing reliable to work with.
+The right sequence is to standardise and structure first. Then extend into predictive approaches as the data quality supports it. We see fleets attempt this the other way around and find that the analytics tools have nothing solid to work with.
+The question worth asking of any platform: does it integrate with condition monitoring systems, and does it produce the quality of structured historical data that predictive tools will eventually need?
+Class Compliance Tracking: Built In, Not Bolted On
+Compliance is not a separate function from maintenance. Class surveys, flag state inspections, ISM audits, and port state control examinations all require maintenance records. If those records need to be assembled manually before each inspection, the platform is creating risk rather than reducing it.
+What class-aligned workflows mean in practice: tasks structured around class-approved intervals, certificates and survey dates tracked within the platform, corrective actions recorded against findings, and survey history accessible on demand. When a surveyor arrives, the documentation is already there.
+Class society approval is a meaningful evaluation criterion. It means the platform’s workflows and record structures have been assessed against the standards that classification societies actually apply. 
+For Executives, the framing that matters is this: compliance is a risk management function. A platform that makes audit preparation routine removes a source of operational and regulatory exposure that most organisations have simply accepted as normal. It does not need to be normal.
+The question worth asking: is your classification society’s approval confirmed for the specific tier and deployment model you are evaluating, and can the vendor show you what audit-ready documentation looks like in practice before you commit?
+AMOS™ is approved by major classification societies
+
+Our Certifications
+Mobile-First Workflows: The Gap Between Design and Reality
+Most maritime platforms are designed for use at a workstation. Most maintenance is carried out away from one.
+When a system is difficult to use at the point of work, teams tell us they find workarounds: tasks recorded after the fact, from memory, at the end of a shift. Completion records become approximations. Evidence goes uncaptured. The audit trail gets gaps. The compliance value of the entire platform starts to erode from the bottom up.
+Native mobile workflows are not a convenience feature. They are a data quality requirement. There is a meaningful difference between a desktop interface that works on a phone and a platform built for mobile task execution from the start: offline capability when connectivity drops, synchronisation when it returns, and workflows that reflect how work actually happens on board.
+Spare Parts Linkage: One Platform, One Database
+Here is a situation most fleet operators will recognise. A maintenance job is scheduled. The work order is raised. The job starts and the required part is not on board. Procurement is contacted. Sourcing takes days. The job is delayed. If this happens during a dry dock, the implications for schedule and cost can be significant.
+What we see consistently is that this gets labelled a procurement problem. It is not. It is a data connectivity problem. And it is entirely avoidable.
+When these functions run on the same platform, the sequence changes. Scheduled tasks automatically link to required components. The system checks availability across vessels, warehouses, and shore stores when the job is planned. Shortfalls are flagged in advance. Purchase requisitions can be triggered automatically when stock falls below threshold. Purchasing teams see upcoming demand before it becomes urgent rather than after it becomes a crisis.
+The question worth asking: at what point in the maintenance planning process does this platform check parts availability, and what happens automatically when a shortfall is identified?
+Why Many Platforms Struggle at Fleet Scale
+A single-vessel platform can look capable in a demonstration. The limitations tend to emerge later, as fleets grow, vessel types diversify, and the organisation needs to standardise processes across the whole operation.
+The structural weaknesses we see most often are predictable. Platforms built around individual vessel installations rather than fleet-wide architecture can make it harder to aggregate data cleanly across vessels. Platforms that treat compliance as a separate module rather than an embedded function create double-handling that compounds as the fleet grows. Platforms that require custom integration between maintenance, inventory, and procurement introduce failure points that become harder to manage as operational complexity increases.
+These factors can make it harder for fleets to move from reactive to controlled operations, particularly at scale.
+The questions that expose these weaknesses during evaluation are specific:
+•	Can the system produce a live fleet-wide maintenance status view without manual consolidation?
+•	Can compliance records be accessed centrally across all vessels simultaneously?
+•	Does the platform run on a single architecture and single database regardless of how many vessels are on it?
+•	What happens to your data and your workflows when your fleet doubles?
+These are fair questions to put to any vendor, and the answers will tell you more than any feature comparison.
+How to Evaluate Maritime Asset Management Software: A Sharper Checklist
+#	Area	Question to ask any vendor
+01	Foundation	Is the system purpose-built for maritime operations, or adapted from a generic maintenance platform and configured to fit?
+02	Integration	Does it connect maintenance, inventory, procurement, and compliance in a single platform on a single database, or does integration between those functions require middleware or vendor-managed connectors?
+03	Compliance	Is it approved by your classification society, and does that approval cover the specific tier and deployment model you need?
+04	Connectivity	Does it support true offline working at sea with automatic synchronisation, or does it require connectivity to function?
+05	Mobile	Does it offer native mobile workflows built for onboard execution, or a desktop interface made accessible on mobile?
+06	Architecture	Can it integrate with your ERP, condition monitoring systems, and analytics platforms through an open, documented API without custom development?
+07	Deployment	Does it support your deployment model, on-premise, cloud, or hybrid, without feature compromise between models?
+08	Scale	Can it scale from your current fleet size to significantly larger without a platform migration?
+09	Implementation	Does the vendor have a structured implementation methodology, and can they evidence successful deployments with reference customers?
+10	Support	Is ongoing support delivered by people with maritime operational knowledge?
+How AMOS Works as the Operational Backbone of Your Fleet
+Everything covered in this guide, maintenance planning, compliance tracking, mobile workflows, spare parts linkage, fleet-scale data, comes together in one place with AMOS.
+AMOS is not another system to manage. It becomes the system your fleet runs on: the operational backbone that connects maintenance, inventory, procurement, compliance, and performance analytics in one environment on one architecture. No bolt-on modules. No data that lives somewhere else.
+Here is how AMOS addresses each capability area covered in this guide.
+Capability Area	How AMOS Delivers
+Planned Maintenance	Class-aligned workflows, full timestamped audit trail per asset, fleet-wide visibility of maintenance status, and automatic linking between scheduled tasks and parts availability.
+Preventive & Predictive	A structured planned maintenance foundation with open API integration for condition monitoring systems and IoT inputs, producing the structured historical data that predictive analytics tools require.
+Class Compliance	Approved by ABS, Bureau Veritas, CCS, ClassNK, DNV, Lloyd’s Register, and RINA. Compliance is embedded in daily operations, not assembled before inspections.
+Mobile-First	Native mobile task execution with offline capability and automatic ship-to-shore synchronisation, designed for how maintenance actually gets done on board.
+Spare Parts Linkage	Maintenance, inventory, and procurement on the same platform and the same database. Parts availability is known before a job starts, not after it stalls.
+Fleets using AMOS™ benefit from:
+15%
+Reduction in downtime
+20%
+Reduction in maintenance costs
+30%
+Improvement in workforce efficiency
+50%
+Reduction in audit preparation time
+Based on reported outcomes across the AMOS™ customer base.
+AMOS is available in three tiers on a single architecture. Gateway for smaller and mid-sized fleets. Horizon for scaling operations. Enterprise for large multi-entity organisations. Your fleet grows. Your configuration grows with it. Nothing to migrate. Nothing to replace.
+Deployment options include on-premise, SpecTec-managed cloud, customer-managed cloud, and hybrid. Over 40 years of live maritime deployment. 3,000+ vessels. 300+ customers worldwide.
+Frequently Asked Questions
+What is the difference between a PMS and maritime asset management software?
+A PMS schedules jobs and records completions. Maritime asset management software connects those records to inventory, procurement, compliance, and fleet analytics in a single platform. The difference matters when your maintenance function needs to inform purchasing, compliance, and performance reporting without manual data transfer between systems.
+Does maritime asset management software work in low-connectivity environments at sea?
+How does a asset management software support class compliance?
+Ready to Take the Next Step?
+Maritime asset management software has become an essential tool for organisations seeking greater operational control, compliance assurance, and asset reliability.
+If you want to explore how modern fleet platforms support shipowners, operators, and fleet managers:
+
