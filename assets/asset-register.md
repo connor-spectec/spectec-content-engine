@@ -13,7 +13,7 @@ Status options: `Live` | `Complete` | `In Progress` | `Planned` | `Not Started`
 |-------|------------|------|----------|--------|-------|-------------|-------|
 | Stage 0 | What Is Maritime Fleet Management Software? (Definitive Guide) | Long-form guide | Medium | Live | Marketing | output/stage-0-demand-creation/ | Live — strong keyword ranking |
 | Stage 0 | Ship Maintenance Software: The 2026 Buyer's Guide | Long-form guide | Medium | Live | Marketing | output/stage-0-demand-creation/ | Live — strong keyword ranking |
-| Stage 0 | Maritime Compliance and HSQE Software | Long-form guide | Medium | Not Started | Marketing | output/stage-0-demand-creation/ | |
+| Stage 0 | Maritime Compliance and HSQE Software | Long-form guide | Medium | Complete | Marketing | output/stage-0-demand-creation/maritime-compliance-hseq-guide/ | All 5 master prompts complete 2026-05-27 |
 | Stage 0 | Maritime Procurement and Digital Supply Chain Software | Long-form guide | Medium | Not Started | Marketing | output/stage-0-demand-creation/ | |
 | Stage 0 | SFI Coding for Ships | Long-form guide | Medium | Not Started | Marketing | output/stage-0-demand-creation/ | Also needed as campaign asset |
 | Stage 0 | ISM, ISPS and SOLAS: How Digital Systems Reduce Audit Risk | Long-form guide | Medium | Not Started | Marketing | output/stage-0-demand-creation/ | |

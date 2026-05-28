@@ -1,0 +1,590 @@
+{
+  "generated": "2026-05-28T13:42:21Z",
+  "summary": {
+    "live": 18,
+    "complete": 1,
+    "in_progress": 0,
+    "planned": 0,
+    "not_started": 50
+  },
+  "stages": {
+    "demand": [
+      {
+        "title": "What Is Maritime Fleet Management Software? (Definitive Guide)",
+        "type": "Long-form guide",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Live — strong keyword ranking"
+      },
+      {
+        "title": "Ship Maintenance Software: The 2026 Buyer's Guide",
+        "type": "Long-form guide",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Live — strong keyword ranking"
+      },
+      {
+        "title": "Maritime Compliance and HSQE Software",
+        "type": "Long-form guide",
+        "priority": "Medium",
+        "status": "complete",
+        "owner": "Marketing",
+        "notes": "All 5 master prompts complete 2026-05-27"
+      },
+      {
+        "title": "Maritime Procurement and Digital Supply Chain Software",
+        "type": "Long-form guide",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "SFI Coding for Ships",
+        "type": "Long-form guide",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Also needed as campaign asset"
+      },
+      {
+        "title": "ISM, ISPS and SOLAS: How Digital Systems Reduce Audit Risk",
+        "type": "Long-form guide",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Predictive Maintenance in Commercial Shipping",
+        "type": "Long-form guide",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "ESG and Maritime Compliance Reporting in 2026",
+        "type": "Long-form guide",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      }
+    ],
+    "capture": [
+      {
+        "title": "AMOS is Evolving — Social graphics",
+        "type": "Social",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS is Evolving — Emails",
+        "type": "Email",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS is Evolving — Landing page",
+        "type": "Landing page",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS is Evolving — Brochure",
+        "type": "Brochure",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS is Evolving — Webpage updates",
+        "type": "Web copy",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS is Evolving — Sales talking points",
+        "type": "Sales enablement",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS is Evolving — Search ads",
+        "type": "Paid search",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS Procure Smart — Social graphics",
+        "type": "Social",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS Procure Smart — Emails",
+        "type": "Email",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS Procure Smart — Landing page",
+        "type": "Landing page",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS Procure Smart — Product brochure",
+        "type": "Brochure",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS Procure Smart — Blog post",
+        "type": "Blog post",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS Procure Smart — Product page",
+        "type": "Web copy",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS Procure Smart — Battlecard",
+        "type": "Sales enablement",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "AMOS Procure Smart — Search ads",
+        "type": "Paid search",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Campaign live"
+      },
+      {
+        "title": "SFI Coding — Compliance guide",
+        "type": "Long-form guide",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "SFI Coding — Deadline landing page",
+        "type": "Landing page",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "SFI Coding — Email",
+        "type": "Email",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "SFI Coding — LinkedIn content",
+        "type": "Social",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "SFI Coding — Sales talking point",
+        "type": "Sales enablement",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "AMOS Migration — Migration landing page",
+        "type": "Landing page",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Fleet Migration Playbook",
+        "type": "Gated asset / PDF",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Key lead-gen asset"
+      },
+      {
+        "title": "AMOS Migration — Email sequence",
+        "type": "Email sequence",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "AMOS Migration — LinkedIn lead gen form",
+        "type": "LinkedIn",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "AMOS Migration — Implementation one-pager",
+        "type": "One-pager",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Winback — Lapsed customer landing page",
+        "type": "Landing page",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Winback — Email sequence",
+        "type": "Email sequence",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Winback — Personalised outreach guide",
+        "type": "Sales enablement",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Winback — ROI asset",
+        "type": "ROI document",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Winback — Incentive offer brief",
+        "type": "Brief",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Compliance Audit Readiness Checklist",
+        "type": "Checklist / gated PDF",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      }
+    ],
+    "nurture": [
+      {
+        "title": "Case study teasers",
+        "type": "Email / social",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Nurture workflow is live; content is thin"
+      },
+      {
+        "title": "Proof point emails",
+        "type": "Email sequence",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Required to strengthen active nurture workflow"
+      }
+    ],
+    "deal": [
+      {
+        "title": "Early stage credibility and heritage pack",
+        "type": "Sales enablement",
+        "priority": "HIGH",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Case for structured asset management",
+        "stream": "A"
+      },
+      {
+        "title": "Vendor evaluation framework",
+        "type": "Sales enablement",
+        "priority": "HIGH",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "",
+        "stream": "A"
+      },
+      {
+        "title": "Case study pack by sector",
+        "type": "Case studies",
+        "priority": "HIGH",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "",
+        "stream": "A"
+      },
+      {
+        "title": "AMOS vs Sertica",
+        "type": "Competitive comparison",
+        "priority": "HIGH",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Requires sign-off on competitive positioning",
+        "stream": "B"
+      },
+      {
+        "title": "AMOS vs BASSnet",
+        "type": "Competitive comparison",
+        "priority": "HIGH",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Requires sign-off on competitive positioning",
+        "stream": "B"
+      },
+      {
+        "title": "AMOS vs MariApps",
+        "type": "Competitive comparison",
+        "priority": "HIGH",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Requires sign-off on competitive positioning",
+        "stream": "B"
+      },
+      {
+        "title": "AMOS vs DNV ShipManager",
+        "type": "Competitive comparison",
+        "priority": "HIGH",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Requires sign-off on competitive positioning",
+        "stream": "B"
+      },
+      {
+        "title": "ROI and value asset",
+        "type": "ROI document",
+        "priority": "HIGH",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Joint work with Customer Success",
+        "stream": "C"
+      },
+      {
+        "title": "Implementation content pack",
+        "type": "Sales enablement",
+        "priority": "HIGH",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Investment protection and data continuity focus",
+        "stream": "C"
+      },
+      {
+        "title": "Executive summary for board sign-off",
+        "type": "Presentation / PDF",
+        "priority": "HIGH",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "",
+        "stream": "C"
+      }
+    ],
+    "onboarding": [
+      {
+        "title": "Welcome communication from leadership",
+        "type": "Email",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing / CS",
+        "notes": "Triggered by Closed-Won in HubSpot"
+      },
+      {
+        "title": "First 90 days implementation guide",
+        "type": "Guide / PDF",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing / CS",
+        "notes": ""
+      },
+      {
+        "title": "Key contacts at SpecTec guide",
+        "type": "Reference document",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing / CS",
+        "notes": ""
+      }
+    ],
+    "lifecycle": [
+      {
+        "title": "Decision Maker quarterly performance programme",
+        "type": "Email programme",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Monthly / quarterly cadence"
+      },
+      {
+        "title": "Renewal sequence (90 / 60 / 30 day)",
+        "type": "Email sequence",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Direct revenue impact"
+      },
+      {
+        "title": "Tier upgrade campaign",
+        "type": "Email / landing page",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Advocacy programme (case studies / testimonials / speakers)",
+        "type": "Multi-format",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "User pathway adoption and efficiency programme",
+        "type": "Email programme",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Bi-weekly first 90 days, then monthly"
+      }
+    ],
+    "services": [
+      {
+        "title": "AMOS Health Check brochure",
+        "type": "Brochure",
+        "priority": "Medium",
+        "status": "live",
+        "owner": "Marketing",
+        "notes": "Live — entry point for SPS offer"
+      },
+      {
+        "title": "AMOS Strategic Project Services flagship page",
+        "type": "Web copy",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "New offer, no market presence yet"
+      },
+      {
+        "title": "AMOS Strategic Project Services brochure",
+        "type": "Brochure",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Service pillar one-pagers (×8)",
+        "type": "One-pagers",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Pillars: Strategic Consultancy, Project Delivery, Platform & Marketplace, Data Services, Health Check, Root Cause Resolution, Training & Capability, Optimisation"
+      },
+      {
+        "title": "Strategic Project Services customer campaign",
+        "type": "Campaign",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Website nav and services section update",
+        "type": "Web copy",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      }
+    ],
+    "support": [
+      {
+        "title": "Support tiers overview page",
+        "type": "Web copy",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": "Silver = default, Gold = target, Platinum = enterprise"
+      },
+      {
+        "title": "Support tiers comparison asset",
+        "type": "Comparison PDF",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Tier upgrade campaign: Silver to Gold",
+        "type": "Email campaign",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "Platinum positioning and proposal asset",
+        "type": "Sales enablement",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      }
+    ]
+  }
+}

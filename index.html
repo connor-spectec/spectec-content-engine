@@ -331,13 +331,6 @@ main{flex:1;min-width:0;padding:40px 44px 100px}
 
 </main>
 </div>
-<div class="pov" id="pov" onclick="cp()"></div>
-<div class="spk" id="spk">
-  <div class="sopt" onclick="as('live')"><span class="sb s-live"><span class="sd"></span>Live</span></div>
-  <div class="sopt" onclick="as('complete')"><span class="sb s-complete"><span class="sd"></span>Complete</span></div>
-  <div class="sopt" onclick="as('inprogress')"><span class="sb s-inprogress"><span class="sd"></span>In progress</span></div>
-  <div class="sopt" onclick="as('planned')"><span class="sb s-planned"><span class="sd"></span>Planned</span></div>
-</div>
 <script>
 var CAMPS=[
   {id:"c1",col:"#6E00E5",title:"AMOS is Evolving",status:"Live",date:"May \u2013 June 2026",desc:"Announces the next chapter of AMOS \u2014 repositioning the platform with bold, visionary messaging that builds excitement and anticipation across existing customers and prospects.",assets:["Social graphics: platform evolution visuals","Emails: campaign announcement and follow-up sequence","Landing page: AMOS is Evolving campaign page","Brochure: platform evolution overview","Webpages: updated product and platform pages","Sales support: talking points and objection handling","Search ads: campaign keyword set"]},
@@ -405,6 +398,7 @@ var TILES={
   {id:"sp3",p:3,d:"planned",title:"Platinum positioning and proposal asset",ctx:"Platinum is sold by proposal to strategic and enterprise customers \u2014 executive-facing asset needed",desc:"Platinum is offered by proposal to strategic or enterprise customers. Marketing needs an executive-facing one-pager covering premium differentiators: dedicated success and delivery oversight, predictive support, APM data insight reviews, executive QBRs.",own:"Marketing",deps:["Commercial (Platinum proposal process)","Customer Success (Platinum delivery model accuracy)"],rep:["Executive proposal insert","Sales deck: Platinum positioning slide","LinkedIn content: what Platinum partnership looks like"]}
  ]
 };
+Object.values(TILES).forEach(function(arr){arr.forEach(function(item){tileById[item.id]=item;});});
 var PL=[
  {n:"CONVERSION ASSETS",sect:true},
  {n:"ROI and value asset",o:"Mktg + Commercial",m:[0,1,2,0,0,0,0,0],tid:"dl1",td:"planned"},
@@ -459,20 +453,25 @@ var JPHASES=[
   {lbl:"DM Pathway",st:"Stage 6-7",fn:"POST",col:"#3B6D11",items:[{t:"Quarterly performance reports",live:false},{t:"Renewal sequence",live:false},{t:"Tier upgrade campaign",live:false},{t:"Advocacy programme",live:false}],gaps:[{t:"Nothing built yet"}]},
   {lbl:"User Pathway",st:"Stage 6-7",fn:"POST",col:"#5A8A20",items:[{t:"Adoption programme",live:false},{t:"Best practice content",live:false},{t:"Workflow tips series",live:false},{t:"Getting started guides",live:false}],gaps:[{t:"Nothing built yet"}]}
 ];
+var manifestData=null;
+var manifestStatusByTitle={};
+var tileById={};
 var st={};
-try{st=JSON.parse(localStorage.getItem("stv6")||"{}");}catch(e){}
-function sv(){try{localStorage.setItem("stv6",JSON.stringify(st));document.getElementById("saveInd").textContent="Saved "+new Date().toLocaleTimeString();}catch(e){}}
-function gs(id,df){return st[id+"_s"]||df;}
+try{st=JSON.parse(localStorage.getItem("spectec_comments")||"{}");}catch(e){}
+function sv(){try{localStorage.setItem("spectec_comments",JSON.stringify(st));document.getElementById("saveInd").textContent="Saved "+new Date().toLocaleTimeString();}catch(e){}}
+function buildManifestLookup(data){manifestStatusByTitle={};if(!data||!data.stages)return;Object.values(data.stages).forEach(function(assets){if(!Array.isArray(assets))return;assets.forEach(function(asset){manifestStatusByTitle[asset.title.toLowerCase()]=asset.status;});});}
+function manifestStatusForTitle(title){if(!title||!Object.keys(manifestStatusByTitle).length)return null;var tl=title.toLowerCase();if(manifestStatusByTitle[tl])return manifestStatusByTitle[tl];var keys=Object.keys(manifestStatusByTitle);for(var i=0;i<keys.length;i++){if(tl.indexOf(keys[i])>=0||keys[i].indexOf(tl)>=0)return manifestStatusByTitle[keys[i]];}return null;}
+function normalizeStatus(s){if(s==='in_progress')return 'inprogress';if(s==='not_started')return 'planned';return s;}
+function gs(id,df){var item=tileById[id];if(item){var ms=manifestStatusForTitle(item.title);if(ms)return normalizeStatus(ms);}return df;}
 function gc(id){return st[id+"_c"]||[];}
 function mkBadge(id,df){
   var s=gs(id,df);
-  var L={planned:"Planned",inprogress:"In progress",complete:"Complete",live:"Live"};
+  var L={planned:"Planned",inprogress:"In progress",complete:"Complete",live:"Live",not_started:"Not started"};
   var el=document.createElement("span");
   el.className="sb s-"+s;
+  el.style.cursor="default";
   el.setAttribute("data-id",id);
   el.innerHTML="<span class='sd'></span>"+(L[s]||s);
-  el.title="Click to change";
-  el.onclick=function(e){e.stopPropagation();openPicker(e,id,df);};
   return el;
 }
 function buildChecks(item){
@@ -663,11 +662,19 @@ function renderPlanner(){
   html+="</tbody>";t.innerHTML=html;
 }
 function updateProgress(){
-  var all=[];Object.values(TILES).forEach(function(arr){arr.forEach(function(x){all.push({id:x.id,d:x.d});});});
-  var live=0,comp=0,prog=0,plan=0;
-  all.forEach(function(x){var s=gs(x.id,x.d);if(s==="live")live++;else if(s==="complete")comp++;else if(s==="inprogress")prog++;else plan++;});
-  document.getElementById("pLive").textContent=live;document.getElementById("pComp").textContent=comp;document.getElementById("pProg").textContent=prog;document.getElementById("pPlan").textContent=plan;
-  document.getElementById("pbf").style.width=Math.round(((live+comp)/all.length)*100)+"%";
+  if(manifestData&&manifestData.summary){
+    var s=manifestData.summary;
+    var live=s.live||0,comp=s.complete||0,prog=s.in_progress||0,plan=(s.planned||0)+(s.not_started||0);
+    var total=live+comp+prog+plan;
+    document.getElementById("pLive").textContent=live;document.getElementById("pComp").textContent=comp;document.getElementById("pProg").textContent=prog;document.getElementById("pPlan").textContent=plan;
+    document.getElementById("pbf").style.width=total>0?Math.round(((live+comp)/total)*100)+"%":"0%";
+  } else {
+    var all=[];Object.values(TILES).forEach(function(arr){arr.forEach(function(x){all.push({id:x.id,d:x.d});});});
+    var live=0,comp=0,prog=0,plan=0;
+    all.forEach(function(x){var s=gs(x.id,x.d);if(s==="live")live++;else if(s==="complete")comp++;else if(s==="inprogress")prog++;else plan++;});
+    document.getElementById("pLive").textContent=live;document.getElementById("pComp").textContent=comp;document.getElementById("pProg").textContent=prog;document.getElementById("pPlan").textContent=plan;
+    document.getElementById("pbf").style.width=Math.round(((live+comp)/all.length)*100)+"%";
+  }
 }
 var dragId=null;
 function ov(e){e.preventDefault();var tile=e.target.closest(".tile");document.querySelectorAll(".tile").forEach(function(t){t.classList.remove("drag-over");});if(tile&&tile.id!=="tile-"+dragId)tile.classList.add("drag-over");}
@@ -681,41 +688,15 @@ function od(e,sec){
   items.splice(fi,1);items.splice(ti,0,dragId);st["ord_"+sec]=items;sv();renderGrid(sec);
   document.querySelectorAll(".tile").forEach(function(t){t.classList.remove("drag-over");});dragId=null;
 }
-var pickId=null,pickDf=null;
-function openPicker(e,id,df){
-  pickId=id;pickDf=df;
-  var p=document.getElementById("spk");var o=document.getElementById("pov");
-  p.classList.add("open");o.style.display="block";
-  var r=e.target.closest(".sb").getBoundingClientRect();
-  p.style.top=(r.bottom+4)+"px";p.style.left=r.left+"px";
+function updateJourneyFromManifest(){
+  JPHASES.forEach(function(ph){
+    ph.items.forEach(function(it){
+      var ms=manifestStatusForTitle(it.t);
+      if(ms){var ns=normalizeStatus(ms);it.live=(ns==='live'||ns==='complete');}
+    });
+  });
 }
-function cp(){document.getElementById("spk").classList.remove("open");document.getElementById("pov").style.display="none";pickId=null;}
-function as(s){
-  if(!pickId)return;
-  var id=pickId;var df=pickDf;
-  st[id+"_s"]=s;sv();cp();
-  var sectionKeys=Object.keys(TILES);
-  var found=false;
-  for(var k=0;k<sectionKeys.length;k++){
-    var sec=sectionKeys[k];
-    for(var i=0;i<TILES[sec].length;i++){
-      if(TILES[sec][i].id===id){
-        var tileEl=document.getElementById("tile-"+id);
-        if(tileEl){
-          var wasOpen=tileEl.querySelector(".tb.open")!==null;
-          var newTile=mkTile(TILES[sec][i]);
-          tileEl.parentNode.replaceChild(newTile,tileEl);
-          if(wasOpen){var nb=document.getElementById("tb-"+id);var nc=document.getElementById("cv-"+id);if(nb)nb.classList.add("open");if(nc)nc.classList.add("open");}
-        }
-        found=true;break;
-      }
-    }
-    if(found)break;
-  }
-  renderPlanner();
-  renderTimeline();
-  updateProgress();
-}
+function updateFromManifest(data){buildManifestLookup(data);updateJourneyFromManifest();}
 function showPage(id,btn){
   document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active");});
   document.getElementById("page-"+id).classList.add("active");
@@ -723,8 +704,11 @@ function showPage(id,btn){
   if(btn)btn.classList.add("active");
   window.scrollTo(0,0);
 }
-renderJourney();renderCampaigns();renderAllGrids();renderTimeline();renderPlanner();updateProgress();
-document.getElementById("saveInd").textContent="Ready";
+fetch('/content-manifest.json')
+  .then(function(r){return r.json();})
+  .then(function(data){manifestData=data;updateFromManifest(data);})
+  .catch(function(){})
+  .then(function(){renderJourney();renderCampaigns();renderAllGrids();renderTimeline();renderPlanner();updateProgress();document.getElementById("saveInd").textContent="Ready";});
 </script>
 </body>
 </html>
