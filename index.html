@@ -696,7 +696,24 @@ function updateJourneyFromManifest(){
     });
   });
 }
-function updateFromManifest(data){buildManifestLookup(data);updateJourneyFromManifest();}
+function updateFromManifest(manifest){
+  var stageMap={'demand':'demand','capture':'capture','nurture':'nurture','deal':'deal','onboarding':'onboarding','lifecycle':'lifecycle','services':'services','support':'support'};
+  var statusMap={'live':'live','complete':'complete','in_progress':'inprogress','planned':'planned','not_started':'planned'};
+  buildManifestLookup(manifest);
+  if(!manifest||!manifest.stages)return;
+  Object.keys(manifest.stages).forEach(function(stageKey){
+    var tilesKey=stageMap[stageKey]||stageKey;
+    var stageTiles=TILES[tilesKey];
+    if(!stageTiles)return;
+    manifest.stages[stageKey].forEach(function(asset){
+      var match=stageTiles.find(function(tile){
+        return tile.title.toLowerCase().indexOf(asset.title.toLowerCase().substring(0,20))!==-1||asset.title.toLowerCase().indexOf(tile.title.toLowerCase().substring(0,20))!==-1;
+      });
+      if(match){match.d=statusMap[asset.status]||'planned';}
+    });
+  });
+  updateJourneyFromManifest();
+}
 function showPage(id,btn){
   document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active");});
   document.getElementById("page-"+id).classList.add("active");
