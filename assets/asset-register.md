@@ -114,7 +114,7 @@ Status options: `Live` | `Complete` | `In Progress` | `Planned` | `Not Started`
 |-------|------------|------|----------|--------|-------|-------------|-------|
 | Stage 4 | AMOS vs Sertica | Competitive comparison | HIGH | Not Started | Marketing | output/stage-4-deal-stage/stream-b-competitor/ | Requires sign-off on competitive positioning |
 | Stage 4 | AMOS vs BASSnet | Competitive comparison | HIGH | Not Started | Marketing | output/stage-4-deal-stage/stream-b-competitor/ | Requires sign-off on competitive positioning |
-| Stage 4 | AMOS vs MariApps | Competitive comparison | HIGH | Not Started | Marketing | output/stage-4-deal-stage/stream-b-competitor/ | Requires sign-off on competitive positioning |
+| Stage 4 | AMOS vs MariApps | Competitive comparison | HIGH | IN PROGRESS | Marketing | output/stage-4-deal-stage/stream-b-competitor/ | Requires sign-off on competitive positioning |
 | Stage 4 | AMOS vs DNV ShipManager | Competitive comparison | HIGH | Not Started | Marketing | output/stage-4-deal-stage/stream-b-competitor/ | Requires sign-off on competitive positioning |
 
 ### Stream C — Legacy AMOS to New AMOS
