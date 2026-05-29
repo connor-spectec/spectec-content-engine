@@ -179,6 +179,12 @@ main{flex:1;min-width:0;padding:40px 44px 100px}
 .jli{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--tx2)}
 .jld{width:10px;height:10px;border-radius:3px}
 .jwrap{overflow-x:auto;padding-bottom:12px}
+.tt-title a{color:inherit;text-decoration:none}
+.tt-title a:hover{text-decoration:underline}
+.blog-list{margin-top:4px;padding-left:18px}
+.blog-list li{font-size:12px;color:var(--tx2);padding:2px 0;line-height:1.5}
+.blog-list a{color:var(--purple);text-decoration:none}
+.blog-list a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -346,7 +352,7 @@ var TILES={
   {id:"s3",p:3,d:"planned",title:"Check HubSpot Breeze workflow build capability",ctx:"Confirm what Breeze AI can actually do on our subscription before designing workflows around it",desc:"Before committing to Breeze AI for CS health scoring or contact enrichment, confirm what is available on our current HubSpot tier.",own:"Marketing",deps:["Marketing (HubSpot tier review)"],rep:[],checks:[{id:"s3c1",lbl:"Breeze AI capabilities confirmed against current HubSpot subscription"}]}
  ],
  demand:[
-  {id:"d1",p:1,d:"live",title:"What Is Maritime Fleet Management Software? (Definitive Guide)",ctx:"Live. Category-defining guide \u2014 top organic performer with 210 active users",desc:"Layer 1 spine asset 1. Live on the knowledge hub. Top organic landing page with 210 active users. Category-owning and AI-indexed. Maintain and update quarterly.",own:"Marketing",deps:["Product (accuracy review quarterly)"],rep:["Social posts from key sections","FAQ schema blocks","Sales reference: category positioning"]},
+  {id:"d1",p:1,d:"live",title:"What Is Maritime Fleet Management Software? (Definitive Guide)",ctx:"Live. Category-defining guide \u2014 top organic performer with 210 active users",desc:"Layer 1 spine asset 1. Live on the knowledge hub. Top organic landing page with 210 active users. Category-owning and AI-indexed. Maintain and update quarterly.",own:"Marketing",deps:["Product (accuracy review quarterly)"],rep:["Social posts from key sections","FAQ schema blocks","Sales reference: category positioning"],url:"https://spectec.net/knowledge-hub/maritime-fleet-management-software-the-complete-guide-2026/",blogs:[{t:"What Is Maritime Fleet Management Software?",u:"https://spectec.net/knowledge-hub/what-is-maritime-fleet-management-software/"},{t:"The 5 Core Modules Every Fleet Management System Needs",u:"https://spectec.net/knowledge-hub/fleet-management-system-modules/"},{t:"How Maritime Fleet Software Integrates with ERP Systems",u:"https://spectec.net/knowledge-hub/maritime-fleet-software-erp-integration/"},{t:"Cloud vs On-Premise Fleet Management Software: Which Is Right for You?",u:"https://spectec.net/knowledge-hub/cloud-vs-on-premise-fleet-management-software/"},{t:"How AI Is Changing Maritime Fleet Management",u:"https://spectec.net/knowledge-hub/ai-maritime-fleet-management/"},{t:"How Fleet Management Software Reduces Vessel Downtime",u:"https://spectec.net/knowledge-hub/reduce-vessel-downtime-fleet-management-software/"},{t:"How to Choose Maritime Fleet Management Software: A Buyer's Guide",u:"https://spectec.net/knowledge-hub/how-to-choose-maritime-fleet-management-software/"},{t:"Predictive Maintenance for Maritime Fleets: How It Works",u:"https://spectec.net/knowledge-hub/predictive-maintenance-maritime-fleets/"},{t:"Digital Maritime Supply Chains: How Fleet Software Transforms Procurement",u:"https://spectec.net/knowledge-hub/maritime-supply-chain-management-software/"},{t:"Managing Dry Dock Projects with Fleet Management Software",u:"https://spectec.net/knowledge-hub/dry-dock-project-management-fleet-software/"}]},
   {id:"d2",p:2,d:"live",title:"Ship Maintenance Software: The 2026 Buyer's Guide",ctx:"Live. Ranking position 1-2 across maintenance terms \u2014 confirmed in AI search results",desc:"Layer 1 spine asset 2. Live on the knowledge hub. Ranking position 1-2 for ship maintenance software and marine maintenance software. Confirmed appearing in AI search results. Update quarterly.",own:"Marketing",deps:["Product (accuracy review quarterly)"],rep:["Maintenance module page internal links","FAQ schema blocks","Sales reference: maintenance positioning"]},
   {id:"d3",p:3,d:"planned",title:"Maritime Compliance and HSQE Software: Complete Guide",ctx:"Long-form guide targeting HSEQ Directors \u2014 builds authority and feeds the audit readiness checklist",desc:"Layer 1 spine asset 3. Targets HSEQ Directors and Compliance Managers. Strong AI answer engine potential. Compliance drives procurement decisions.",own:"Marketing",deps:["Product (HSEQ module accuracy)","Legal sign-off on regulatory claims"],rep:["LinkedIn article series: ISM, SOLAS, MARPOL explained","Audit readiness checklist (gated download)","Sales talking points: compliance","Short-form video: what auditors look for"]},
   {id:"d4",p:4,d:"planned",title:"Maritime Procurement and Digital Supply Chain Software",ctx:"Explains how AMOS manages procurement end to end \u2014 targets Procurement Managers and CFOs",desc:"Layer 1 spine asset 4. Targets Procurement Managers, CFOs, and Technical Superintendents. Positions AMOS beyond maintenance.",own:"Marketing",deps:["Commercial (procurement proof points)","Finance examples from customer base"],rep:["LinkedIn carousel: procurement inefficiencies","CFO briefing note","Vendor evaluation template","Infographic: requisition to delivery workflow"]},
@@ -500,7 +506,9 @@ function mkTile(item){
   var hd=document.createElement("div");hd.className="th";
   var pri=document.createElement("div");pri.className="tpri";pri.textContent=item.p;
   var txW=document.createElement("div");txW.className="ttx";
-  var ttl=document.createElement("div");ttl.className="tt-title";ttl.textContent=item.title;txW.appendChild(ttl);
+  var ttl=document.createElement("div");ttl.className="tt-title";
+  if(item.url){var ta=document.createElement("a");ta.href=item.url;ta.target="_blank";ta.rel="noopener noreferrer";ta.textContent=item.title;ttl.appendChild(ta);}else{ttl.textContent=item.title;}
+  txW.appendChild(ttl);
   if(item.ctx){var ctx=document.createElement("div");ctx.className="tt-ctx";ctx.textContent=item.ctx;txW.appendChild(ctx);}
   var chev=document.createElement("span");chev.className="tchev";chev.innerHTML="&#8964;";
   hd.appendChild(pri);hd.appendChild(txW);hd.appendChild(mkBadge(item.id,item.d));hd.appendChild(chev);
@@ -525,7 +533,14 @@ function mkTile(item){
     var rl=document.createElement("div");rl.className="tml";rl.textContent="Repurposed assets and formats";rb.appendChild(rl);
     var rlist=document.createElement("div");rlist.className="rlist";
     item.rep.forEach(function(r){var p=document.createElement("span");p.className="rpill";p.textContent=r;rlist.appendChild(p);});
-    rb.appendChild(rlist);body.appendChild(rb);
+    rb.appendChild(rlist);
+    if(item.blogs&&item.blogs.length){
+      var blbl=document.createElement("div");blbl.className="tml";blbl.style.marginTop="8px";blbl.textContent="Supporting blogs";rb.appendChild(blbl);
+      var bl=document.createElement("ol");bl.className="blog-list";
+      item.blogs.forEach(function(b){var li=document.createElement("li");var a=document.createElement("a");a.href=b.u;a.target="_blank";a.rel="noopener noreferrer";a.textContent=b.t;li.appendChild(a);bl.appendChild(li);});
+      rb.appendChild(bl);
+    }
+    body.appendChild(rb);
   }
   var csec=document.createElement("div");csec.className="csec";
   var clbl=document.createElement("div");clbl.className="clbl";clbl.textContent="Comments";
