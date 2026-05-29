@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-28T13:46:04Z",
+  "generated": "2026-05-29T08:28:03Z",
   "summary": {
     "live": 18,
     "complete": 1,
-    "in_progress": 0,
+    "in_progress": 1,
     "planned": 0,
-    "not_started": 50
+    "not_started": 49
   },
   "stages": {
     "demand": [
@@ -392,7 +392,7 @@
         "title": "AMOS vs MariApps",
         "type": "Competitive comparison",
         "priority": "HIGH",
-        "status": "not_started",
+        "status": "in_progress",
         "owner": "Marketing",
         "notes": "Requires sign-off on competitive positioning",
         "stream": "B"
