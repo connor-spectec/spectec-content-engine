@@ -398,6 +398,7 @@ var TILES={
   {id:"sp3",p:3,d:"planned",title:"Platinum positioning and proposal asset",ctx:"Platinum is sold by proposal to strategic and enterprise customers \u2014 executive-facing asset needed",desc:"Platinum is offered by proposal to strategic or enterprise customers. Marketing needs an executive-facing one-pager covering premium differentiators: dedicated success and delivery oversight, predictive support, APM data insight reviews, executive QBRs.",own:"Marketing",deps:["Commercial (Platinum proposal process)","Customer Success (Platinum delivery model accuracy)"],rep:["Executive proposal insert","Sales deck: Platinum positioning slide","LinkedIn content: what Platinum partnership looks like"]}
  ]
 };
+var tileById={};
 Object.values(TILES).forEach(function(arr){arr.forEach(function(item){tileById[item.id]=item;});});
 var PL=[
  {n:"CONVERSION ASSETS",sect:true},
@@ -455,7 +456,6 @@ var JPHASES=[
 ];
 var manifestData=null;
 var manifestStatusByTitle={};
-var tileById={};
 var st={};
 try{st=JSON.parse(localStorage.getItem("spectec_comments")||"{}");}catch(e){}
 function sv(){try{localStorage.setItem("spectec_comments",JSON.stringify(st));document.getElementById("saveInd").textContent="Saved "+new Date().toLocaleTimeString();}catch(e){}}
