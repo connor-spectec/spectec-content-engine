@@ -1,0 +1,315 @@
+COMPETITIVE BATTLECARD
+SpecTec AMOS™  vs  Sertica by RINA
+INTERNAL USE ONLY  |  Not for external distribution
+
+Competitor
+Sertica by RINA	Prepared By
+[Name / Team]	Date
+[Month Year]	Version
+v3.0
+
+A  |  QUICK REFERENCE CARD  —  Read this before every call
+
+TOP 3 WIN THEMES — use these verbatim or adapt
+1. Proven at scale Sertica hasn't reached.  "40+ years. 3,000+ active vessels. 40%+ of the world's 20 largest fleets. Sertica is growing — but growth is not the same as a track record."
+2. One platform, no replatforming.  "AMOS™ Gateway, Horizon, Enterprise — same database, same team, same platform. A modular build-as-you-go approach risks integration debt and re-implementation before you reach governance scale."
+3. Independent. Class-agnostic.  "We're approved by RINA and six other class societies — and owned by none of them. Sertica is owned by RINA. Ask yourself: whose interests is that roadmap built around?"
+Source: SpecTec Value Proposition & AMOS Brochure, March 2026
+
+TOP OBJECTIONS	INSTANT RESPONSE
+"Sertica is backed by RINA — that gives us confidence."	"AMOS™ is also RINA-approved — and approved by 6 other societies. We're not tied to one class, so no conflict of interest. Our roadmap serves operators, not class commercial strategy."
+"We like the modular approach — start small."	"AMOS™ Gateway is exactly that — but on the same platform you'll govern from at Enterprise. Modules assembled from a catalogue grow sideways, not up. Ask Sertica to show a customer who went full enterprise governance without re-implementing."
+"Sertica is a more modern, cloud-native product."	"Cloud-native is a deployment model, not a measure of governance depth. AMOS™ has been continuously developed for 40+ years — the original innovator, still leading."
+
+⚠  [VERIFY] CHECKLIST — Resolve before use in a live deal
+
+Priority	Item to verify	Owner
+HIGH	SpecTec fleet penetration stat (40%+ of top 20 largest fleets) — confirm exact figure before quoting verbally	Sales leadership
+HIGH	SpecTec customer testimonials — confirm current quotes approved for internal use	Marketing
+HIGH	SpecTec reference customer per sector — confirm who is approved and willing before naming	Sales leadership
+MED	Sertica vessel/headcount figures — public sources vary widely; do not quote from site	Field intelligence
+MED	AMOS CII/EU MRV/FuelEU reporting capability — confirm vs Sertica VRS module	Product team
+MED	AMOS Staff Management nativity — confirm fully native before using crewing third-party angle	Product team
+MED	Sertica ABS/LR/ClassNK/CCS approval status — not listed publicly; confirm absence before using	Product team
+LOW	Sertica current headcount post-2021 acquisition	Field intelligence
+LOW	SpecTec pricing positioning vs Sertica	Deal team / Sales ops
+
+⚡  SpecTec AMOS™ UNIQUE SELLING POINTS  |  Know these before every call
+
+1	40+ Years. The Original. Still Leading.
+AMOS™ was the first digital maritime asset management system. 40+ years of continuous operation in complex, safety-critical environments is not marketing — it is proof. We have run governance-grade operations across thousands of vessels in conditions no newer product has faced.
+Source: SpecTec Value Proposition, March 2026	2	One Platform. Three Tiers. No Replatforming.
+AMOS™ Gateway, Horizon, and Enterprise are one platform configured to your operational maturity. You never outgrow it. No module patchwork. No data migration. No re-implementation. Your investment compounds — it does not restart.
+Source: SpecTec AMOS Brochure, March 2026
+3	Trusted by 40%+ of the World's Largest Fleets
+Over 40% of the top 20 largest global fleets rely on AMOS™. That is not a marketing claim — it is operational reality in the most complex, high-stakes environments in shipping.
+Source: SpecTec Value Proposition, March 2026
+[VERIFY]  Confirm exact figure with SpecTec before quoting verbally	4	Class-Agnostic. Approved by 7+ Societies.
+ABS, DNV, Lloyd's Register, Bureau Veritas, ClassNK, RINA, CCS. Not owned by any classification society. No conflict of interest. No captive relationship. Our approvals follow the customer's vessels, not our commercial interests.
+Source: SpecTec AMOS Brochure, March 2026
+5	Purpose-Built for Maritime Asset Management. Not an ERP. Not Adapted.
+AMOS™ is not an ERP with a maritime skin, not a generic PMS, and not a dashboard layer on top of other systems. It is a purpose-built maritime asset management and compliance platform — the only one proven at governance grade across global fleet scale.
+Source: SpecTec Value Proposition, March 2026
+
+1  |  COMPETITOR OVERVIEW
+
+Company Name	Sertica by RINA  |  sertica.com
+Parent Company	RINA S.p.A. — Italian classification society, inspection, testing & certification group, Genoa, Italy
+Source: Riviera Maritime / RINA.org, 2021
+Headquarters	Aalborg, Denmark  |  Additional offices: Singapore, Chile
+Source: sertica.com/services/support; MarineLink, 2021
+Founded	Software first coded 1989, launched 1991 (as Logimatic). Acquired by RINA 2021, rebranded Sertica by RINA.
+Source: sertica.com/about-us; CBInsights; Riviera Maritime, 2021
+Company Size	~50 staff at acquisition (2021)
+Source: MarineLink, 2021
+[VERIFY]  Request current headcount from field intelligence or LinkedIn
+Brief Overview	Sertica is a modular ship management software suite developed by RINA Digital Solutions. Customers select modules they need and add more as they grow. Coverage spans maintenance, procurement, HSQE, crewing, performance, vessel reporting, logbooks, and fleet KPI dashboards. Owned by classification society RINA since 2021, it benefits from RINA's class relationships while positioning as a user-friendly, flexible ecosystem for fleets of all sizes.
+Watch Outs	•	Acquired by RINA 2021 — class society ownership gives cross-sell leverage with RINA-classed vessels
+•	SERTICA Maritime Conference 2026 — 60+ participants; growing community and ecosystem signal
+•	Actively expanding CII/EU ETS/FuelEU narrative through VRS and Performance modules
+•	DFDS case study targets 66% PO automation — strong procurement messaging
+Source: sertica.com; sertica.com/events; sertica.com/insights/customer-cases/dfds-group
+
+2  |  THEIR PRODUCT OVERVIEW
+
+Sertica is a modular fleet management suite: cloud (Microsoft Azure/RINA-managed), on-premise, or mixed. Modules purchased independently. The Fleet KPI module aggregates data from all modules and third-party systems.
+
+Key Modules	•	Maintenance (PMS) — mobile app, offline sync
+•	Procurement — PO management, Sertica Connect supplier portal
+•	HSQE — safety management, incident tracking, ISM compliance, inspection app
+•	Crewing & Payroll — powered by OMEGA (Soft-Team.dk) — third-party dependency
+•	Performance — fuel, emissions, CII, voyage optimisation, sensor integration
+•	VRS — EU MRV, IMO DCS, CII, FuelEU Maritime, custom reports
+•	Logbook — electronic MARPOL record books
+•	Fleet — KPI aggregation from all Sertica and third-party systems
+Source: sertica.com/products; sertica.com/modules; sertica.com/crewing
+Deployment	•	Cloud: Microsoft Azure, browser-based, RINA-managed (09:00–15:00 GMT+1 primary support; Singapore GMT+7 / Chile GMT-4 overflow)
+•	On-Premise: customer-managed, full control, offline capable
+•	Mixed: cloud shore office + onboard installation
+Source: sertica.com/services/sertica-cloud; sertica.com/services/support
+Class Approvals	•	DNV Type Approval — PMS
+•	Bureau Veritas Type Approval — PMS
+•	RINA Type Approval — Electronic Logbook (MARPOL)
+•	ISO 9001:2015
+Source: sertica.com/insights/certifications
+[VERIFY]  ABS, Lloyd's Register, ClassNK, CCS not listed — confirm absence before using competitively
+Key Personas	Fleet/Technical Managers, HSQE teams, Procurement teams, IT/Operations. RINA parentage opens doors through class society relationships.
+
+3  |  PRODUCT FEATURE COMPARISON
+
+Depth matters more than presence. Native = built into the core platform. Not confirmed = no public evidence — verify before use. ★ Procure Smart = SpecTec's standalone AI procurement intelligence layer (works alongside any system).
+
+Feature Area	Sertica by RINA	AMOS™ by SpecTec	Notes
+Key:  ✓ Native  ~ Integrated  ⚠ Third-party  ◑ Partial  ? Not confirmed  ✗ Not listed  ★ Procure Smart 
+MAINTENANCE
+Planned Maintenance System (PMS)	✓  Native	✓  Native	Both DNV & BV approved
+Mobile app / offline sync	✓  Native	✓  Native	Both confirmed
+Dry dock / activity management	✓  Native	✓  Native	Sertica: Activity Mgmt module
+Condition-based maintenance	◑  Partial	?  Not confirmed	[VERIFY both]
+QR code / spare parts integration	✓  Native	?  Not confirmed	Sertica confirmed; AMOS [VERIFY]
+PROCUREMENT
+Purchase order management	✓  Native	✓  Native	Both confirmed
+Supplier portal / e-commerce	✓  Native	✓  Native	Sertica: Connect; AMOS: top-3 partners
+AI invoice matching (3-way)	◑  Partial	★  Procure Smart	Sertica: manual/partial; AMOS: Procure Smart 85%+ match rate
+Duplicate purchasing elimination	?  Not confirmed	★  Procure Smart	AMOS Procure Smart: $23M savings, Form-Fit-Function engine
+Budget visibility at approval	?  Not confirmed	★  Procure Smart	AMOS Procure Smart: real-time at point of approval, <1% variance
+Low-value PO automation	◑  Partial	★  Procure Smart	Sertica: targets 66% (DFDS case); AMOS: 7–10K POs/yr automated
+Demand forecasting (3–6 months)	?  Not confirmed	★  Procure Smart	AMOS Procure Smart: maintenance-linked demand; 15% spend reduction
+Budget management	✓  Native	✓  Native	Both confirmed
+Inventory management	✓  Native	✓  Native	Both confirmed
+COMPLIANCE & HSQE
+ISM / ISPS / SOLAS / MARPOL	✓  Native	✓  Native	Both confirmed
+Incident & event management	✓  Native	✓  Native	Both confirmed
+Audit & inspection management	✓  Native	✓  Native	Both confirmed
+Electronic logbooks (MARPOL)	✓  Native	✓  Native	Both RINA-approved
+Certificate management	✓  Native	✓  Native	Both confirmed
+SIRE 2.0 procurement compliance link	?  Not confirmed	★  Procure Smart	AMOS Procure Smart: late parts = charterer-visible compliance gap
+PERFORMANCE & DECARBONISATION
+CII reporting	✓  Native	?  Not confirmed	Sertica: VRS module confirmed; AMOS [VERIFY]
+EU MRV / IMO DCS	✓  Native	?  Not confirmed	Sertica: VRS confirmed; AMOS [VERIFY]
+FuelEU Maritime compliance	✓  Native	?  Not confirmed	Sertica webinar confirmed; AMOS [VERIFY]
+Voyage optimisation	✓  Native	?  Not confirmed	Sertica: Performance module; AMOS [VERIFY]
+ESG / sustainability reporting	◑  Partial	?  Not confirmed	[VERIFY both — fast-moving area]
+CREWING & WORKFORCE
+Crew management (lifecycle)	⚠  Third-party	✓  Native	Sertica: OMEGA/Soft-Team.dk; AMOS native [VERIFY]
+Payroll administration	⚠  Third-party	?  Not confirmed	Sertica: OMEGA/Soft-Team; AMOS [VERIFY]
+Certificate / competency tracking	⚠  Third-party	✓  Native	Sertica: OMEGA; AMOS Staff Mgmt [VERIFY native]
+DATA, ANALYTICS & GOVERNANCE
+Fleet KPI dashboard	✓  Native	✓  Native	Both confirmed
+Role-based dashboards	✓  Native	✓  Native	Both confirmed
+Multi-entity / multi-region governance	?  Not confirmed	✓  Native	AMOS Enterprise; Sertica [VERIFY]
+Board-level executive reporting	?  Not confirmed	✓  Native	AMOS Enterprise; Sertica [VERIFY]
+Continuous audit readiness	◑  Partial	✓  Native	AMOS Enterprise tier; Sertica HSQE module
+Policy enforcement across fleet	?  Not confirmed	✓  Native	AMOS Enterprise; Sertica [VERIFY]
+API-first / open integration	✓  Native	✓  Native	Both confirmed
+DEPLOYMENT & COMMERCIAL
+Cloud (SaaS)	✓  Native	✓  Native	Sertica: Azure/RINA-managed; AMOS: SpecTec-managed
+On-premise deployment	✓  Native	✓  Native	Both confirmed
+Hybrid / mixed deployment	✓  Native	✓  Native	Both confirmed
+Sovereign / regional data hosting	?  Not confirmed	✓  Native	AMOS confirmed; Sertica Azure-only [VERIFY]
+CapEx / OpEx / subscription	?  Not confirmed	✓  Native	AMOS all three confirmed; Sertica [VERIFY]
+CLASSIFICATION — AMOS™ ADVANTAGE
+DNV Type Approval	✓  Native	✓  Native	Both confirmed
+Bureau Veritas Type Approval	✓  Native	✓  Native	Both confirmed
+RINA Type Approval	✓  Native	✓  Native	Both confirmed
+ABS Approval	?  Not confirmed	✓  Native	AMOS confirmed; Sertica not listed
+Lloyd's Register Approval	?  Not confirmed	✓  Native	AMOS confirmed; Sertica not listed
+ClassNK Approval	?  Not confirmed	✓  Native	AMOS confirmed; Sertica not listed
+CCS Approval	?  Not confirmed	✓  Native	AMOS confirmed; Sertica not listed
+Source: sertica.com/products, sertica.com/modules, sertica.com/insights/certifications (March 2026); SpecTec AMOS Brochure & Procure Smart brochure, March–May 2026. All [VERIFY] items require product team confirmation before live deal use.
+
+★  AMOS™ PROCURE SMART — Procurement Intelligence Advantage
+AMOS™ Procure Smart is a standalone AI-powered procurement intelligence layer that works alongside AMOS™ or any other fleet management system — including Sertica and MariApps. It directly addresses the structural procurement waste that affects every fleet.
+
+$23M+ duplicate purchasing waste eliminated	85%+ automated 3-way match rate (from 30–40%)	15% spend reduction via 3–6 month demand visibility	<1% budget variance (from 3–5%)
+7,000–10,000 POs automated per year	PO cycle: 7 days → under 4 hours	Built on 40 years of AMOS™ procurement data	EU AI Act compliant — ahead of Aug 2026 deadline
+
+Key angle vs Sertica: DFDS targeting 66% PO automation via Sertica Connect. AMOS Procure Smart delivers 85%+ automated match rate and works alongside Sertica or any other system — including as a standalone engagement.
+SIRE 2.0 compliance angle: a late part that defers a maintenance job is now a charterer-visible compliance gap. PSC detention costs $25,000/day. Procure Smart connects parts availability to maintenance planning — eliminating that exposure.
+Source: AMOS Procure Smart brochure & spectec.net/amos-procure-smart, May 2026
+
+4  |  COMPETITIVE ANALYSIS — STRENGTHS, WEAKNESSES & AMOS™ POSITIONING
+
+Where Sertica is genuinely strong — and where AMOS™ wins. Focus on the 'so what' not just the feature.
+
+SERTICA — STRENGTH OR WEAKNESS	AMOS™ COUNTER-POSITION
+STRENGTH: RINA class society backing
+Cross-referral through RINA's surveying relationships is a genuine commercial lever — particularly for RINA-classed prospects.
+Source: Riviera Maritime, 2021	Counter: class-agnostic, approved by RINA and 6 others
+AMOS™ is RINA-approved — and approved by ABS, DNV, LR, BV, ClassNK, and CCS. Not owned by any of them. Mixed-class fleets, acquisitions, and class changes present no gaps. Independence from any class society is a structural advantage.
+Source: SpecTec AMOS Brochure, March 2026
+STRENGTH: Modular flexibility — start small
+Pick-and-mix module approach appeals to cost-conscious buyers wanting a low-commitment entry point.
+Source: sertica.com/products	Counter: three tiers, one platform — no replatforming
+AMOS™ Gateway is built for exactly that entry point — on the same platform the customer will govern from at Enterprise. Modules assembled from a catalogue risk integration debt, data inconsistency, and re-implementation before reaching governance scale.
+Source: SpecTec AMOS Brochure, March 2026
+STRENGTH: Scandinavian/northern European customer base
+Strong presence with DFDS, SVITZER, Euronav, Berge Bulk in northern Europe.
+Source: sertica.com/references; MarineLink, 2021	Counter: genuinely global delivery — every major maritime region
+SpecTec operates regional delivery and support teams across Europe, Asia-Pacific, Americas, and the Middle East — not a Scandinavian specialist with overflow offices.
+Source: SpecTec AMOS Brochure, March 2026
+STRENGTH: Active CII/ESG/FuelEU narrative (VRS module)
+VRS explicitly covers EU MRV, IMO DCS, CII, and FuelEU Maritime. Sertica is actively marketing into the decarbonisation buying trigger.
+Source: sertica.com/vessel-reporting-system	Counter: AMOS™ analytics inside one governed platform — not a bolt-on
+AMOS™ performance and analytics sits within the same governed platform — not a separate VRS module. Data integrity is structural. And AMOS Procure Smart links parts availability to maintenance planning, eliminating the SIRE 2.0 compliance gap from procurement delays.
+Source: SpecTec AMOS Brochure, March 2026; Procure Smart brochure, May 2026
+[VERIFY]  Confirm AMOS CII/EU MRV/FuelEU module capability with product team
+STRENGTH: User-friendliness prominently marketed
+Sertica markets ease of use as a core differentiator. SVITZER crew feedback cited as 'overwhelmingly positive' about the intuitive interface.
+Source: sertica.com/insights/customer-cases/svitzer-maintenance	Counter: AMOS™ built for every role — crew to board — mobile-first
+Ease of use in a demo is not the same as operational depth under audit pressure. AMOS™ is purpose-designed for all stakeholders — mobile-first execution for crew, structured workflows for technical managers, executive dashboards for leadership.
+Source: SpecTec AMOS Brochure, March 2026
+WEAKNESS: Crewing & payroll is a third-party dependency (OMEGA/Soft-Team)
+Sertica's crewing and payroll module is explicitly 'powered by OMEGA' — a separate Danish company. Accountability is split if issues arise.
+Source: sertica.com/crewing	Advantage: AMOS™ Staff Management — native, one vendor, one SLA
+AMOS™ Staff Management is built into the platform. One support team, one data model, no third-party dependency in a business-critical function.
+Source: SpecTec AMOS Brochure, March 2026
+[VERIFY]  Confirm AMOS Staff Management is fully native before using this point
+WEAKNESS: Limited support hours / single primary support location
+Primary support runs 09:00–15:00 GMT+1 from Aalborg. Singapore and Chile are overflow only. For 24/7 operations this is a structural constraint.
+Source: sertica.com/services/support	Advantage: SpecTec regional teams — not overflow coverage
+SpecTec operates regional delivery and support teams positioned in the regions where customers operate — maritime domain expertise, not just timezone coverage.
+Source: SpecTec AMOS Brochure, March 2026
+[VERIFY]  Confirm SpecTec support SLA and hours coverage before using competitively
+WEAKNESS: Post-acquisition integration risk (RINA acquired 2021)
+~4 years under new ownership. Prospects may legitimately question roadmap continuity, support model changes, and original team ethos under large group ownership.
+Source: Riviera Maritime, 2021; MarineLink, 2021	Advantage: 40+ years uninterrupted — single focus, no acquisition disruption
+SpecTec has developed AMOS™ as a dedicated maritime software business for over four decades. No integration risk. No brand confusion. No divided roadmap attention.
+Source: SpecTec Value Proposition, March 2026
+WEAKNESS: Enterprise governance capability not a stated core strength
+Fleet KPI dashboard is relatively new. Multi-entity, multi-region, board-level assurance governance is not prominently marketed.
+Source: sertica.com/fleet; sertica.com/products
+[VERIFY]  Inferred from public marketing — seek win/loss evidence from field team	Advantage: AMOS™ Enterprise — dedicated governance tier, not a dashboard
+AMOS™ Enterprise delivers embedded policy enforcement, continuous audit readiness, executive dashboards linking risk and performance, and governance across fleets, entities, and regions.
+Source: SpecTec AMOS Brochure, March 2026
+
+5  |  WHY WE WIN — FULL TALK TRACKS
+
+1	Proven at scale and complexity Sertica hasn't reached
+"We've been the digital backbone of complex, safety-critical fleets for over 40 years. More than 40% of the world's 20 largest fleets rely on AMOS™ right now — not because we're the cheapest or the newest, but because when the stakes are high, operators choose proven. Sertica is growing — but growth is not the same as a track record."  [Source: SpecTec Value Proposition, March 2026 — VERIFY fleet stat before quoting]
+2	One platform that scales — no module debt, no replatforming
+"AMOS™ Gateway, Horizon, and Enterprise are three tiers of one platform. Your data, your workflows, and your team's knowledge stay intact as you scale. With a modular build-as-you-go approach, you risk integration debt, data inconsistency, and a re-implementation event before you reach enterprise governance. Ask Sertica to show you a customer who started with two modules and now runs full fleet governance globally."  [Source: SpecTec AMOS Brochure, March 2026]
+3	Independent. Class-agnostic. No conflict of interest.
+"AMOS™ is approved by RINA and six other class societies — and we're not owned by any of them. Sertica is owned by RINA. We're not suggesting that's a problem, but ask yourself: when your asset management software is owned by your classification society, whose interests is that roadmap built around? We have one interest: yours."  [Source: SpecTec AMOS Brochure, March 2026; Riviera Maritime, 2021]
+
+6  |  PRICING
+
+Sertica Pricing	Not published publicly.
+[VERIFY]  No pricing data available. Request field intelligence and win/loss notes. Modular per-vessel or subscription model likely — inference only.
+Price Objection Handling	•	TCO framing: include implementation quality, data migration risk, replatforming cost if modular approach reaches its limits, and support coverage gaps
+•	AMOS™ available as CapEx, OpEx, or subscription — match to customer's commercial model
+•	Zero operational downtime during SpecTec implementation — implementation risk is a real, quantifiable cost
+•	AMOS Procure Smart ROI: $23M+ duplicate purchasing waste eliminated, 15% spend reduction — a quantified procurement payback within months
+Source: SpecTec AMOS Brochure, March 2026; Procure Smart brochure, May 2026
+SpecTec Positioning	[VERIFY]  Insert pricing positioning vs Sertica from deal team guidance. Do not speculate without evidence.
+
+7  |  OBJECTION HANDLING
+
+OBJECTION	AMOS™ RESPONSE
+"Sertica is backed by RINA — that gives us confidence."	Acknowledge RINA — then pivot: 'AMOS™ is approved by RINA and six other class societies. We're not tied to one — whatever class your vessels sit under, AMOS™ fits. And as an independent software business, our roadmap is driven entirely by maritime operators — not a class society's broader commercial strategy.'  [Source: SpecTec AMOS Brochure, March 2026]
+"Sertica looks easier to use — our crew responded well in the demo."	'Usability matters — and AMOS™ is purpose-built for every user from crew to board, mobile-first with offline sync. But ease of use in a demo is not the same as operational depth under audit pressure and fleet-wide governance at scale. Ask them to demonstrate how Sertica handles [your most complex workflow]. We'd welcome a direct comparison.'  [Source: SpecTec AMOS Brochure, March 2026]
+"We like Sertica's modular approach — we can start small and grow."	'Starting small is smart — AMOS™ Gateway is built exactly for that. On the same platform you'll scale to at Enterprise. With a module-assembly approach you may face integration debt, data inconsistency, and a re-implementation event before you reach governance scale. Ask Sertica to show a customer who started with two modules and now runs full fleet governance globally.'  [Source: SpecTec AMOS Brochure, March 2026]
+"Sertica has [customer name] — a reference in our sector."	'We'd like to introduce you to [SpecTec reference in same sector] who've been live with AMOS™ for [X] years and can speak to long-term operational reality — not just go-live.'  [VERIFY: match reference to prospect's sector — confirm approved and willing before naming]
+"Their procurement module looks capable — DFDS is targeting 66% PO automation."	'That's a target — with AMOS™ Procure Smart, the baseline is 85%+ automated 3-way match, 7–10,000 POs per year running automatically, and $23M+ in duplicate purchasing waste eliminated. And Procure Smart works alongside Sertica if they're already installed — it's the intelligence layer, not a replacement.'  [Source: Procure Smart brochure, May 2026]
+
+8  |  DISCOVERY QUESTIONS — Surface Sertica's weaknesses naturally
+
+Ask without naming Sertica. Expose gaps that favour AMOS™.
+
+•	How important is it that your system is approved by your specific classification society — and do you operate vessels under more than one class?
+•	When you scale — by acquiring vessels, entering new regions, or adding business units — how do you expect your platform to keep up without re-implementation?
+•	How does the vendor handle crewing and payroll — is that native to the platform, or does it involve a separate vendor?
+•	What are the vendor's support hours outside their primary office timezone — especially for 24/7 operations?
+•	Where is your operational data hosted, and who controls it? Does it sit within a region your compliance requirements demand?
+•	Who owns the software vendor — and how does the parent's commercial interests align with your operational roadmap?
+•	If you needed board-level governance reporting across multiple entities and regions simultaneously, have you seen it demonstrated at that scale?
+•	What is your current three-way invoice match rate — and what does a failed match cost you in investigation time?
+•	How much procurement spend variance do you carry per quarter — and can you see it in real time at the point of approval?
+
+9  |  RISKS & LANDMINES
+
+RISK / LANDMINE	RECOMMENDED ACTION
+Prospect's vessels are RINA-classed
+Sertica may be proposed internally through RINA's commercial team.
+Source: Riviera Maritime, 2021	Lead with AMOS™'s own RINA PMS approval — then reframe independence as a structural benefit. Escalate to SpecTec leadership for exec-to-exec engagement if needed.
+Positive Sertica demo reaction from crew or technical team
+Sertica's UI is positioned as intuitive. A strong demo creates early emotional commitment.	Request a focused counter-demo on the prospect's most complex workflow. Prioritise AMOS™ Enterprise governance and fleet-wide benchmarking. Bring a reference customer if possible.
+Sertica has a named reference in the prospect's sector
+SVITZER, DFDS, Hapag-Lloyd, Berge Bulk, Grimaldi, Condor Ferries will be used.
+Source: sertica.com/references	Match the reference tier with a SpecTec customer in the same sector with longer live tenure.
+[VERIFY]  Confirm SpecTec references with sales leadership before naming
+RFP language favours modular flexibility or 'start small'
+This framing tilts towards Sertica's positioning.	Flag to your manager. Request a pre-submission meeting to reframe around TCO, governance depth, and long-term scalability. Offer a platform vs module-assembly workshop.
+Procurement or IT driving the decision
+Defaults to features and price — Sertica's comfort zone. Also — if procurement is a pain point, Procure Smart may be a compelling standalone entry point.	Ensure Technical Director, HSQE lead, and Fleet Manager are engaged. If procurement waste is a trigger, lead with Procure Smart ROI numbers to reframe the conversation.
+
+10  |  RED FLAGS — When to triage your time
+
+•	Price is the primary non-negotiable driver — AMOS™ is not the right fit (per SpecTec ICP)
+•	Prospect is a small single-vessel operator with no meaningful regulatory exposure — below AMOS™ Gateway ICP threshold
+•	RINA has an existing board-level relationship and evaluation is being steered through RINA's commercial organisation
+•	No operational or technical stakeholder engaged — procurement-only decision with no one owning the operational outcome
+•	Prospect explicitly wants a cosmetic software upgrade without process improvement — poor long-term ICP fit
+•	Prospect has already signed a Sertica contract and is running a 'market check' compliance exercise
+Source: SpecTec Ideal Customer Profile, March 2026
+
+11  |  SERTICA KNOWN CUSTOMERS
+
+All entries confirmed from public Sertica sources (sertica.com/references; /insights/customer-cases), March 2026.
+
+Customer	Sector	Notes
+Hapag-Lloyd	Container	Replaced several systems 2021 — maintenance, procurement, HSQE
+SVITZER	Towage	400+ vessels, 40+ countries — maintenance standardisation
+DFDS	Ferry / RoRo	Growth strategy platform; targeting 66% PO automation
+Grimaldi Group	RoRo / Container	Performance monitoring, fuel efficiency
+Berge Bulk	Bulk	25% procurement productivity increase cited
+Condor Ferries	Ferry	HSQE/SMS — 12-month implementation; zero DOC remarks
+Euronav	Tanker	Reference customer (case study not publicly detailed)
+Technomar Shipping	Container / Bulk	VRS rollout — CII and regulatory compliance
+Attica Group	Ferry / Passenger	Maintenance and safety scheduling digitalisation
+d'Amico International	Tanker	Electronic logbook — bilge, sludge, waste management
+Tarbit Shipping AB	Tanker	Inspection App — SIRE 2.0 preparation
+Seamar Management	Bulk	Reference customer listed
+Compagnie Maritime Nantaise	General Cargo	Cost optimisation and data management
+
+INTERNAL USE ONLY  |  Do not share externally. Resolve all [VERIFY] flags before live deal use. Contact Sales Enablement for updates.  Sources: sertica.com (March 2026) | SpecTec AMOS Brochure, Value Proposition & ICP (March 2026) | AMOS Procure Smart brochure & spectec.net/amos-procure-smart (May 2026) | Riviera Maritime / MarineLink (2021)
