@@ -681,19 +681,14 @@ function renderPlanner(){
   html+="</tbody>";t.innerHTML=html;
 }
 function updateProgress(){
-  if(manifestData&&manifestData.summary){
-    var s=manifestData.summary;
-    var live=s.live||0,comp=s.complete||0,prog=s.in_progress||0,plan=(s.planned||0)+(s.not_started||0);
-    var total=live+comp+prog+plan;
-    document.getElementById("pLive").textContent=live;document.getElementById("pComp").textContent=comp;document.getElementById("pProg").textContent=prog;document.getElementById("pPlan").textContent=plan;
-    document.getElementById("pbf").style.width=total>0?Math.round(((live+comp)/total)*100)+"%":"0%";
-  } else {
-    var all=[];Object.values(TILES).forEach(function(arr){arr.forEach(function(x){all.push({id:x.id,d:x.d});});});
-    var live=0,comp=0,prog=0,plan=0;
-    all.forEach(function(x){var s=gs(x.id,x.d);if(s==="live")live++;else if(s==="complete")comp++;else if(s==="inprogress")prog++;else plan++;});
-    document.getElementById("pLive").textContent=live;document.getElementById("pComp").textContent=comp;document.getElementById("pProg").textContent=prog;document.getElementById("pPlan").textContent=plan;
-    document.getElementById("pbf").style.width=Math.round(((live+comp)/all.length)*100)+"%";
-  }
+  var all=[];Object.values(TILES).forEach(function(arr){arr.forEach(function(x){all.push({id:x.id,d:x.d});});});
+  var live=0,comp=0,prog=0,plan=0;
+  all.forEach(function(x){var s=gs(x.id,x.d);if(s==="live")live++;else if(s==="complete")comp++;else if(s==="inprogress")prog++;else plan++;});
+  document.getElementById("pLive").textContent=live;
+  document.getElementById("pComp").textContent=comp;
+  document.getElementById("pProg").textContent=prog;
+  document.getElementById("pPlan").textContent=plan;
+  document.getElementById("pbf").style.width=all.length>0?Math.round(((live+comp)/all.length)*100)+"%":"0%";
 }
 var dragId=null;
 function ov(e){e.preventDefault();var tile=e.target.closest(".tile");document.querySelectorAll(".tile").forEach(function(t){t.classList.remove("drag-over");});if(tile&&tile.id!=="tile-"+dragId)tile.classList.add("drag-over");}
