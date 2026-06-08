@@ -189,6 +189,8 @@ main{flex:1;min-width:0;padding:40px 44px 100px}
 .pri-high{background:#C0392B;color:#fff}
 .pri-medium{background:#E67E22;color:#fff}
 .pri-low{background:#27AE60;color:#fff}
+.overdue-lbl{font-size:10px;font-weight:700;color:#C0392B;text-transform:uppercase;letter-spacing:.06em;margin-top:4px;display:none}
+.tile.overdue{border-left:3px solid #C0392B}
 </style>
 </head>
 <body>
@@ -553,6 +555,21 @@ function mkTile(item){
     mr.appendChild(db);
   }
   body.appendChild(mr);
+  var dueSec=document.createElement("div");dueSec.style.marginBottom="10px";
+  var dueLbl=document.createElement("div");dueLbl.className="tml";dueLbl.textContent="Due date";
+  var dueInp=document.createElement("input");dueInp.type="date";
+  dueInp.style.cssText="font-family:'DM Sans',sans-serif;font-size:12px;padding:4px 8px;border:1px solid var(--bd2);border-radius:6px;background:var(--sf);color:var(--tx);cursor:pointer";
+  dueInp.value=localStorage.getItem('due_'+item.id)||'';
+  var overdueLbl=document.createElement("div");overdueLbl.className="overdue-lbl";overdueLbl.textContent="Overdue";
+  function refreshOverdue(){
+    var d=dueInp.value;var s=gs(item.id,item.d);
+    var od=(d&&s!=="live"&&s!=="complete"&&new Date(d)<new Date(new Date().toDateString()));
+    tile.classList.toggle("overdue",!!od);overdueLbl.style.display=od?"block":"none";
+  }
+  dueInp.onclick=function(e){e.stopPropagation();};
+  dueInp.onchange=function(){localStorage.setItem('due_'+item.id,dueInp.value);refreshOverdue();};
+  refreshOverdue();
+  dueSec.appendChild(dueLbl);dueSec.appendChild(dueInp);dueSec.appendChild(overdueLbl);body.appendChild(dueSec);
   if(item.rep&&item.rep.length){
     var rb=document.createElement("div");rb.style.marginBottom="10px";
     var rl=document.createElement("div");rl.className="tml";rl.textContent="Repurposed assets and formats";rb.appendChild(rl);
