@@ -3,785 +3,1807 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SpecTec Prospect to Lifecycle Plan 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>SpecTec Content Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
-:root{
---navy:#1C1A5C;--purple:#6E00E5;--purple2:#9E14CC;--magenta:#CF29B0;--pink:#FF3D96;
---blue:#378ADD;--teal:#0F6E56;--green:#3B6D11;--orange:#C05A10;
---sp:#A32D2D;--si:#BA7517;--sc:#3B6D11;--sl:#0F6E56;
---bg:#f7f6fc;--sf:#fff;--sf2:#f0eef8;
---tx:#1a1829;--tx2:#56546e;--tx3:#9896a8;
---bd:rgba(28,26,92,0.1);--bd2:rgba(28,26,92,0.18);
+/* ============================================================
+   RESET + VARIABLES
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --brand: #1C1A5C;
+  --accent: #CF29B0;
+  --bg: #F0EFF8;
+  --white: #ffffff;
+  --font-head: 'Nunito', sans-serif;
+  --font-body: 'Nunito Sans', sans-serif;
+  /* status */
+  --live: #639922;
+  --inprog: #378ADD;
+  --review: #EF9F27;
+  --planned: #B4B2A9;
+  --complete: #3C3489;
+  /* priority */
+  --high-bg: #FCEBEB; --high-txt: #791F1F;
+  --med-bg: #FAEEDA; --med-txt: #633806;
+  --low-bg: #EAF3DE; --low-txt: #27500A;
+  /* stage */
+  --tofu: #6B5EA8;
+  --mofu: #378ADD;
+  --bofu: #EF9F27;
+  --post: #639922;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);font-size:14px;line-height:1.6}
-.layout{display:flex;min-height:100vh}
-nav{width:242px;min-width:242px;background:var(--navy);position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
-.nb{padding:22px 20px 16px;border-bottom:1px solid rgba(255,255,255,0.08)}
-.nl{font-size:16px;font-weight:600;color:#fff}
-.ns{font-size:10px;color:rgba(255,255,255,.3);margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
-.nsl{font-size:10px;color:rgba(255,255,255,.26);text-transform:uppercase;letter-spacing:.08em;padding:13px 20px 3px;font-weight:500}
-.ni{flex:1;padding:6px 0}
-.nit{display:flex;align-items:center;gap:9px;padding:7px 20px;cursor:pointer;border:none;background:none;width:100%;text-align:left;transition:background .12s}
-.nit:hover{background:rgba(255,255,255,.06)}
-.nit.active{background:rgba(255,255,255,.11)}
-.ndot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.ntx{font-size:12px;color:rgba(255,255,255,.6);font-weight:400;flex:1}
-.nit.active .ntx{color:#fff;font-weight:500}
-.nft{font-size:9px;color:rgba(255,255,255,.24);white-space:nowrap}
-.nfooter{padding:12px 20px;border-top:1px solid rgba(255,255,255,.07);font-size:10px;color:rgba(255,255,255,.24)}
-.nsave{padding:5px 20px 0;font-size:10px;color:rgba(255,255,255,.28);font-family:'DM Mono',monospace}
-main{flex:1;min-width:0;padding:40px 44px 100px}
-.page{display:none}.page.active{display:block}
-.ph{margin-bottom:28px;padding-bottom:22px;border-bottom:1px solid var(--bd)}
-.htag{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);background:rgba(110,0,229,.08);padding:3px 10px;border-radius:20px;margin-bottom:10px}
-.ph h1{font-size:26px;font-weight:300;color:var(--navy);letter-spacing:-.02em;margin-bottom:6px}
-.hmeta{display:flex;gap:16px;font-size:12px;color:var(--tx3);flex-wrap:wrap}
-.prog-bar{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:13px 18px;margin-bottom:24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-.ps{text-align:center}
-.pn{font-size:20px;font-weight:300;color:var(--navy);font-family:'DM Mono',monospace}
-.pl{font-size:10px;color:var(--tx3);text-transform:uppercase;letter-spacing:.06em;margin-top:1px}
-.pdiv{width:1px;background:var(--bd);height:30px}
-.pbw{flex:1;min-width:140px}
-.pbt{background:var(--sf2);border-radius:4px;height:5px;overflow:hidden;margin-top:7px}
-.pbf{height:5px;border-radius:4px;background:linear-gradient(90deg,var(--purple),var(--pink));transition:width .4s}
-.pbl{font-size:11px;color:var(--tx2);font-weight:500}
-.snote{background:rgba(110,0,229,.04);border:1px solid rgba(110,0,229,.12);border-radius:8px;padding:13px 16px;margin-bottom:28px;font-size:13px;line-height:1.7;color:var(--tx2)}
-.snote strong{color:var(--navy);font-weight:500}
-.wnote{background:var(--sf);border:1px solid var(--bd);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:11px 15px;margin-bottom:14px;font-size:12.5px;color:var(--tx2);line-height:1.7}
-.wnote strong{color:var(--navy);font-weight:500;display:block;margin-bottom:2px;font-size:10px;text-transform:uppercase;letter-spacing:.06em}
-.hsnote{background:var(--sf2);border:1px solid var(--bd);border-radius:7px;padding:9px 13px;margin-bottom:14px;font-size:12px;color:var(--tx2);display:flex;gap:8px;align-items:flex-start}
-.hsdot{width:6px;height:6px;border-radius:50%;background:#ff5c35;flex-shrink:0;margin-top:5px}
-.sh{display:flex;align-items:flex-start;gap:13px;margin-bottom:5px}
-.sico{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#fff;flex-shrink:0;font-family:'DM Mono',monospace}
-.sm{flex:1}
-.str{display:flex;align-items:center;gap:9px;margin-bottom:2px;flex-wrap:wrap}
-.ssl{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
-.ftag{font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 9px;border-radius:20px}
-.ft-tofu{background:rgba(110,0,229,.1);color:var(--purple)}
-.ft-mofu{background:rgba(207,41,177,.1);color:var(--magenta)}
-.ft-bofu{background:rgba(55,138,221,.1);color:var(--blue)}
-.ft-post{background:rgba(15,110,86,.1);color:var(--teal)}
-.sh h2{font-size:19px;font-weight:500;color:var(--navy);letter-spacing:-.01em}
-.sint{font-size:13px;color:var(--tx2);line-height:1.75;max-width:680px;margin-bottom:10px}
-.tlabel{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:9px}
-.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-bottom:20px}
-.ccamp{background:var(--sf);border:1px solid var(--bd);border-radius:10px;overflow:hidden}
-.ccamp-bar{height:4px}
-.ccamp-body{padding:12px 13px}
-.ccamp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
-.ccamp-title{font-size:13px;font-weight:600;color:var(--navy)}
-.ccamp-desc{font-size:12px;color:var(--tx2);line-height:1.6;margin-bottom:8px}
-.ccamp-date{font-size:11px;color:var(--tx3);font-family:'DM Mono',monospace;margin-bottom:9px}
-.ccamp-al{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--tx3);margin-bottom:5px}
-.ccamp-asset{font-size:12px;color:var(--tx2);padding:4px 0;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:6px}
-.ccamp-asset:last-child{border-bottom:none}
-.ach{width:14px;height:14px;border-radius:3px;border:1.5px solid var(--bd2);flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;transition:all .15s}
-.ach.on{background:var(--sc);border-color:var(--sc)}
-.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:11px}
-.tile{background:var(--sf);border:1px solid var(--bd);border-radius:10px;overflow:hidden;cursor:grab;user-select:none;transition:border-color .15s,box-shadow .15s}
-.tile:hover{border-color:var(--bd2);box-shadow:0 2px 10px rgba(28,26,92,.06)}
-.tile.dragging{opacity:.4}
-.tile.drag-over{border-color:var(--purple);border-style:dashed}
-.th{display:flex;align-items:flex-start;gap:9px;padding:11px 13px;cursor:pointer}
-.tpri{width:19px;height:19px;min-width:19px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:#fff;font-family:'DM Mono',monospace;background:var(--purple);margin-top:1px}
-.ttx{flex:1}
-.tt-title{font-size:13px;font-weight:500;color:var(--tx);line-height:1.35}
-.tt-ctx{font-size:11px;color:var(--tx3);margin-top:2px;line-height:1.4}
-.tchev{font-size:15px;color:var(--tx3);transition:transform .2s;flex-shrink:0;margin-top:1px}
-.tchev.open{transform:rotate(180deg)}
-.tb{border-top:1px solid var(--bd);padding:13px;display:none}
-.tb.open{display:block}
-.tdesc{font-size:12.5px;color:var(--tx2);line-height:1.7;margin-bottom:11px}
-.tml{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--tx3);margin-bottom:5px}
-.own{display:inline-block;font-size:11px;background:rgba(28,26,92,.07);color:var(--navy);padding:3px 8px;border-radius:5px;font-weight:500}
-.dep{display:inline-block;font-size:11px;background:rgba(186,117,23,.08);color:#7a4d0a;padding:3px 8px;border-radius:5px;margin:2px 3px 2px 0;border:1px solid rgba(186,117,23,.15)}
-.rlist{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
-.rpill{font-size:11px;background:rgba(110,0,229,.07);color:var(--purple);padding:3px 8px;border-radius:5px;border:1px solid rgba(110,0,229,.12)}
-.chklist{margin-bottom:11px}
-.chk-row{display:flex;align-items:flex-start;gap:8px;padding:5px 0;border-bottom:1px solid var(--bd)}
-.chk-box{width:14px;height:14px;min-width:14px;border-radius:3px;border:1.5px solid var(--bd2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;margin-top:1px;transition:all .15s}
-.chk-box.on{background:var(--sc);border-color:var(--sc)}
-.chk-lbl{font-size:12px;color:var(--tx2);line-height:1.5}
-.sb{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:3px 9px;border-radius:20px;cursor:pointer;white-space:nowrap}
-.sb:hover{opacity:.8}
-.sd{width:6px;height:6px;border-radius:50%}
-.s-planned{background:rgba(163,45,45,.1);color:var(--sp)}.s-planned .sd{background:var(--sp)}
-.s-inprogress{background:rgba(186,117,23,.11);color:var(--si)}.s-inprogress .sd{background:var(--si)}
-.s-complete{background:rgba(59,109,17,.1);color:var(--sc)}.s-complete .sd{background:var(--sc)}
-.s-live{background:rgba(15,110,86,.1);color:var(--sl)}.s-live .sd{background:var(--sl)}
-.pov{display:none;position:fixed;inset:0;z-index:100}
-.spk{display:none;position:fixed;background:var(--sf);border:1px solid var(--bd2);border-radius:8px;padding:5px;z-index:101;box-shadow:0 4px 20px rgba(28,26,92,.12);min-width:136px}
-.spk.open{display:block}
-.sopt{padding:6px 10px;border-radius:6px;cursor:pointer}
-.sopt:hover{background:var(--sf2)}
-.csec{margin-top:11px;border-top:1px solid var(--bd);padding-top:11px}
-.clbl{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--tx3);margin-bottom:6px}
-.citem{background:var(--sf2);border-radius:6px;padding:8px 10px;margin-bottom:5px;font-size:12.5px;color:var(--tx2);position:relative}
-.cmeta{font-size:10px;color:var(--tx3);font-family:'DM Mono',monospace;margin-bottom:2px}
-.cdel{position:absolute;top:6px;right:8px;background:none;border:none;cursor:pointer;color:var(--tx3);font-size:13px;opacity:.5}
-.cdel:hover{opacity:1;color:#E24B4A}
-.crow{display:flex;gap:6px;margin-top:7px}
-.cinp{flex:1;font-family:'DM Sans',sans-serif;font-size:12.5px;padding:6px 9px;border:1px solid var(--bd2);border-radius:6px;background:var(--sf);color:var(--tx);resize:none;height:32px;transition:border-color .15s,height .15s}
-.cinp:focus{outline:none;border-color:var(--purple);height:60px}
-.cbtn{background:var(--navy);color:#fff;border:none;border-radius:6px;padding:6px 11px;font-size:11px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif}
-.cbtn:hover{opacity:.85}
-.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 18px}
-.pcard{background:var(--sf);border:1px solid var(--bd);border-radius:9px;padding:14px;border-top:3px solid}
-.pnum{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
-.pcard h4{font-size:13px;font-weight:500;color:var(--navy);margin-bottom:5px}
-.pcard p{font-size:12px;color:var(--tx2);line-height:1.6;margin-bottom:7px}
-.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
-.scard{background:var(--sf);border:1px solid var(--bd);border-radius:9px;padding:13px;border-top:3px solid}
-.scard h4{font-size:13px;font-weight:500;color:var(--navy);margin-bottom:5px}
-.scard p{font-size:12px;color:var(--tx2);line-height:1.6}
-.tlwrap{margin-top:10px}
-.tli{display:flex;gap:14px}
-.tldw{display:flex;flex-direction:column;align-items:center;width:22px;flex-shrink:0;padding-top:4px}
-.tldt{width:11px;height:11px;border-radius:50%;border:2px solid var(--bd2);background:var(--sf);flex-shrink:0;z-index:1}
-.tldt.live{border-color:var(--sl);background:var(--sl)}
-.tldt.complete{border-color:var(--sc);background:var(--sc)}
-.tldt.inprogress{border-color:var(--si);background:var(--si)}
-.tldt.planned{border-color:var(--sp);background:#fff}
-.tlc{flex:1;padding-bottom:16px}
-.tl-title{font-size:13px;font-weight:500;color:var(--tx);margin-bottom:1px}
-.tl-desc{font-size:12px;color:var(--tx2)}
-.tl-date{font-size:11px;color:var(--tx3);font-family:'DM Mono',monospace;margin-top:2px}
-.tl-sec-hdr{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--navy);background:var(--sf2);padding:7px 10px;border-radius:6px;margin:16px 0 10px;border-left:3px solid var(--purple);display:block}
-.plwrap{overflow-x:auto;margin-top:8px}
-.plt{border-collapse:collapse;min-width:800px;width:100%}
-.plt th{background:var(--navy);color:rgba(255,255,255,.76);font-size:11px;font-weight:500;padding:7px 9px;text-align:left;white-space:nowrap}
-.plt th.mc{text-align:center;width:56px}
-.plt td{padding:6px 9px;font-size:12px;border-bottom:1px solid var(--bd);color:var(--tx2);vertical-align:middle}
-.plt td.an{font-weight:500;color:var(--tx);max-width:220px}
-.plt tr:hover td{background:var(--sf2)}
-.plt td.sect{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--tx3);background:var(--sf2);padding:8px 9px}
-.pc{text-align:center}
-.bar-s{background:rgba(163,45,45,.18);border-radius:4px 0 0 4px;height:14px;display:block}
-.bar-e{background:var(--sl);border-radius:0 4px 4px 0;height:14px;display:block}
-.bar-done{background:var(--sc);border-radius:4px;height:14px;display:block}
-.bar-x{height:14px;display:block}
-.pleg{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;align-items:center}
-.jmap{display:grid;grid-template-columns:repeat(8,1fr);gap:0;min-width:900px}
-.jph{padding:0 5px 20px}
-.jph-hd{border-radius:8px 8px 0 0;padding:9px 10px;text-align:center}
-.jph-lb{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:#fff;margin-bottom:1px}
-.jph-st{font-size:11px;color:rgba(255,255,255,.7)}
-.jph-fn{font-size:9px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em}
-.jitems{border:1px solid var(--bd);border-top:none;border-radius:0 0 8px 8px;padding:9px 7px;min-height:260px;background:var(--sf)}
-.ji{font-size:11px;padding:4px 6px;border-radius:4px;margin-bottom:3px;line-height:1.4;border:1px solid}
-.ji-plan{background:rgba(186,117,23,.09);border-color:rgba(186,117,23,.22);color:#7a4d0a}
-.ji-live{background:rgba(15,110,86,.1);border-color:rgba(15,110,86,.25);color:#0a4a38}
-.ji-gap{background:rgba(163,45,45,.1);border-color:rgba(163,45,45,.25);color:#6e1a1a}
-.jgap-lb{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;margin-top:7px;margin-bottom:3px;color:var(--tx3)}
-.jleg{display:flex;gap:14px;margin-top:10px;flex-wrap:wrap}
-.jli{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--tx2)}
-.jld{width:10px;height:10px;border-radius:3px}
-.jwrap{overflow-x:auto;padding-bottom:12px}
-.tt-title a{color:inherit;text-decoration:none}
-.tt-title a:hover{text-decoration:underline}
-.blog-list{margin-top:4px;padding-left:18px}
-.blog-list li{font-size:12px;color:var(--tx2);padding:2px 0;line-height:1.5}
-.blog-list a{color:var(--purple);text-decoration:none}
-.blog-list a:hover{text-decoration:underline}
-.pri-badge{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;cursor:pointer;letter-spacing:.04em;text-transform:uppercase;user-select:none;flex-shrink:0;margin-right:2px}
-.pri-high{background:#C0392B;color:#fff}
-.pri-medium{background:#E67E22;color:#fff}
-.pri-low{background:#27AE60;color:#fff}
-.overdue-lbl{font-size:10px;font-weight:700;color:#C0392B;text-transform:uppercase;letter-spacing:.06em;margin-top:4px;display:none}
-.tile.overdue{border-left:3px solid #C0392B}
+html, body { height: 100%; overflow: hidden; }
+body { font-family: var(--font-body); font-size: 13px; color: #2D2B55; background: var(--bg); }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+#app { display: flex; height: 100vh; position: relative; overflow: hidden; }
+
+/* SIDEBAR */
+#sidebar {
+  width: 200px; min-width: 200px; background: var(--brand);
+  display: flex; flex-direction: column; overflow-y: auto; z-index: 10;
+}
+.sidebar-brand { padding: 20px 16px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.sidebar-brand .name { font-family: var(--font-head); font-size: 15px; color: var(--white); font-weight: 700; }
+.sidebar-brand .sub { font-family: var(--font-head); font-size: 10px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.sidebar-nav { padding: 10px 0; flex: 1; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px; padding: 9px 16px;
+  cursor: pointer; color: rgba(255,255,255,0.55); font-family: var(--font-head);
+  font-size: 13px; font-weight: 500; transition: background 0.15s, color 0.15s;
+  border-left: 2.5px solid transparent;
+}
+.nav-item:hover { color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.05); }
+.nav-item.active { color: var(--white); border-left-color: var(--accent); background: rgba(255,255,255,0.08); }
+.nav-item .ti { font-size: 16px; }
+
+/* MAIN */
+#main { flex: 1; display: flex; flex-direction: column; overflow: hidden; position: relative; }
+
+/* TOPBAR */
+#topbar {
+  height: 52px; min-height: 52px; background: var(--white);
+  border-bottom: 1px solid #E4E3F0; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 24px; z-index: 5;
+}
+#topbar-title { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: var(--brand); }
+.btn-primary {
+  background: var(--brand); color: var(--white); border: none; padding: 7px 14px;
+  border-radius: 6px; font-family: var(--font-head); font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+/* CONTENT AREA */
+#content-area {
+  flex: 1; overflow-y: auto; padding: 20px 24px;
+  position: relative;
+}
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+/* Cards */
+.card { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; }
+.card-pad { padding: 16px; }
+
+/* Metric cards */
+.metrics-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.metric-card { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; padding: 16px; }
+.metric-label { font-size: 11px; color: #7D7BAA; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 6px; }
+.metric-value { font-family: var(--font-head); font-size: 28px; font-weight: 700; color: var(--brand); }
+.metric-value.warn { color: var(--review); }
+.metric-value.danger { color: var(--high-txt); }
+
+/* Status pills */
+.status-pill {
+  display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px;
+  border-radius: 20px; font-size: 11px; font-weight: 600; cursor: pointer;
+  user-select: none; white-space: nowrap;
+}
+.status-pill.Live { background: #EAF3DE; color: var(--live); }
+.status-pill.In-progress { background: #E3F0FC; color: var(--inprog); }
+.status-pill.Ready-for-review { background: #FEF4E3; color: var(--review); }
+.status-pill.Planned { background: #F2F2F0; color: var(--planned); }
+.status-pill.Complete { background: #ECEAFF; color: var(--complete); }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.dot-Live { background: var(--live); }
+.dot-In-progress { background: var(--inprog); }
+.dot-Ready-for-review { background: var(--review); }
+.dot-Planned { background: var(--planned); }
+.dot-Complete { background: var(--complete); }
+
+/* Priority badges */
+.priority-badge {
+  display: inline-block; padding: 2px 7px; border-radius: 4px;
+  font-size: 10px; font-weight: 700; cursor: pointer; user-select: none; white-space: nowrap;
+}
+.priority-badge.High { background: var(--high-bg); color: var(--high-txt); }
+.priority-badge.Medium { background: var(--med-bg); color: var(--med-txt); }
+.priority-badge.Low { background: var(--low-bg); color: var(--low-txt); }
+
+/* Stage chips */
+.stage-chip {
+  display: inline-block; padding: 2px 7px; border-radius: 4px;
+  font-size: 10px; font-weight: 600; white-space: nowrap;
+}
+.stage-demand-creation { background: #ECEAFF; color: var(--tofu); }
+.stage-attract-capture { background: #E3F0FC; color: var(--mofu); }
+.stage-nurture-qualify { background: #E3F0FC; color: #1A5FA8; }
+.stage-deal-stage { background: #FEF4E3; color: var(--bofu); }
+.stage-onboarding { background: #EAF3DE; color: var(--post); }
+.stage-lifecycle { background: #ECEAFF; color: var(--complete); }
+
+/* Alert bar */
+.alert-bar {
+  background: var(--high-bg); border: 1px solid #F09595; border-radius: 6px;
+  padding: 10px 14px; margin-bottom: 16px; display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 10px;
+}
+.alert-bar p { font-size: 12px; color: var(--high-txt); line-height: 1.5; }
+.alert-dismiss { background: none; border: none; color: var(--high-txt); cursor: pointer; font-size: 16px; opacity: 0.6; flex-shrink: 0; padding: 0; }
+.alert-dismiss:hover { opacity: 1; }
+
+/* Section headings */
+.section-heading { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--brand); margin-bottom: 12px; }
+.section-sub { font-size: 11px; color: #7D7BAA; margin-left: 6px; font-weight: 400; }
+
+/* Priority grid */
+.priority-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.asset-card { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; padding: 12px; cursor: pointer; transition: box-shadow 0.15s; }
+.asset-card:hover { box-shadow: 0 2px 8px rgba(28,26,92,0.12); }
+.asset-card.overdue { border-left: 2.5px solid #F09595; }
+.asset-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; margin-bottom: 6px; }
+.asset-card-title { font-family: var(--font-head); font-size: 13px; font-weight: 500; color: var(--brand); line-height: 1.3; flex: 1; }
+.asset-card-stage { margin-bottom: 8px; }
+.asset-card-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; font-size: 11px; color: #7D7BAA; margin: 8px 0; }
+.asset-card-meta span { display: flex; align-items: center; gap: 4px; }
+.asset-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid #F0EFF8; }
+.avatar { width: 24px; height: 24px; border-radius: 50%; background: var(--brand); color: var(--white); font-size: 9px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.due-date-text { font-size: 11px; color: #7D7BAA; }
+.due-date-text.overdue { color: var(--high-txt); font-weight: 600; }
+
+/* Chart container */
+.chart-card { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; padding: 16px; margin-bottom: 20px; }
+
+/* TABLE */
+.tbl-wrap { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; overflow: hidden; }
+table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+thead th {
+  background: #F8F7FC; padding: 9px 10px; text-align: left;
+  font-size: 11px; font-weight: 700; color: #7D7BAA; text-transform: uppercase;
+  letter-spacing: 0.4px; border-bottom: 1px solid #E4E3F0; cursor: pointer;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; user-select: none;
+}
+thead th:hover { background: #EEECf6; }
+thead th .sort-ind { margin-left: 4px; opacity: 0.5; }
+tbody tr { border-bottom: 1px solid #F2F1F8; transition: background 0.1s; }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: #F8F7FC; }
+tbody tr.overdue-row { border-left: 2.5px solid #F09595; }
+td { padding: 8px 10px; font-size: 12px; vertical-align: middle; overflow: hidden; text-overflow: ellipsis; }
+.td-title { cursor: pointer; font-weight: 500; color: var(--brand); }
+.td-title:hover { text-decoration: underline; }
+.actions-btn { background: none; border: none; cursor: pointer; font-size: 16px; color: #7D7BAA; padding: 2px 6px; border-radius: 4px; }
+.actions-btn:hover { background: #F0EFF8; color: var(--brand); }
+
+/* Inline dropdown */
+.dropdown-wrap { position: relative; display: inline-block; }
+.dropdown-menu {
+  position: absolute; right: 0; top: 100%; background: var(--white);
+  border: 1px solid #E4E3F0; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 100; min-width: 130px; overflow: hidden;
+}
+.dropdown-menu button {
+  display: block; width: 100%; padding: 8px 12px; background: none; border: none;
+  text-align: left; font-size: 12px; cursor: pointer; color: #2D2B55;
+}
+.dropdown-menu button:hover { background: #F8F7FC; }
+.dropdown-menu button.danger { color: var(--high-txt); }
+
+/* Search + filters */
+.search-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.search-input {
+  flex: 1; padding: 8px 12px; border: 1px solid #E4E3F0; border-radius: 6px;
+  font-family: var(--font-body); font-size: 13px; background: var(--white); outline: none;
+}
+.search-input:focus { border-color: var(--brand); }
+.filter-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.filter-chip {
+  padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600;
+  cursor: pointer; border: 1.5px solid #E4E3F0; background: var(--white); color: #7D7BAA;
+  transition: all 0.15s;
+}
+.filter-chip.active { background: var(--brand); color: var(--white); border-color: var(--brand); }
+
+/* MONTH PLANNER */
+.planner-nav { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 16px; }
+.planner-nav button { background: none; border: 1px solid #E4E3F0; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; color: #7D7BAA; }
+.planner-nav button:hover { background: #F0EFF8; color: var(--brand); }
+.planner-month { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--brand); min-width: 140px; text-align: center; }
+.planner-split { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.planner-panel { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; padding: 14px; }
+.planner-panel-header { margin-bottom: 12px; }
+.planner-panel-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--brand); }
+.planner-panel-sub { font-size: 10px; color: #7D7BAA; margin-top: 2px; }
+.week-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.week-col-head { font-size: 10px; font-weight: 700; color: #7D7BAA; text-transform: uppercase; padding: 4px 0 6px; border-bottom: 1px solid #E4E3F0; margin-bottom: 6px; }
+.week-col-range { font-size: 9px; color: #B4B2A9; font-weight: 400; }
+.planner-card {
+  background: #F8F7FC; border-radius: 5px; padding: 6px 7px; margin-bottom: 5px;
+  cursor: pointer; border: 1px solid #E4E3F0;
+}
+.planner-card:hover { border-color: var(--brand); }
+.planner-card.overdue { background: #FCEBEB; border-color: #F09595; }
+.planner-card-title { font-size: 11px; font-weight: 500; color: var(--brand); line-height: 1.3; margin-bottom: 4px; }
+.planner-card.overdue .planner-card-title { color: var(--high-txt); }
+.planner-no-date { margin-top: 12px; border-top: 1px dashed #E4E3F0; padding-top: 10px; }
+.planner-no-date-label { font-size: 10px; color: #B4B2A9; font-weight: 600; text-transform: uppercase; margin-bottom: 6px; }
+
+/* FUNNEL MAP */
+.funnel-journey-label { display: inline-flex; align-items: center; gap: 6px; background: #ECEAFF; color: var(--tofu); padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; margin-bottom: 10px; }
+.funnel-divider { display: flex; align-items: center; gap: 10px; margin: 12px 0; }
+.funnel-divider-line { flex: 1; height: 1px; background: #E4E3F0; }
+.funnel-divider-label { font-size: 11px; color: #639922; font-weight: 700; background: #EAF3DE; padding: 3px 10px; border-radius: 4px; }
+.funnel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.funnel-card { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; overflow: hidden; }
+.funnel-card-header { padding: 12px 14px; border-bottom: 1px solid #E4E3F0; }
+.funnel-card-name { font-family: var(--font-head); font-size: 13px; font-weight: 500; color: var(--brand); display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 3px; }
+.funnel-pos-tag { font-size: 9px; font-weight: 700; padding: 2px 5px; border-radius: 3px; white-space: nowrap; }
+.pos-TOFU { background: #ECEAFF; color: var(--tofu); }
+.pos-MOFU { background: #E3F0FC; color: var(--mofu); }
+.pos-BOFU { background: #FEF4E3; color: var(--bofu); }
+.pos-Post-sale { background: #EAF3DE; color: var(--post); }
+.funnel-card-desc { font-size: 10px; color: #9D9BBF; line-height: 1.4; margin-bottom: 6px; }
+.funnel-counts { font-size: 10px; display: flex; gap: 8px; }
+.funnel-counts span { font-weight: 600; }
+.funnel-body { padding: 8px 0; }
+.funnel-row {
+  display: flex; align-items: center; gap: 8px; padding: 5px 14px;
+  cursor: pointer; transition: background 0.1s;
+}
+.funnel-row:hover { background: #F8F7FC; }
+.funnel-row-title { flex: 1; font-size: 11px; color: #2D2B55; }
+.gap-dot { width: 7px; height: 7px; border-radius: 50%; border: 2px dashed #F09595; flex-shrink: 0; }
+.funnel-add-row { display: flex; align-items: center; gap: 6px; padding: 5px 14px; color: #7D7BAA; font-size: 11px; cursor: pointer; }
+.funnel-add-row:hover { color: var(--brand); }
+
+/* SEO / AEO */
+.seo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+.pillar-card { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; padding: 14px; }
+.pillar-type-badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-bottom: 8px; display: inline-block; }
+.badge-seo { background: #ECEAFF; color: var(--tofu); }
+.badge-aeo { background: #E3F6F6; color: #0A7B7B; }
+.pillar-name { font-family: var(--font-head); font-size: 13px; font-weight: 600; color: var(--brand); margin-bottom: 3px; }
+.pillar-intent { font-size: 10px; color: #9D9BBF; margin-bottom: 10px; }
+.pillar-counts { font-size: 10px; color: #7D7BAA; margin-bottom: 10px; }
+.pillar-row { display: flex; align-items: center; gap: 7px; padding: 4px 0; border-top: 1px solid #F2F1F8; cursor: pointer; }
+.pillar-row:hover { background: #F8F7FC; margin: 0 -14px; padding: 4px 14px; }
+.pillar-row-name { flex: 1; font-size: 11px; color: #2D2B55; }
+.pillar-row-type { font-size: 9px; color: #9D9BBF; font-weight: 600; text-transform: uppercase; }
+.aeo-section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.aeo-section-rule { flex: 1; height: 1px; background: #E4E3F0; }
+.aeo-section-label { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--brand); }
+.aeo-q-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.aeo-q-card { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; padding: 12px; cursor: pointer; }
+.aeo-q-card:hover { box-shadow: 0 2px 6px rgba(28,26,92,0.1); }
+.aeo-q-text { font-size: 11px; font-weight: 500; color: var(--brand); line-height: 1.4; margin-bottom: 8px; }
+.q-type-badge { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #E3F6F6; color: #0A7B7B; display: inline-block; }
+
+/* SERVICE PORTFOLIO */
+.callout-box { background: #F8F7FC; border: 1px solid #E4E3F0; border-radius: 6px; padding: 12px 14px; margin-bottom: 14px; font-size: 12px; color: #2D2B55; line-height: 1.5; }
+.tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+.tier-card { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; padding: 14px; }
+.tier-name { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--brand); margin-bottom: 4px; }
+.tier-desc { font-size: 11px; color: #7D7BAA; margin-bottom: 6px; }
+.tier-target { font-size: 10px; color: #9D9BBF; }
+.portfolio-divider { height: 1px; background: #E4E3F0; margin: 20px 0; }
+
+/* SETUP */
+.rule-table { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; overflow: hidden; margin-bottom: 16px; }
+.rule-row { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #F2F1F8; }
+.rule-row:last-child { border-bottom: none; }
+.rule-cond { flex: 1; font-size: 12px; color: #2D2B55; }
+.outcome-badge { padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+.badge-sql { background: #EAF3DE; color: var(--post); }
+.badge-mql { background: #FEF4E3; color: var(--review); }
+.checklist-card { background: var(--white); border-radius: 8px; border: 1px solid #E4E3F0; padding: 16px; margin-bottom: 16px; }
+.checklist-item { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid #F2F1F8; }
+.checklist-item:last-child { border-bottom: none; }
+.checklist-item input[type=checkbox] { width: 15px; height: 15px; cursor: pointer; accent-color: var(--brand); }
+.checklist-item label { font-size: 12px; color: #2D2B55; cursor: pointer; }
+.checklist-item.checked label { text-decoration: line-through; color: #9D9BBF; }
+.amber-callout { background: #FEF4E3; border: 1px solid #EF9F27; border-radius: 6px; padding: 12px 14px; font-size: 12px; color: var(--med-txt); }
+.amber-callout strong { display: block; margin-bottom: 6px; font-size: 13px; }
+.amber-callout ul { padding-left: 16px; margin-top: 6px; }
+.amber-callout li { font-size: 11px; margin-bottom: 2px; }
+
+/* DETAIL PANEL */
+#panel-overlay {
+  position: absolute; inset: 0; background: rgba(28,26,92,0.25);
+  z-index: 50; display: none;
+}
+#detail-panel {
+  position: absolute; top: 0; right: 0; width: 380px; height: 100%;
+  background: var(--white); border-left: 1px solid #E4E3F0;
+  z-index: 51; display: none; flex-direction: column;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+}
+#panel-overlay.open, #detail-panel.open { display: flex; }
+.panel-header { padding: 16px 20px; border-bottom: 1px solid #E4E3F0; display: flex; align-items: center; justify-content: space-between; }
+.panel-header-title { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--brand); }
+.panel-close { background: none; border: none; font-size: 20px; cursor: pointer; color: #7D7BAA; padding: 0; line-height: 1; }
+.panel-close:hover { color: var(--brand); }
+.panel-body { flex: 1; overflow-y: auto; padding: 16px 20px; }
+.panel-footer { padding: 12px 20px; border-top: 1px solid #E4E3F0; display: flex; align-items: center; justify-content: space-between; }
+.field-group { margin-bottom: 14px; }
+.field-label { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #7D7BAA; letter-spacing: 0.4px; margin-bottom: 5px; }
+.field-input {
+  width: 100%; padding: 7px 10px; border: 1px solid #E4E3F0; border-radius: 6px;
+  font-family: var(--font-body); font-size: 13px; color: #2D2B55; background: var(--white); outline: none;
+}
+.field-input:focus { border-color: var(--brand); }
+.field-input.textarea { resize: vertical; min-height: 80px; }
+.overdue-warn { font-size: 11px; color: var(--high-txt); margin-top: 4px; font-weight: 600; }
+.btn-delete { background: none; border: none; color: var(--high-txt); font-size: 12px; font-weight: 600; cursor: pointer; }
+.btn-delete:hover { text-decoration: underline; }
+
+/* MODAL */
+#modal-overlay {
+  position: absolute; inset: 0; background: rgba(28,26,92,0.35);
+  z-index: 60; display: none; align-items: center; justify-content: center;
+}
+#modal-overlay.open { display: flex; }
+#add-modal {
+  background: var(--white); border-radius: 10px; width: 440px; max-height: 90vh;
+  display: flex; flex-direction: column; box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+.modal-header { padding: 16px 20px; border-bottom: 1px solid #E4E3F0; display: flex; align-items: center; justify-content: space-between; }
+.modal-header-title { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--brand); }
+.modal-body { flex: 1; overflow-y: auto; padding: 16px 20px; }
+.modal-footer { padding: 12px 20px; border-top: 1px solid #E4E3F0; display: flex; justify-content: flex-end; gap: 8px; }
+.btn-secondary { background: none; border: 1px solid #E4E3F0; padding: 7px 14px; border-radius: 6px; font-family: var(--font-head); font-size: 12px; font-weight: 600; cursor: pointer; color: #7D7BAA; }
+.btn-secondary:hover { background: #F0EFF8; }
+
+/* Section visibility */
+.section { display: none; }
+.section.active { display: block; }
+
+/* SVG chart helpers */
+.chart-axis text { font-family: var(--font-body); font-size: 11px; fill: #9D9BBF; }
+.chart-axis line { stroke: #E4E3F0; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D4D2E8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #B4B2C8; }
 </style>
 </head>
 <body>
-<div class="layout">
-<nav>
-  <div class="nb"><div class="nl">SpecTec</div><div class="ns">Prospect to Lifecycle &middot; 2026</div></div>
-  <div class="ni">
-    <div class="nsl">Overview</div>
-    <button class="nit active" onclick="showPage('journey',this)"><div class="ndot" style="background:#FF3D96"></div><span class="ntx">End-to-end journey</span></button>
-    <div class="nsl">Setup</div>
-    <button class="nit" onclick="showPage('setup',this)"><div class="ndot" style="background:#FF3D96"></div><span class="ntx">Requirements</span></button>
-    <div class="nsl">Prospect journey</div>
-    <button class="nit" onclick="showPage('demand',this)"><div class="ndot" style="background:#6E00E5"></div><span class="ntx">Demand creation</span><span class="nft">TOFU</span></button>
-    <button class="nit" onclick="showPage('capture',this)"><div class="ndot" style="background:#9E14CC"></div><span class="ntx">Attract &amp; capture</span><span class="nft">TOFU</span></button>
-    <button class="nit" onclick="showPage('nurture',this)"><div class="ndot" style="background:#CF29B0"></div><span class="ntx">Nurture &amp; qualify</span><span class="nft">MOFU</span></button>
-    <button class="nit" onclick="showPage('deal',this)"><div class="ndot" style="background:#378ADD"></div><span class="ntx">Deal stage</span><span class="nft">BOFU</span></button>
-    <div class="nsl">Customer journey</div>
-    <button class="nit" onclick="showPage('onboarding',this)"><div class="ndot" style="background:#0F6E56"></div><span class="ntx">Onboarding</span><span class="nft">POST</span></button>
-    <button class="nit" onclick="showPage('lifecycle',this)"><div class="ndot" style="background:#3B6D11"></div><span class="ntx">Lifecycle pathways</span><span class="nft">POST</span></button>
-    <div class="nsl">Services</div>
-    <button class="nit" onclick="showPage('services',this)"><div class="ndot" style="background:#C05A10"></div><span class="ntx">Service portfolio assets</span></button>
-    <div class="nsl">Planning</div>
-    <button class="nit" onclick="showPage('timeline',this)"><div class="ndot" style="background:#888780"></div><span class="ntx">Activity timeline</span></button>
-    <button class="nit" onclick="showPage('planner',this)"><div class="ndot" style="background:#888780"></div><span class="ntx">Month planner</span></button>
-  </div>
-  <div class="nsave" id="saveInd">Ready</div>
-  <div class="nfooter">May 2026 &middot; Marketing</div>
-</nav>
-<main>
+<div id="app">
+  <!-- SIDEBAR -->
+  <nav id="sidebar">
+    <div class="sidebar-brand">
+      <div class="name">SpecTec</div>
+      <div class="sub">Content Engine</div>
+    </div>
+    <div class="sidebar-nav">
+      <div class="nav-item active" data-section="dashboard"><i class="ti ti-layout-dashboard"></i> Dashboard</div>
+      <div class="nav-item" data-section="registry"><i class="ti ti-list"></i> Content Registry</div>
+      <div class="nav-item" data-section="planner"><i class="ti ti-calendar-month"></i> Month Planner</div>
+      <div class="nav-item" data-section="funnel"><i class="ti ti-filter"></i> Funnel Map</div>
+      <div class="nav-item" data-section="seo"><i class="ti ti-search"></i> SEO / AEO Pillars</div>
+      <div class="nav-item" data-section="portfolio"><i class="ti ti-briefcase"></i> Service Portfolio</div>
+      <div class="nav-item" data-section="setup"><i class="ti ti-settings"></i> Setup &amp; Config</div>
+    </div>
+  </nav>
 
-<div class="prog-bar">
-  <div class="ps"><div class="pn" id="pLive">0</div><div class="pl">Live</div></div>
-  <div class="pdiv"></div>
-  <div class="ps"><div class="pn" id="pComp">0</div><div class="pl">Complete</div></div>
-  <div class="pdiv"></div>
-  <div class="ps"><div class="pn" id="pProg">0</div><div class="pl">In progress</div></div>
-  <div class="pdiv"></div>
-  <div class="ps"><div class="pn" id="pPlan">0</div><div class="pl">Planned</div></div>
-  <div class="pdiv"></div>
-  <div class="pbw"><div class="pbl">Overall progress</div><div class="pbt"><div class="pbf" id="pbf" style="width:0%"></div></div></div>
-</div>
+  <!-- MAIN -->
+  <div id="main">
+    <div id="topbar">
+      <div id="topbar-title">Dashboard</div>
+      <div id="topbar-action"></div>
+    </div>
 
-<div class="page active" id="page-journey">
-  <div class="ph"><div class="htag">Visual overview</div><h1>End-to-end customer journey</h1><div class="hmeta"><span>Day 1 prospect to Year 1 customer</span></div></div>
-  <div class="jwrap"><div class="jmap" id="jmap"></div></div>
-  <div class="jleg">
-    <div class="jli"><div class="jld" style="background:rgba(15,110,86,.15);border:1px solid rgba(15,110,86,.3)"></div>Live</div>
-    <div class="jli"><div class="jld" style="background:rgba(186,117,23,.15);border:1px solid rgba(186,117,23,.3)"></div>Planned</div>
-    <div class="jli"><div class="jld" style="background:rgba(163,45,45,.12);border:1px solid rgba(163,45,45,.28)"></div>Gap</div>
-  </div>
-</div>
+    <div id="content-area">
+      <!-- overlay + panel inside content-area so position:absolute works in iframe -->
+      <div id="panel-overlay"></div>
+      <div id="detail-panel">
+        <div class="panel-header">
+          <div class="panel-header-title">Asset detail</div>
+          <button class="panel-close" id="panel-close-btn">×</button>
+        </div>
+        <div class="panel-body" id="panel-body"></div>
+        <div class="panel-footer">
+          <button class="btn-delete" id="panel-delete-btn">Delete asset</button>
+          <button class="btn-primary" id="panel-save-btn">Save changes</button>
+        </div>
+      </div>
 
-<div class="page" id="page-setup">
-  <div class="ph"><div class="htag">Prerequisites</div><h1>Setup requirements</h1></div>
-  <div class="snote"><strong>Foundation first.</strong> The two-pathway lifecycle model depends on Contact Category being reliably populated and lead qualification routing being correctly configured in HubSpot.</div>
-  <div class="hsnote"><div class="hsdot"></div><div><strong>Lead qualification logic:</strong> Business email + any form = SQL. Non-business email = MQL. Book a Demo = SQL regardless of email domain.</div></div>
-  <div class="tlabel">Configuration items</div>
-  <div class="tgrid" id="grid-setup" ondragover="ov(event)" ondrop="od(event,'setup')"></div>
-</div>
+      <div id="modal-overlay">
+        <div id="add-modal">
+          <div class="modal-header">
+            <div class="modal-header-title">Add asset</div>
+            <button class="panel-close" id="modal-close-btn">×</button>
+          </div>
+          <div class="modal-body" id="modal-body"></div>
+          <div class="modal-footer">
+            <button class="btn-secondary" id="modal-cancel-btn">Cancel</button>
+            <button class="btn-primary" id="modal-save-btn">Add asset</button>
+          </div>
+        </div>
+      </div>
 
-<div class="page" id="page-demand">
-  <div class="ph"><div class="htag">Layer 0 &middot; Stage 0</div><h1>Demand creation <span class="ftag ft-tofu" style="vertical-align:middle;font-size:12px">Top of funnel</span></h1></div>
-  <div class="wnote"><strong>Why we need this</strong>SpecTec has strong rankings for software-intent keywords but limited visibility upstream. Assets 1 and 2 are live. Six remain to be built.</div>
-  <div class="tlabel">Content assets &mdash; drag to reprioritise</div>
-  <div class="tgrid" id="grid-demand" ondragover="ov(event)" ondrop="od(event,'demand')"></div>
-</div>
-
-<div class="page" id="page-capture">
-  <div class="ph"><div class="htag">Stage 1</div><h1>Attract and capture <span class="ftag ft-tofu" style="vertical-align:middle;font-size:12px">Top of funnel</span></h1></div>
-  <div class="wnote"><strong>Why we need this</strong>Campaigns are the primary vehicle for driving qualified contacts into HubSpot. Each campaign requires supporting assets to run effectively.</div>
-  <div class="hsnote"><div class="hsdot"></div><div><strong>HubSpot routing:</strong> Business email + any form = SQL. Non-business email = MQL. Book a Demo = SQL regardless.</div></div>
-  <div class="tlabel">Current and planned campaigns &mdash; tick assets as built</div>
-  <div class="cgrid" id="campGrid"></div>
-  <div class="tlabel" style="margin-top:8px">Additional capture assets</div>
-  <div class="tgrid" id="grid-capture" ondragover="ov(event)" ondrop="od(event,'capture')"></div>
-</div>
-
-<div class="page" id="page-nurture">
-  <div class="ph"><div class="htag">Stages 2&ndash;3</div><h1>Nurture and qualify <span class="ftag ft-mofu" style="vertical-align:middle;font-size:12px">Middle of funnel</span></h1></div>
-  <div class="wnote"><strong>Why we need this</strong>The nurture workflow is live but the content driving it is thin. Without strong proof content the sequence cannot move prospects to SQL with genuine ICP fit.</div>
-  <div class="hsnote"><div class="hsdot"></div><div><strong>HubSpot:</strong> Active nurture workflow and lead scoring live. <strong>Contact Category must be completed at SQL stage</strong> &mdash; required configuration change not yet made.</div></div>
-  <div class="tlabel">Content assets &mdash; drag to reprioritise</div>
-  <div class="tgrid" id="grid-nurture" ondragover="ov(event)" ondrop="od(event,'nurture')"></div>
-</div>
-
-<div class="page" id="page-deal">
-  <div class="ph"><div class="htag">Stage 4</div><h1>Deal stage support <span class="ftag ft-bofu" style="vertical-align:middle;font-size:12px">Bottom of funnel</span></h1></div>
-  <div class="wnote"><strong>Why we need this</strong>Sales has no structured content support during the deal cycle. No ROI asset, no migration reassurance, no executive summary for board sign-off. The deal-stage HubSpot workflow is not yet built.</div>
-  <div class="hsnote"><div class="hsdot"></div><div><strong>HubSpot:</strong> Deal-stage workflow to be built by Marketing. Triggered when Deal is created and contact associated.</div></div>
-  <div class="tlabel" style="margin-bottom:8px">Implementation: three streams</div>
-  <div class="sgrid">
-    <div class="scard" style="border-top-color:#6E00E5"><h4>Stream A: No system to AMOS</h4><p>Buyer has no current PMS. Content focuses on the case for structured asset management and how AMOS structures the journey from zero to operational control.</p></div>
-    <div class="scard" style="border-top-color:#CF29B0"><h4>Stream B: Competitor to AMOS</h4><p>Buyer switching from Sertica, BASSnet, MariApps, or another platform. Requires sign-off on competitive positioning.</p></div>
-    <div class="scard" style="border-top-color:#378ADD"><h4>Stream C: Legacy AMOS to new AMOS</h4><p>Existing customer upgrading or moving to a new tier. Joint work with Customer Success. Focuses on investment protection and data continuity.</p></div>
-  </div>
-  <div class="tlabel">Content assets &mdash; drag to reprioritise</div>
-  <div class="tgrid" id="grid-deal" ondragover="ov(event)" ondrop="od(event,'deal')"></div>
-</div>
-
-<div class="page" id="page-onboarding">
-  <div class="ph"><div class="htag">Stage 5</div><h1>Customer onboarding <span class="ftag ft-post" style="vertical-align:middle;font-size:12px">Post-sale</span></h1></div>
-  <div class="wnote"><strong>Why we need this</strong>Without a structured onboarding sequence the customer's first post-sale experience is silence. None of these assets currently exist. Everything must be agreed with Marketing, Commercial, and Customer Success.</div>
-  <div class="hsnote"><div class="hsdot"></div><div><strong>HubSpot:</strong> Closed-Won triggers lifecycle workflow. After onboarding sequence, workflow forks on Contact Category into Decision Maker or User pathway.</div></div>
-  <div class="tlabel">Content assets &mdash; drag to reprioritise</div>
-  <div class="tgrid" id="grid-onboarding" ondragover="ov(event)" ondrop="od(event,'onboarding')"></div>
-</div>
-
-<div class="page" id="page-lifecycle">
-  <div class="ph"><div class="htag">Stages 6&ndash;7</div><h1>Lifecycle pathways <span class="ftag ft-post" style="vertical-align:middle;font-size:12px">Post-sale</span></h1></div>
-  <div class="wnote"><strong>Why we need this</strong>Currently no structured lifecycle programme exists. The renewal sequence and tier upgrade campaign have direct and measurable revenue impact. Every asset here needs to be built from scratch.</div>
-  <div class="pgrid">
-    <div class="pcard" style="border-top-color:#6E00E5"><div class="pnum" style="color:#6E00E5">Decision Maker pathway</div><h4>Executive and decision maker</h4><p>Monthly or quarterly. ROI demonstration, renewal confidence, expansion conversations.</p><div class="tml">HubSpot Contact Category</div><div style="font-size:12px;color:var(--tx2)">Executive, Decision Maker</div></div>
-    <div class="pcard" style="border-top-color:#9E14CC"><div class="pnum" style="color:#9E14CC">User pathway</div><h4>Operational, technical, and end users</h4><p>Bi-weekly for first 90 days, then monthly. Adoption, best practice, workflow confidence.</p><div class="tml">HubSpot Contact Category</div><div style="font-size:12px;color:var(--tx2)">Product Owner, IT Contact, Influencer, Procurement, User</div></div>
-  </div>
-  <div class="tlabel">Content assets &mdash; drag to reprioritise</div>
-  <div class="tgrid" id="grid-lifecycle" ondragover="ov(event)" ondrop="od(event,'lifecycle')"></div>
-</div>
-
-<div class="page" id="page-services">
-  <div class="ph"><div class="htag">Service portfolio</div><h1>Service portfolio assets</h1><div class="hmeta"><span>What marketing needs to build to bring the service portfolio to life</span></div></div>
-  <div class="snote"><strong>Marketing scope only.</strong> This section covers content and assets marketing needs to create. Operational detail, SLA definitions, and pricing sit with Customer Success and Commercial.</div>
-  <div class="sh" style="margin-top:8px"><div class="sico" style="background:#C05A10">SPS</div><div class="sm"><div class="str"><span class="ssl" style="color:#C05A10">New service grouping</span></div><h2>AMOS Strategic Project Services</h2></div></div>
-  <p class="sint">Replaces Application Management Services. A structured 12&ndash;36 month improvement programme. Eight pillars: Strategic Consultancy, Project Delivery, Platform and Marketplace, Data Services, AMOS Health Check, Root Cause Resolution, Training and Capability, Optimisation.</p>
-  <div class="wnote"><strong>Why marketing needs to build this</strong>AMOS Strategic Project Services is a new offer with no market presence yet. It needs a full asset suite. The Health Check brochure is already live and serves as the entry point.</div>
-  <div class="tlabel">Content and asset requirements &mdash; drag to reprioritise</div>
-  <div class="tgrid" id="grid-services" ondragover="ov(event)" ondrop="od(event,'services')"></div>
-  <div class="sh" style="margin-top:28px"><div class="sico" style="background:#BA7517">SUP</div><div class="sm"><div class="str"><span class="ssl" style="color:#BA7517">Support tiers</span></div><h2>Silver, Gold, and Platinum support packages</h2></div></div>
-  <p class="sint">Three-tier support model. Silver is default. Gold is recommended target tier. Platinum is for strategic and enterprise customers. Marketing creates awareness and sales enablement assets.</p>
-  <div class="wnote"><strong>Why marketing needs to build this</strong>The support tiers are a commercial differentiator and a retention tool. Customers need to understand what they are on, what they are missing, and why upgrading makes sense.</div>
-  <div class="tlabel">Content and asset requirements &mdash; drag to reprioritise</div>
-  <div class="tgrid" id="grid-support" ondragover="ov(event)" ondrop="od(event,'support')"></div>
-</div>
-
-<div class="page" id="page-timeline">
-  <div class="ph"><div class="htag">Reference</div><h1>Activity timeline</h1><div class="hmeta"><span>All assets across every section &mdash; grouped by stage &mdash; click status badge to update</span></div></div>
-  <div class="tlwrap" id="tlwrap"></div>
-</div>
-
-<div class="page" id="page-planner">
-  <div class="ph"><div class="htag">Planning</div><h1>Month by month planner</h1><div class="hmeta"><span>Production and go-live schedule June to December 2026 &mdash; bar colour reflects live asset status</span></div></div>
-  <div class="plwrap"><table class="plt" id="plt"></table></div>
-  <div class="pleg">
-    <span class="sb s-live" style="cursor:default"><span class="sd"></span>Live</span>
-    <span class="sb s-complete" style="cursor:default"><span class="sd"></span>Complete</span>
-    <span class="sb s-inprogress" style="cursor:default"><span class="sd"></span>In progress</span>
-    <span class="sb s-planned" style="cursor:default"><span class="sd"></span>Planned</span>
-    <span style="font-size:11px;color:var(--tx3);margin-left:6px">Bar colour reflects live asset status &mdash; change a tile status and the planner updates automatically</span>
+      <!-- SECTIONS -->
+      <div id="section-dashboard" class="section active"></div>
+      <div id="section-registry" class="section"></div>
+      <div id="section-planner" class="section"></div>
+      <div id="section-funnel" class="section"></div>
+      <div id="section-seo" class="section"></div>
+      <div id="section-portfolio" class="section"></div>
+      <div id="section-setup" class="section"></div>
+    </div>
   </div>
 </div>
 
-</main>
-</div>
-<datalist id="owner-opts">
-  <option value="Connor">
-  <option value="Marketing Team">
-  <option value="Agency">
-  <option value="">
-</datalist>
 <script>
-var CAMPS=[
-  {id:"c1",col:"#6E00E5",title:"AMOS is Evolving",status:"Live",date:"May \u2013 June 2026",desc:"Announces the next chapter of AMOS \u2014 repositioning the platform with bold, visionary messaging that builds excitement and anticipation across existing customers and prospects.",assets:["Social graphics: platform evolution visuals","Emails: campaign announcement and follow-up sequence","Landing page: AMOS is Evolving campaign page","Brochure: platform evolution overview","Webpages: updated product and platform pages","Sales support: talking points and objection handling","Search ads: campaign keyword set"]},
-  {id:"c2",col:"#CF29B0",title:"AMOS Procure Smart",status:"Live",date:"June \u2013 July 2026",desc:"Product launch campaign for AMOS Procure Smart \u2014 our intelligent procurement module that streamlines the entire maritime purchasing process.",assets:["Social graphics: Procure Smart launch visuals","Emails: product launch and nurture sequence","Landing page: Procure Smart campaign and demo CTA","Brochure: Procure Smart product overview","Blog: maritime procurement explainer content","Webpages: Procure Smart product page","Sales enablement: battlecard and demo guide","Images: product and campaign imagery","Search ads: procurement keyword set"]},
-  {id:"c3",col:"#378ADD",title:"SFI Coding",status:"Coming Soon",date:"July \u2013 August 2026",desc:"Compliance-led campaign helping fleet managers navigate SFI coding requirements with deadline-driven urgency.",assets:["SFI Coding guide (knowledge hub)","Deadline urgency landing page","Email: SFI compliance deadline reminder","LinkedIn sponsored content: SFI awareness","Sales talking point: SFI positioning"]},
-  {id:"c4",col:"#0F6E56",title:"AMOS Migration",status:"Coming Soon",date:"September \u2013 October 2026",desc:"Cloud migration confidence campaign \u2014 guiding IT managers through the AMOS migration journey with clear, reassuring messaging.",assets:["Migration confidence landing page","Fleet Migration Playbook (gated download)","Email sequence: migration reassurance (3 emails)","LinkedIn lead gen form: IT Manager audience","Implementation one-pager: zero downtime methodology"]},
-  {id:"c5",col:"#C05A10",title:"Winback",status:"Coming Soon",date:"November \u2013 December 2026",desc:"Re-engagement campaign targeting lapsed customers \u2014 compelling reasons to return to AMOS with exclusive incentives.",assets:["Winback landing page","Email sequence: lapsed customer re-engagement (4 emails)","Personalised outreach guide for sales","ROI and value asset (what they are missing)","Exclusive incentive offer brief"]}
-];
-var TILES={
- setup:[
-  {id:"s1",p:1,d:"planned",title:"Configure lead qualification routing",ctx:"Configure HubSpot so business emails route to SQL and non-business emails route to MQL",desc:"Two routing rules to configure and test in HubSpot. Both must be live before campaign traffic is driven.",own:"Marketing",deps:["Marketing (HubSpot config)"],rep:[],checks:[{id:"s1c1",lbl:"MQL routing live: non-business email contacts enrolled in nurture workflow"},{id:"s1c2",lbl:"SQL routing live: business email contacts and Book a Demo submissions enrolled in sales qualification workflow"}]},
-  {id:"s2",p:2,d:"planned",title:"Make Contact Category mandatory",ctx:"Required field at SQL for prospects and at Closed-Won for customers \u2014 plus inform the sales team",desc:"Covers both prospect qualification and customer handoff. Contact Category drives the two-pathway lifecycle fork.",own:"Marketing",deps:["Marketing (HubSpot config)","Account owners (data clean on existing contacts)"],rep:[],checks:[{id:"s2c1",lbl:"Contact Category mandatory at SQL stage \u2014 field enforced in HubSpot for prospects"},{id:"s2c2",lbl:"Contact Category mandatory at Closed-Won \u2014 field enforced on Deal record for customers"},{id:"s2c3",lbl:"Sales team informed of the change and updated on what each category value means"}]},
-  {id:"s3",p:3,d:"planned",title:"Check HubSpot Breeze workflow build capability",ctx:"Confirm what Breeze AI can actually do on our subscription before designing workflows around it",desc:"Before committing to Breeze AI for CS health scoring or contact enrichment, confirm what is available on our current HubSpot tier.",own:"Marketing",deps:["Marketing (HubSpot tier review)"],rep:[],checks:[{id:"s3c1",lbl:"Breeze AI capabilities confirmed against current HubSpot subscription"}]}
- ],
- demand:[
-  {id:"d1",p:1,d:"live",title:"What Is Maritime Fleet Management Software? (Definitive Guide)",ctx:"Live. Category-defining guide \u2014 top organic performer with 210 active users",desc:"Layer 1 spine asset 1. Live on the knowledge hub. Top organic landing page with 210 active users. Category-owning and AI-indexed. Maintain and update quarterly.",own:"Marketing",deps:["Product (accuracy review quarterly)"],rep:["Social posts from key sections","FAQ schema blocks","Sales reference: category positioning"],url:"https://spectec.net/knowledge-hub/maritime-fleet-management-software-the-complete-guide-2026/",blogs:[{t:"What Is Maritime Fleet Management Software?",u:"https://spectec.net/knowledge-hub/what-is-maritime-fleet-management-software/"},{t:"The 5 Core Modules Every Fleet Management System Needs",u:"https://spectec.net/knowledge-hub/fleet-management-system-modules/"},{t:"How Maritime Fleet Software Integrates with ERP Systems",u:"https://spectec.net/knowledge-hub/maritime-fleet-software-erp-integration/"},{t:"Cloud vs On-Premise Fleet Management Software: Which Is Right for You?",u:"https://spectec.net/knowledge-hub/cloud-vs-on-premise-fleet-management-software/"},{t:"How AI Is Changing Maritime Fleet Management",u:"https://spectec.net/knowledge-hub/ai-maritime-fleet-management/"},{t:"How Fleet Management Software Reduces Vessel Downtime",u:"https://spectec.net/knowledge-hub/reduce-vessel-downtime-fleet-management-software/"},{t:"How to Choose Maritime Fleet Management Software: A Buyer's Guide",u:"https://spectec.net/knowledge-hub/how-to-choose-maritime-fleet-management-software/"},{t:"Predictive Maintenance for Maritime Fleets: How It Works",u:"https://spectec.net/knowledge-hub/predictive-maintenance-maritime-fleets/"},{t:"Digital Maritime Supply Chains: How Fleet Software Transforms Procurement",u:"https://spectec.net/knowledge-hub/maritime-supply-chain-management-software/"},{t:"Managing Dry Dock Projects with Fleet Management Software",u:"https://spectec.net/knowledge-hub/dry-dock-project-management-fleet-software/"}]},
-  {id:"d2",p:2,d:"live",title:"Ship Maintenance Software: The 2026 Buyer's Guide",url:"https://spectec.net/knowledge-hub/maritime-asset-management-software-the-2026-buyers-guide/",ctx:"Live. Ranking position 1-2 across maintenance terms \u2014 confirmed in AI search results",desc:"Layer 1 spine asset 2. Live on the knowledge hub. Ranking position 1-2 for ship maintenance software and marine maintenance software. Confirmed appearing in AI search results. Update quarterly.",own:"Marketing",deps:["Product (accuracy review quarterly)"],rep:["Maintenance module page internal links","FAQ schema blocks","Sales reference: maintenance positioning"],blogs:[{t:"Ship Maintenance Compliance: How Asset Management Software Supports Class, Flag, and ISM Requirements",u:"https://spectec.net/knowledge-hub/ship-maintenance-compliance-how-asset-management-software-supports-class-flag-and-ism-requirements/"},{t:"Maritime Procurement Is Not the Problem. Disconnected Systems Are.",u:"https://spectec.net/knowledge-hub/maritime-procurement-is-not-the-problem-disconnected-systems-are/"}]},
-  {id:"d3",p:3,d:"planned",title:"Maritime Compliance and HSQE Software: Complete Guide",ctx:"Long-form guide targeting HSEQ Directors \u2014 builds authority and feeds the audit readiness checklist",desc:"Layer 1 spine asset 3. Targets HSEQ Directors and Compliance Managers. Strong AI answer engine potential. Compliance drives procurement decisions.",own:"Marketing",deps:["Product (HSEQ module accuracy)","Legal sign-off on regulatory claims"],rep:["LinkedIn article series: ISM, SOLAS, MARPOL explained","Audit readiness checklist (gated download)","Sales talking points: compliance","Short-form video: what auditors look for"]},
-  {id:"d4",p:4,d:"planned",title:"Maritime Procurement and Digital Supply Chain Software",ctx:"Explains how AMOS manages procurement end to end \u2014 targets Procurement Managers and CFOs",desc:"Layer 1 spine asset 4. Targets Procurement Managers, CFOs, and Technical Superintendents. Positions AMOS beyond maintenance.",own:"Marketing",deps:["Commercial (procurement proof points)","Finance examples from customer base"],rep:["LinkedIn carousel: procurement inefficiencies","CFO briefing note","Vendor evaluation template","Infographic: requisition to delivery workflow"]},
-  {id:"d5",p:5,d:"planned",title:"SFI Coding for Ships: Standardising Fleet Data",ctx:"Defends existing position 1 SFI rankings \u2014 technical audience, Fleet Data Managers and Superintendents",desc:"Defends strong existing SFI rankings (position 1 across multiple terms). Technical audience: Fleet Data Managers, Superintendents, IT.",own:"Marketing",deps:["Product (SFI module accuracy)","SpecTec Technical Account Manager (Nino or Tonino)"],rep:["SFI onboarding guide (PDF)","Data standardisation infographic","LinkedIn technical article","FAQ block for knowledge hub"]},
-  {id:"d6",p:6,d:"planned",title:"ISM, ISPS and SOLAS: How Digital Systems Reduce Audit Risk",ctx:"Regulatory explainer \u2014 positions AMOS as the tool that makes audit preparation systematic",desc:"Regulatory explainer with very strong AI answer engine potential. Supports the HSEQ cluster and drives the audit readiness checklist download.",own:"Marketing",deps:["Legal review of regulatory claims","HSEQ customer proof point"],rep:["Audit workflow infographic","Checklist download lead magnet","LinkedIn regulatory update post","Sales battlecard: compliance positioning"]},
-  {id:"d7",p:7,d:"planned",title:"Predictive Maintenance in Commercial Shipping",ctx:"Future-facing piece \u2014 positions AMOS as innovation-ready without overpromising",desc:"Future-facing authority piece. Strong AI visibility opportunity. Positions AMOS as innovation-ready without overstating current capability.",own:"Marketing",deps:["Product (roadmap alignment)","Technical accuracy review"],rep:["Predictive vs preventive comparison blog","Short-form educational video","LinkedIn thought leadership post","Infographic: maintenance maturity model"]},
-  {id:"d8",p:8,d:"planned",title:"ESG and Maritime Compliance Reporting in 2026",ctx:"Executive-level piece for CFOs and Sustainability Leads \u2014 ESG is a confirmed buying trigger",desc:"Executive-level authority piece targeting CFOs, COOs, and Sustainability Leads. ESG is a confirmed buying trigger in the ICP.",own:"Marketing",deps:["Commercial (ESG examples from customer base)","External ESG industry data sources"],rep:["Executive LinkedIn article","ESG explainer PDF download","Email to executive contacts","PR story pitch"]}
- ],
- capture:[
-  {id:"ca1",p:1,d:"planned",title:"Gated asset: Compliance Audit Readiness Checklist",ctx:"Highest-priority lead magnet \u2014 converts HSEQ readers into SQL contacts",desc:"Practical, specific, immediately useful to HSEQ audiences. Strong conversion potential from SEO traffic and paid. Business email submission routes directly to SQL.",own:"Marketing",deps:["Legal (regulatory accuracy)","HSEQ customer input for credibility"],rep:["LinkedIn promotional campaign","Pre-audit email nurture","Sales tool for HSEQ conversations","Webinar basis: preparing for ISM audit"]},
-  {id:"ca2",p:2,d:"planned",title:"Gated asset: Fleet Migration Playbook",ctx:"Removes migration fear for legacy system prospects \u2014 paired with the AMOS Migration campaign",desc:"Targets mid-to-late funnel prospects with legacy system fatigue. Removes migration fear. High perceived value.",own:"Marketing",deps:["Customer Success (migration methodology)","Product (deployment options accuracy)"],rep:["Migration webinar","Infographic: 6-step migration process","Sales tool for stalled deals","LinkedIn article: is your PMS holding you back?"]}
- ],
- nurture:[
-  {id:"n1",p:1,d:"live",title:"Nurture sequence: operational challenge education",ctx:"Active HubSpot sequence \u2014 covers maintenance, compliance, procurement, and data fragmentation pain",desc:"Active in HubSpot. Covers unplanned downtime, compliance overload, procurement inefficiency, fragmented data. Educational, not product-forward.",own:"Marketing",deps:["SEO / AEO Content Pillar articles (demand layer)","Lead scoring review"],rep:["Social posts from each email theme","Blog cluster from email content","Sales talking points document"]},
-  {id:"n2",p:2,d:"live",title:"Nurture sequence: AMOS capability and proof",ctx:"Active HubSpot sequence \u2014 covers platform capabilities, tier positioning, and customer proof",desc:"Active in HubSpot. Covers AMOS platform capabilities, tier positioning, and customer proof. Needs stronger case study assets to support the proof emails.",own:"Marketing",deps:["Case study pack (by sector)","Testimonial log (available)"],rep:["Customer proof social posts","Tier overview one-pager","Sales email templates"]},
-  {id:"n3",p:3,d:"planned",title:"Case study teasers and proof point emails",ctx:"Short-form proof emails using Saipem, MDPC, Fjord1, and Federal Fleet \u2014 inserted into the nurture sequence",desc:"Four case studies available: Saipem (offshore energy), MDPC (FPSO/migration), Fjord1 (ferry/IT), Federal Fleet (government/naval). Sector gaps: commercial shipping, tanker, LNG.",own:"Marketing",deps:["Commercial (additional case study approvals)","Customers (sign-off on proof)"],rep:["LinkedIn case study posts","Sales battlecard evidence","Website proof section","Webinar customer story slot"]},
-  {id:"n4",p:4,d:"live",title:"Lead scoring model review",ctx:"Review scoring thresholds to ensure ICP fit signals are weighted over engagement volume",desc:"Active but requires review. Engagement does not equal qualification. Scoring thresholds must reflect genuine ICP fit signals.",own:"Marketing",deps:["Marketing (HubSpot field weighting)","Sales (ICP feedback)"],rep:[]},
-  {id:"n5",p:5,d:"live",title:"MariApps Competitor Battlecard",ctx:"Side-by-side comparison for sales conversations with MariApps prospects",desc:"Equips sales with a structured comparison of AMOS vs MariApps covering functionality, heritage, deployment, and support. For use in deal-stage conversations where the prospect is evaluating both platforms.",own:"Marketing",deps:["Commercial (competitive positioning sign-off)","Product (feature accuracy)"],rep:["Sales email: why customers choose AMOS over MariApps","LinkedIn comparison post","Objection handling guide insert"]},
-  {id:"n6",p:6,d:"planned",title:"BASSnet Competitor Battlecard",ctx:"Side-by-side comparison for sales conversations with BASSnet prospects",desc:"Equips sales with a structured comparison of AMOS vs BASSnet covering functionality, heritage, deployment, and support. For use in deal-stage conversations where the prospect is evaluating both platforms.",own:"Marketing",deps:["Commercial (competitive positioning sign-off)","Product (feature accuracy)"],rep:["Sales email: why customers choose AMOS over BASSnet","LinkedIn comparison post","Objection handling guide insert"]},
-  {id:"n7",p:7,d:"planned",title:"DNV ShipManager Battlecard",ctx:"Side-by-side comparison for sales conversations with DNV ShipManager prospects",desc:"Equips sales with a structured comparison of AMOS vs DNV ShipManager covering functionality, heritage, deployment, and support. For use in deal-stage conversations where the prospect is evaluating both platforms.",own:"Marketing",deps:["Commercial (competitive positioning sign-off)","Product (feature accuracy)"],rep:["Sales email: why customers choose AMOS over DNV ShipManager","LinkedIn comparison post","Objection handling guide insert"]},
-  {id:"n8",p:8,d:"planned",title:"Sertica Competitor Battlecard",ctx:"Side-by-side comparison for sales conversations with Sertica prospects",desc:"Equips sales with a structured comparison of AMOS vs Sertica covering functionality, heritage, deployment, and support. For use in deal-stage conversations where the prospect is evaluating both platforms.",own:"Marketing",deps:["Commercial (competitive positioning sign-off)","Product (feature accuracy)"],rep:["Sales email: why customers choose AMOS over Sertica","LinkedIn comparison post","Objection handling guide insert"]}
- ],
- deal:[
-  {id:"dl1",p:1,d:"planned",title:"ROI and value asset",ctx:"The single most important missing asset \u2014 demonstrates measurable AMOS outcomes for deal support",desc:"Does not yet exist. Demonstrates measurable value using AMOS customer outcomes: 15% downtime reduction, 20% maintenance cost reduction, 30% workforce efficiency, 50% audit prep reduction. Must be validated with Commercial.",own:"Marketing",deps:["Commercial (customer outcome data)","Sales (deal-stage objection input)","Finance (TCO model)"],rep:["Sales deck slide","LinkedIn ROI post","Executive email asset","PR proof point","Webinar data segment"]},
-  {id:"dl2",p:2,d:"planned",title:"Implementation content: three-stream asset set",ctx:"Three sets of assets \u2014 no system to AMOS, competitor to AMOS, and legacy AMOS to new AMOS",desc:"Stream A: no system to AMOS. Stream B: competitor product to AMOS (requires competitive positioning sign-off). Stream C: legacy AMOS to new AMOS (joint with Customer Success). Each stream needs a landing page, one-pager, and email asset.",own:"Marketing",deps:["Customer Success (Streams A and C methodology)","Commercial (Stream B competitive positioning approval)","Product (Stream C tier and version accuracy)"],rep:["Stream A: case for structured asset management","Stream B: migration from competitor one-pager","Stream C: upgrade value and continuity guide","Sales tool: implementation stream selector"]},
-  {id:"dl3",p:3,d:"planned",title:"Executive summary asset for board sign-off",ctx:"One-page decision-maker brief \u2014 strategic rationale, outcomes, and risk for final buying approval",desc:"Decision-maker facing one-page summary covering strategic rationale, proven outcomes, and risk profile. Designed to support the final buying decision at board level.",own:"Marketing",deps:["Commercial (deal-stage review)","Customer Success (implementation confidence data)"],rep:["Proposal appendix","Board presentation slide","Sales closing email"]},
-  {id:"dl4",p:4,d:"planned",title:"Early stage: credibility and heritage pack",ctx:"40+ years heritage and 3,000+ vessels \u2014 builds trust and reduces risk perception at first contact",desc:"40+ years heritage, 3,000+ vessels, approved by ABS, DNV, Bureau Veritas, ClassNK, RINA, CCS. Customer testimonials selected by sector to match the prospect.",own:"Marketing",deps:["Commercial (sector-matched testimonial selection)"],rep:["Sales email sequence (early stage)","LinkedIn heritage post","Proposal supporting document"]},
-  {id:"dl5",p:5,d:"planned",title:"Vendor evaluation framework",ctx:"Helps buyers structure their evaluation in a way that favours AMOS strengths over feature-list comparisons",desc:"Helps buyers structure their software evaluation mapping naturally to AMOS strengths: heritage, governance depth, deployment flexibility, maritime expertise, and long-term partnership.",own:"Marketing",deps:["Commercial (evaluation criteria from real deals)","Product (capability accuracy)"],rep:["Gated PDF download","Sales tool: evaluation guide","LinkedIn comparison post","Knowledge hub article"]},
-  {id:"dl6",p:6,d:"planned",title:"Case study pack by sector",ctx:"Sector-matched proof for deal stage \u2014 gaps: container shipping, tanker, and LNG",desc:"Current coverage: offshore energy (Saipem), FPSO/migration (MDPC), ferry/IT (Fjord1), government/naval (Federal Fleet). Priority gaps: container shipping, tanker, LNG.",own:"Marketing",deps:["Commercial (customer access for new case studies)","Customers (sign-off and participation)"],rep:["Sales battlecard evidence","Website proof section","LinkedIn case study posts"]}
- ],
- onboarding:[
-  {id:"o1",p:1,d:"planned",title:"Welcome communication: from leadership, all contacts",ctx:"First post-sale touchpoint \u2014 warm and human, from CCO or Head of Marketing",desc:"Warm, human welcome from Head of Marketing or CCO. Sent to all contacts on a Closed-Won deal. Must be agreed with Commercial and Customer Success.",own:"Marketing",deps:["CCO or Head of Marketing sign-off","Commercial (account handoff process)","Customer Success (implementation intro)","Marketing (HubSpot Closed-Won trigger)"],rep:["Template for partner welcome","Internal announcement format"]},
-  {id:"o2",p:2,d:"planned",title:"First 90 days: what to expect",ctx:"Implementation timeline overview \u2014 sets milestones, introduces key contacts, reduces post-sale anxiety",desc:"Covers phased rollout milestones, who to contact at SpecTec, and what the customer needs to prepare. Must be agreed with Customer Success for accuracy.",own:"Marketing",deps:["Customer Success (implementation timeline and methodology)","Product (milestone definitions)","Commercial (account manager mapping)"],rep:["Customer portal content","FAQ for implementation questions","Onboarding webinar basis"]},
-  {id:"o3",p:3,d:"planned",title:"Key contacts at SpecTec guide",ctx:"Simple reference \u2014 who to call for what, escalation paths, and support channels from day one",desc:"Covers who to call for what, escalation paths, support channels, and key relationship owners.",own:"Marketing",deps:["Customer Success (contacts and escalation accuracy)","Commercial (account manager mapping)"],rep:["Customer portal page","Onboarding pack insert"]}
- ],
- lifecycle:[
-  {id:"l1",p:1,d:"planned",title:"Renewal sequence: 90, 60, 30 day programme",ctx:"Timed email sequence starting 90 days before renewal \u2014 highest direct revenue impact asset",desc:"Reinforces value delivered, surfaces expansion opportunities, removes friction from the renewal decision.",own:"Marketing",deps:["Commercial (renewal date data in HubSpot)","Marketing (HubSpot renewal trigger workflow)"],rep:["Renewal email templates","ROI summary for renewal meeting","Expansion conversation guide"]},
-  {id:"l2",p:2,d:"planned",title:"Decision Maker pathway: quarterly performance programme",ctx:"Quarterly content for executives \u2014 performance data, industry insights, and tier upgrade prompts",desc:"Monthly or quarterly cadence. Performance reports, industry insights, tier upgrade prompts, and renewal confidence content.",own:"Marketing",deps:["Commercial (renewal trigger data)","Product (performance report template)","Customer Success (customer health signals)"],rep:["Executive LinkedIn articles","Renewal campaign email series","Case study invitation","Board-ready data summary"]},
-  {id:"l3",p:3,d:"planned",title:"Tier upgrade campaign: Gateway to Horizon to Enterprise",ctx:"Structured upsell triggered when a customer shows signs of outgrowing their current AMOS tier",desc:"Triggered by adoption signals or Customer Success health score thresholds. Targeted at customers on Gateway or Horizon.",own:"Marketing",deps:["Commercial (upgrade trigger criteria)","Product (tier differentiation accuracy)"],rep:["Upgrade landing page","Sales email sequence","ROI comparison by tier"]},
-  {id:"l4",p:4,d:"planned",title:"Advocacy programme: case study and reference scheme",ctx:"Converts satisfied customers into published proof \u2014 case studies, video testimonials, and event speakers",desc:"Invitation triggered at adoption or satisfaction threshold. Pipeline for written case studies, video testimonials, and event speakers.",own:"Marketing",deps:["Commercial (customer relationship access)","Customer Success (satisfaction data)","Customers (participation)"],rep:["Published case studies","Video testimonials","Event speaker programme","PR stories"]},
-  {id:"l5",p:5,d:"planned",title:"User pathway: adoption and efficiency programme",ctx:"Bi-weekly for first 90 days then monthly \u2014 adoption, best practice, workflows, getting started guides",desc:"Drives full platform adoption, surfaces best practice, builds daily workflow confidence. Covers Product Owner, IT, Procurement, and end users.",own:"Marketing",deps:["Product (feature adoption data)","Customer Success (most common support issues and user questions)"],rep:["Help centre articles","Webinar series","LinkedIn best practice posts","Module upsell email sequence","Getting started video series"]}
- ],
- services:[
-  {id:"sv1",p:1,d:"live",title:"AMOS Health Check brochure",ctx:"Live. Entry point asset for all AMOS Strategic Project Services engagements",desc:"The Essential Health Check brochure is live. Two tiers: Essential (free) and Advanced. Entry point for every Strategic Project Services agreement. Needs to be added to website nav and linked from relevant pages.",own:"Marketing",deps:["Customer Success (delivery accuracy)","Product (capability sign-off)"],rep:["Website page: AMOS Health Check","LinkedIn campaign: free health check offer","Sales email tool: health check CTA","Email nurture: existing customer health check invitation"]},
-  {id:"sv2",p:2,d:"planned",title:"AMOS Strategic Project Services: flagship page and brochure",ctx:"Primary awareness asset for the new service grouping \u2014 replaces Application Management Services",desc:"Flagship landing page and downloadable brochure covering what AMOS Strategic Project Services is, the eight pillars, the delivery model (12\u201336 month programmes), and the entry point via the Health Check.",own:"Marketing",deps:["Commercial (pricing and packaging sign-off)","Customer Success (delivery model accuracy)"],rep:["Sales deck section: Strategic Project Services","LinkedIn campaign: new service announcement","Email to existing customers: new service introduction","Website nav update","Sales enablement one-pager"]},
-  {id:"sv3",p:3,d:"planned",title:"Website nav and services section update",ctx:"Add AMOS Strategic Project Services and all eight pillars to the website navigation and services pages",desc:"The website currently does not reflect the new service portfolio. All eight service pillars need dedicated pages or sections, and the top-level nav needs updating.",own:"Marketing",deps:["Commercial (sign-off on what is public-ready)","Product (accuracy of pillar descriptions)","Web development (nav and page build)"],rep:["Internal services guide for sales","Partner briefing on new structure"]},
-  {id:"sv4",p:4,d:"planned",title:"Service pillar one-pagers: all eight pillars",ctx:"One-page asset per pillar for sales use \u2014 eight pillars covering the full service range",desc:"Each of the eight service pillars needs a one-page sales tool covering what it is, who it is for, what is included, and the expected outcome.",own:"Marketing",deps:["Customer Success (each pillar definition and scope)","Commercial (pricing approach per pillar)"],rep:["Website pillar pages","LinkedIn content per pillar","Sales proposal inserts"]},
-  {id:"sv5",p:5,d:"planned",title:"Strategic Project Services customer campaign",ctx:"Campaign to existing customers introducing the new service model and the Health Check entry point",desc:"Email and LinkedIn campaign targeting existing AMOS customers. Leads with the free Health Check offer. Objective is to generate Health Check bookings that convert into Strategic Project Services agreements.",own:"Marketing",deps:["Commercial (customer list and segmentation)","Customer Success (Health Check capacity and scheduling)"],rep:["LinkedIn sponsored content: Health Check offer","Email sequence: 3 emails to existing customers","Sales talking points: AMS to SPS transition"]}
- ],
- support:[
-  {id:"sp1",p:1,d:"planned",title:"Support tiers overview page and comparison asset",ctx:"Clear customer-facing explanation of Silver, Gold, and Platinum \u2014 outcomes and value not SLA tables",desc:"A website page and downloadable one-pager comparing the three tiers. Silver ensures stability. Gold ensures performance. Platinum ensures predictability and partnership.",own:"Marketing",deps:["Customer Success (tier definitions sign-off)","Commercial (pricing approach for external communication)"],rep:["Sales tool: tier comparison one-pager","LinkedIn post: what tier are you on?","Email to existing customers: support tier awareness","Tier upgrade campaign asset (links to lifecycle programme)"]},
-  {id:"sp2",p:2,d:"planned",title:"Tier upgrade campaign: Silver to Gold",ctx:"Campaign targeting Silver customers to move to Gold \u2014 named CSM, priority SLA, proactive trend review",desc:"Gold is the recommended target tier. Marketing needs a targeted campaign to Silver customers explaining the value of Gold: named Customer Success Manager, priority queue handling, proactive incident trend review, and quarterly service reviews.",own:"Marketing",deps:["Commercial (Silver customer list)","Customer Success (Gold value proof points)"],rep:["Email sequence: Silver to Gold upgrade (3 emails)","Sales enablement: Gold upgrade conversation guide","LinkedIn content: the value of a named CSM"]},
-  {id:"sp3",p:3,d:"planned",title:"Platinum positioning and proposal asset",ctx:"Platinum is sold by proposal to strategic and enterprise customers \u2014 executive-facing asset needed",desc:"Platinum is offered by proposal to strategic or enterprise customers. Marketing needs an executive-facing one-pager covering premium differentiators: dedicated success and delivery oversight, predictive support, APM data insight reviews, executive QBRs.",own:"Marketing",deps:["Commercial (Platinum proposal process)","Customer Success (Platinum delivery model accuracy)"],rep:["Executive proposal insert","Sales deck: Platinum positioning slide","LinkedIn content: what Platinum partnership looks like"]}
- ]
+/* ============================================================
+   DATA
+   ============================================================ */
+const SEED_DATA = {
+  assets: [
+    // DEMAND CREATION
+    { id:'a001', title:'LinkedIn thought leadership series', stage:'demand-creation', status:'In progress', priority:'Medium', owner:'Connor', dueDate:'2026-06-30', isGap:false, notes:'' },
+    { id:'a002', title:'Industry event content pack', stage:'demand-creation', status:'Live', priority:'Low', owner:'Marketing Team', dueDate:null, isGap:false, notes:'' },
+    { id:'a003', title:'Maritime software trends report', stage:'demand-creation', status:'Planned', priority:'High', owner:'Agency', dueDate:'2026-07-31', isGap:false, notes:'' },
+    { id:'a004', title:'Podcast / webinar series concept', stage:'demand-creation', status:'Planned', priority:'Medium', owner:'Unassigned', dueDate:null, isGap:false, notes:'' },
+    { id:'a005', title:'Analyst briefing deck', stage:'demand-creation', status:'Planned', priority:'High', owner:'Unassigned', dueDate:null, isGap:true, notes:'' },
+    // ATTRACT & CAPTURE
+    { id:'a006', title:'AMOS Enterprise product overview page', stage:'attract-capture', status:'In progress', priority:'High', owner:'Connor', dueDate:'2026-06-12', isGap:false, notes:'' },
+    { id:'a007', title:'Paid campaign landing pages', stage:'attract-capture', status:'In progress', priority:'High', owner:'Agency', dueDate:'2026-06-20', isGap:false, notes:'' },
+    { id:'a008', title:'Fleet management SEO pillar page', stage:'attract-capture', status:'Live', priority:'Medium', owner:'Agency', dueDate:null, isGap:false, notes:'' },
+    { id:'a009', title:'Book a Demo flow redesign', stage:'attract-capture', status:'Ready for review', priority:'High', owner:'Connor', dueDate:'2026-06-15', isGap:false, notes:'' },
+    { id:'a010', title:'Competitor comparison pages', stage:'attract-capture', status:'Planned', priority:'Medium', owner:'Agency', dueDate:'2026-07-31', isGap:false, notes:'' },
+    { id:'a011', title:'AMOS feature comparison sheet', stage:'attract-capture', status:'Planned', priority:'Medium', owner:'Connor', dueDate:'2026-07-31', isGap:false, notes:'' },
+    // NURTURE & QUALIFY
+    { id:'a012', title:'Nurture email sequence 4-part', stage:'nurture-qualify', status:'Live', priority:'High', owner:'Connor', dueDate:null, isGap:false, notes:'' },
+    { id:'a013', title:'ROI calculator', stage:'nurture-qualify', status:'In progress', priority:'High', owner:'Connor', dueDate:'2026-06-18', isGap:false, notes:'' },
+    { id:'a014', title:'AMOS vs legacy systems guide', stage:'nurture-qualify', status:'In progress', priority:'Medium', owner:'Agency', dueDate:'2026-06-25', isGap:false, notes:'' },
+    { id:'a015', title:'Customer proof video brief', stage:'nurture-qualify', status:'Planned', priority:'Medium', owner:'Marketing Team', dueDate:'2026-07-31', isGap:false, notes:'' },
+    { id:'a016', title:'Lead scoring content triggers', stage:'nurture-qualify', status:'Planned', priority:'High', owner:'Unassigned', dueDate:null, isGap:true, notes:'' },
+    // DEAL STAGE
+    { id:'a017', title:'Case study: Wallenius Wilhelmsen', stage:'deal-stage', status:'Ready for review', priority:'High', owner:'Agency', dueDate:'2026-06-10', isGap:false, notes:'' },
+    { id:'a018', title:'Executive summary deck', stage:'deal-stage', status:'In progress', priority:'High', owner:'Connor', dueDate:'2026-06-28', isGap:false, notes:'' },
+    { id:'a019', title:'Migration reassurance guide', stage:'deal-stage', status:'Planned', priority:'Medium', owner:'Agency', dueDate:'2026-07-31', isGap:false, notes:'' },
+    { id:'a020', title:'Competitor switch kit Stream B', stage:'deal-stage', status:'Planned', priority:'Medium', owner:'Connor', dueDate:'2026-07-31', isGap:false, notes:'' },
+    { id:'a021', title:'Deal-stage HubSpot workflow brief', stage:'deal-stage', status:'Planned', priority:'High', owner:'Unassigned', dueDate:null, isGap:true, notes:'' },
+    // ONBOARDING
+    { id:'a022', title:'Onboarding email sequence', stage:'onboarding', status:'In progress', priority:'High', owner:'Connor', dueDate:'2026-07-31', isGap:false, notes:'', serviceArea:'support-tiers' },
+    { id:'a023', title:'Welcome pack PDF and digital', stage:'onboarding', status:'Planned', priority:'High', owner:'Marketing Team', dueDate:'2026-08-31', isGap:false, notes:'', serviceArea:'support-tiers' },
+    { id:'a024', title:'AMOS getting started guide', stage:'onboarding', status:'Planned', priority:'Medium', owner:'Agency', dueDate:'2026-08-31', isGap:false, notes:'' },
+    { id:'a025', title:'CS handoff briefing template', stage:'onboarding', status:'Planned', priority:'Medium', owner:'Connor', dueDate:'2026-08-31', isGap:false, notes:'', serviceArea:'support-tiers' },
+    { id:'a026', title:'Support tier explainer email', stage:'onboarding', status:'Planned', priority:'Medium', owner:'Connor', dueDate:'2026-06-18', isGap:false, notes:'', serviceArea:'support-tiers' },
+    // LIFECYCLE
+    { id:'a027', title:'DM pathway renewal sequence', stage:'lifecycle', status:'Planned', priority:'High', owner:'Unassigned', dueDate:null, isGap:true, notes:'' },
+    { id:'a028', title:'DM pathway ROI report quarterly', stage:'lifecycle', status:'Planned', priority:'High', owner:'Unassigned', dueDate:null, isGap:true, notes:'' },
+    { id:'a029', title:'User pathway adoption series', stage:'lifecycle', status:'Planned', priority:'Medium', owner:'Unassigned', dueDate:'2026-09-30', isGap:false, notes:'' },
+    { id:'a030', title:'Tier upgrade campaign', stage:'lifecycle', status:'Planned', priority:'Medium', owner:'Unassigned', dueDate:'2026-09-30', isGap:false, notes:'' },
+    { id:'a031', title:'Annual customer health check', stage:'lifecycle', status:'Planned', priority:'Medium', owner:'Unassigned', dueDate:'2026-10-31', isGap:false, notes:'' },
+    // SPS assets
+    { id:'a032', title:'SPS programme overview deck', stage:'demand-creation', status:'Planned', priority:'High', owner:'Connor', dueDate:'2026-08-31', isGap:false, notes:'', serviceArea:'sps' },
+    { id:'a033', title:'SPS pillar one-pagers (8 pillars)', stage:'attract-capture', status:'Planned', priority:'Medium', owner:'Agency', dueDate:'2026-09-30', isGap:false, notes:'', serviceArea:'sps' },
+  ],
+  seoItems: [
+    // SEO pillar 1
+    { id:'s001', type:'seo-pillar', pillarId:null, name:'Fleet management software', intent:'Buyers researching PMS solutions', questionType:null, status:'Live', clusterType:'pillar-page' },
+    { id:'s002', type:'seo-pillar', pillarId:'s001', name:'What is fleet management software', intent:'', questionType:null, status:'Live', clusterType:'cluster-page' },
+    { id:'s003', type:'seo-pillar', pillarId:'s001', name:'Fleet management for shipping companies', intent:'', questionType:null, status:'In progress', clusterType:'cluster-page' },
+    { id:'s004', type:'seo-pillar', pillarId:'s001', name:'Maritime asset management', intent:'', questionType:null, status:'Planned', clusterType:'cluster-page' },
+    { id:'s005', type:'seo-pillar', pillarId:'s001', name:'PMS software comparison', intent:'', questionType:null, status:'Planned', clusterType:'cluster-page', isGap:true },
+    // SEO pillar 2
+    { id:'s006', type:'seo-pillar', pillarId:null, name:'Planned maintenance systems', intent:'Buyers evaluating PMS vendors', questionType:null, status:'In progress', clusterType:'pillar-page' },
+    { id:'s007', type:'seo-pillar', pillarId:'s006', name:'Planned maintenance system guide', intent:'', questionType:null, status:'In progress', clusterType:'cluster-page' },
+    { id:'s008', type:'seo-pillar', pillarId:'s006', name:'PMS for offshore vessels', intent:'', questionType:null, status:'In progress', clusterType:'cluster-page' },
+    { id:'s009', type:'seo-pillar', pillarId:'s006', name:'Class compliance and PMS', intent:'', questionType:null, status:'Planned', clusterType:'cluster-page' },
+    // AEO pillar
+    { id:'s010', type:'aeo-pillar', pillarId:null, name:'AMOS software — what it is', intent:'Brand awareness and direct search', questionType:null, status:'In progress', clusterType:'pillar-page' },
+    { id:'s011', type:'aeo-pillar', pillarId:'s010', name:'What is AMOS software?', intent:'', questionType:'Definition', status:'In progress', clusterType:'answer-page' },
+    { id:'s012', type:'aeo-pillar', pillarId:'s010', name:'What does AMOS stand for?', intent:'', questionType:'Definition', status:'In progress', clusterType:'answer-page' },
+    { id:'s013', type:'aeo-pillar', pillarId:'s010', name:'Is AMOS a PMS or ERP?', intent:'', questionType:'Definition', status:'Planned', clusterType:'answer-page' },
+    { id:'s014', type:'aeo-pillar', pillarId:'s010', name:'AMOS vs competitors', intent:'', questionType:'Comparison', status:'Planned', clusterType:'answer-page', isGap:true },
+    // AEO standalone questions
+    { id:'s015', type:'aeo-question', pillarId:null, name:'What is the best PMS for shipping?', intent:'', questionType:'Comparison', status:'In progress', clusterType:'answer-page' },
+    { id:'s016', type:'aeo-question', pillarId:null, name:'How does AMOS improve vessel compliance?', intent:'', questionType:'How-to', status:'Planned', clusterType:'answer-page' },
+    { id:'s017', type:'aeo-question', pillarId:null, name:'What features should a maritime ERP have?', intent:'', questionType:'Definition', status:'Planned', clusterType:'answer-page' },
+    { id:'s018', type:'aeo-question', pillarId:null, name:'How long does AMOS implementation take?', intent:'', questionType:'How-to', status:'Planned', clusterType:'answer-page' },
+    { id:'s019', type:'aeo-question', pillarId:null, name:'Can AMOS integrate with third-party systems?', intent:'', questionType:'Technical', status:'Planned', clusterType:'answer-page' },
+  ],
+  checklistState: {}
 };
-var tileById={};
-Object.values(TILES).forEach(function(arr){arr.forEach(function(item){tileById[item.id]=item;});});
-var PRI_CYCLE=['high','medium','low'];
-function getPri(id){return localStorage.getItem('prio_'+id)||'medium';}
-function setPri(id,v){localStorage.setItem('prio_'+id,v);}
-function mkPriBadge(id){
-  var p=getPri(id);
-  var el=document.createElement('span');
-  el.className='pri-badge pri-'+p;
-  el.textContent=p.charAt(0).toUpperCase()+p.slice(1);
-  el.onclick=function(e){e.stopPropagation();var cur=getPri(id);var next=PRI_CYCLE[(PRI_CYCLE.indexOf(cur)+1)%3];setPri(id,next);el.className='pri-badge pri-'+next;el.textContent=next.charAt(0).toUpperCase()+next.slice(1);};
-  return el;
-}
-var PL=[
- {n:"CONVERSION ASSETS",sect:true},
- {n:"ROI and value asset",o:"Mktg + Commercial",m:[0,1,2,0,0,0,0,0],tid:"dl1",td:"planned"},
- {n:"Implementation content: 3 streams",o:"Mktg + Customer Success",m:[0,1,1,2,0,0,0,0],tid:"dl2",td:"planned"},
- {n:"Executive summary (board sign-off)",o:"Mktg + Commercial",m:[0,2,0,0,0,0,0,0],tid:"dl3",td:"planned"},
- {n:"Deal-stage HubSpot workflow",o:"Marketing",m:[0,2,0,0,0,0,0,0],tid:"s2",td:"planned"},
- {n:"Case study pack by sector",o:"Mktg + Commercial",m:[0,0,1,1,1,2,0,0],tid:"dl6",td:"planned"},
- {n:"Vendor evaluation framework",o:"Marketing",m:[0,0,1,2,0,0,0,0],tid:"dl5",td:"planned"},
- {n:"CAMPAIGNS",sect:true},
- {n:"AMOS is Evolving (assets)",o:"Marketing",m:[3,0,0,0,0,0,0,0],tid:"c1",td:"live"},
- {n:"AMOS Procure Smart (assets)",o:"Marketing",m:[3,3,0,0,0,0,0,0],tid:"c2",td:"live"},
- {n:"SFI Coding campaign (assets)",o:"Marketing",m:[0,1,2,0,0,0,0,0],tid:"c3",td:"planned"},
- {n:"AMOS Migration campaign (assets)",o:"Marketing",m:[0,0,1,1,2,0,0,0],tid:"c4",td:"planned"},
- {n:"Winback campaign (assets)",o:"Mktg + Commercial",m:[0,0,0,0,1,1,2,0],tid:"c5",td:"planned"},
- {n:"CAPTURE AND NURTURE",sect:true},
- {n:"Compliance Audit Readiness Checklist",o:"Marketing",m:[0,1,2,0,0,0,0,0],tid:"ca1",td:"planned"},
- {n:"Fleet Migration Playbook",o:"Marketing",m:[0,0,1,1,2,0,0,0],tid:"ca2",td:"planned"},
- {n:"Case study teasers (nurture)",o:"Marketing",m:[0,1,2,0,0,0,0,0],tid:"n3",td:"planned"},
- {n:"SEO / AEO CONTENT PILLARS",sect:true},
- {n:"What Is Maritime Fleet Mgmt Software? (live)",o:"Marketing",m:[3,0,0,0,0,0,0,0],tid:"d1",td:"live"},
- {n:"Ship Maintenance Software Guide (live)",o:"Marketing",m:[3,0,0,0,0,0,0,0],tid:"d2",td:"live"},
- {n:"Maritime Compliance and HSQE Guide",o:"Marketing",m:[0,2,0,0,0,0,0,0],tid:"d3",td:"planned"},
- {n:"Maritime Procurement Guide",o:"Marketing",m:[0,1,1,2,0,0,0,0],tid:"d4",td:"planned"},
- {n:"SFI Coding Guide",o:"Marketing",m:[0,1,2,0,0,0,0,0],tid:"d5",td:"planned"},
- {n:"ISM / ISPS / SOLAS Guide",o:"Marketing",m:[0,0,1,1,2,0,0,0],tid:"d6",td:"planned"},
- {n:"Predictive Maintenance Guide",o:"Marketing",m:[0,0,0,1,2,0,0,0],tid:"d7",td:"planned"},
- {n:"ESG and Compliance Reporting Guide",o:"Marketing",m:[0,0,0,1,1,2,0,0],tid:"d8",td:"planned"},
- {n:"SERVICE PORTFOLIO",sect:true},
- {n:"AMOS Health Check (live)",o:"Marketing",m:[3,0,0,0,0,0,0,0],tid:"sv1",td:"live"},
- {n:"AMOS Strategic Project Services page + brochure",o:"Marketing",m:[0,1,2,0,0,0,0,0],tid:"sv2",td:"planned"},
- {n:"Website nav and services section update",o:"Marketing + Web",m:[0,0,1,2,0,0,0,0],tid:"sv3",td:"planned"},
- {n:"Service pillar one-pagers (8 pillars)",o:"Marketing",m:[0,0,0,1,1,2,0,0],tid:"sv4",td:"planned"},
- {n:"Strategic Project Services customer campaign",o:"Marketing",m:[0,0,1,2,0,0,0,0],tid:"sv5",td:"planned"},
- {n:"Support tiers overview page + comparison asset",o:"Marketing",m:[0,2,0,0,0,0,0,0],tid:"sp1",td:"planned"},
- {n:"Tier upgrade campaign: Silver to Gold",o:"Marketing",m:[0,0,0,1,1,2,0,0],tid:"sp2",td:"planned"},
- {n:"Platinum positioning and proposal asset",o:"Marketing",m:[0,0,0,0,1,2,0,0],tid:"sp3",td:"planned"},
- {n:"CUSTOMER PROGRAMME",sect:true},
- {n:"Customer onboarding sequence",o:"Mktg + CS + Commercial",m:[0,0,1,1,2,0,0,0],tid:"o1",td:"planned"},
- {n:"Renewal sequence (90/60/30 day)",o:"Marketing",m:[0,0,0,0,1,1,2,0],tid:"l1",td:"planned"},
- {n:"DM pathway: quarterly programme",o:"Marketing",m:[0,0,0,0,0,1,2,0],tid:"l2",td:"planned"},
- {n:"User pathway: adoption programme",o:"Marketing",m:[0,0,0,0,0,0,1,2],tid:"l5",td:"planned"},
- {n:"Tier upgrade campaign",o:"Mktg + Commercial",m:[0,0,0,0,0,1,1,2],tid:"l3",td:"planned"}
-];
-var MNS=["May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-var JPHASES=[
-  {lbl:"Demand Creation",st:"Layer 0",fn:"TOFU",col:"#6E00E5",items:[{t:"Maritime Fleet Mgmt Guide",live:true},{t:"Ship Maintenance Buyer Guide",live:true},{t:"Compliance & HSQE Guide",live:false},{t:"Procurement Guide",live:false},{t:"SFI Coding Guide",live:false},{t:"ISM/SOLAS Guide",live:false},{t:"Predictive Maintenance Guide",live:false},{t:"ESG Reporting Guide",live:false}]},
-  {lbl:"Attract & Capture",st:"Stage 1",fn:"TOFU",col:"#9E14CC",items:[{t:"AMOS is Evolving (Live)",live:true},{t:"AMOS Procure Smart (Live)",live:true},{t:"SFI Coding campaign",live:false},{t:"AMOS Migration campaign",live:false},{t:"Winback campaign",live:false},{t:"Audit Readiness Checklist",live:false},{t:"Fleet Migration Playbook",live:false}]},
-  {lbl:"Nurture & Qualify",st:"Stages 2-3",fn:"MOFU",col:"#CF29B0",items:[{t:"Challenge education sequence",live:true},{t:"AMOS capability sequence",live:true},{t:"Lead scoring model",live:true},{t:"Case study teasers",live:false},{t:"Industry trend content",live:false},{t:"MariApps Competitor Battlecard",live:false},{t:"BASSnet Competitor Battlecard",live:false},{t:"DNV ShipManager Battlecard",live:false},{t:"Sertica Competitor Battlecard",live:false}],gaps:[{t:"Case study gaps: shipping, tanker, LNG"}]},
-  {lbl:"Deal Stage",st:"Stage 4",fn:"BOFU",col:"#378ADD",items:[{t:"ROI and value asset",live:false},{t:"Implementation: 3 streams",live:false},{t:"Executive summary (board)",live:false},{t:"Credibility & heritage pack",live:false},{t:"Vendor eval framework",live:false},{t:"Case study pack by sector",live:false}],gaps:[{t:"No deal-stage HubSpot workflow yet"},{t:"No ROI asset exists"}]},
-  {lbl:"Closed-Won",st:"Transition",fn:"",col:"#1C1A5C",items:[{t:"Contact Category recorded",live:false},{t:"Deal stage completed",live:false}],gaps:[{t:"Contact Category not yet mandatory"}]},
-  {lbl:"Onboarding",st:"Stage 5",fn:"POST",col:"#0F6E56",items:[{t:"Welcome from leadership",live:false},{t:"First 90 days guide",live:false},{t:"Key contacts guide",live:false}],gaps:[{t:"No onboarding assets exist"},{t:"Needs CS + Commercial + Marketing agreement"}]},
-  {lbl:"DM Pathway",st:"Stage 6-7",fn:"POST",col:"#3B6D11",items:[{t:"Quarterly performance reports",live:false},{t:"Renewal sequence",live:false},{t:"Tier upgrade campaign",live:false},{t:"Advocacy programme",live:false}],gaps:[{t:"Nothing built yet"}]},
-  {lbl:"User Pathway",st:"Stage 6-7",fn:"POST",col:"#5A8A20",items:[{t:"Adoption programme",live:false},{t:"Best practice content",live:false},{t:"Workflow tips series",live:false},{t:"Getting started guides",live:false}],gaps:[{t:"Nothing built yet"}]}
-];
-var manifestData=null;
-var manifestStatusByTitle={};
-var st={};
-try{st=JSON.parse(localStorage.getItem("spectec_comments")||"{}");}catch(e){}
-function sv(){try{localStorage.setItem("spectec_comments",JSON.stringify(st));document.getElementById("saveInd").textContent="Saved "+new Date().toLocaleTimeString();}catch(e){}}
-function buildManifestLookup(data){manifestStatusByTitle={};if(!data||!data.stages)return;Object.values(data.stages).forEach(function(assets){if(!Array.isArray(assets))return;assets.forEach(function(asset){manifestStatusByTitle[asset.title.toLowerCase()]=asset.status;});});}
-function manifestStatusForTitle(title){if(!title||!Object.keys(manifestStatusByTitle).length)return null;var tl=title.toLowerCase();if(manifestStatusByTitle[tl])return manifestStatusByTitle[tl];var keys=Object.keys(manifestStatusByTitle);for(var i=0;i<keys.length;i++){if(tl.indexOf(keys[i])>=0||keys[i].indexOf(tl)>=0)return manifestStatusByTitle[keys[i]];}return null;}
-function normalizeStatus(s){if(s==='in_progress')return 'inprogress';if(s==='not_started')return 'planned';return s;}
-function gs(id,df){var item=tileById[id];if(item){var ms=manifestStatusForTitle(item.title);if(ms)return normalizeStatus(ms);}return df;}
-function gc(id){return st[id+"_c"]||[];}
-function mkBadge(id,df){
-  var s=gs(id,df);
-  var L={planned:"Planned",inprogress:"In progress",complete:"Complete",live:"Live",not_started:"Not started"};
-  var el=document.createElement("span");
-  el.className="sb s-"+s;
-  el.style.cursor="default";
-  el.setAttribute("data-id",id);
-  el.innerHTML="<span class='sd'></span>"+(L[s]||s);
-  return el;
-}
-function buildChecks(item){
-  if(!item.checks||!item.checks.length) return null;
-  var wrap=document.createElement("div");wrap.className="chklist";
-  var lbl=document.createElement("div");lbl.className="tml";lbl.style.marginBottom="6px";lbl.textContent="Checklist";wrap.appendChild(lbl);
-  item.checks.forEach(function(ch){
-    var row=document.createElement("div");row.className="chk-row";
-    var box=document.createElement("div");box.className="chk-box"+(st[ch.id]?" on":"");
-    box.innerHTML=st[ch.id]?"&#10003;":"";
-    box.onclick=function(){st[ch.id]=!st[ch.id];sv();box.className="chk-box"+(st[ch.id]?" on":"");box.innerHTML=st[ch.id]?"&#10003;":"";updateProgress();};
-    var lbl2=document.createElement("span");lbl2.className="chk-lbl";lbl2.textContent=ch.lbl;
-    row.appendChild(box);row.appendChild(lbl2);wrap.appendChild(row);
-  });
-  return wrap;
-}
-function mkTile(item){
-  var tile=document.createElement("div");tile.className="tile";tile.id="tile-"+item.id;
-  tile.draggable=true;
-  tile.ondragstart=function(e){dragId=item.id;tile.classList.add("dragging");e.dataTransfer.effectAllowed="move";};
-  tile.ondragend=function(){document.querySelectorAll(".tile").forEach(function(t){t.classList.remove("dragging","drag-over");});};
-  var hd=document.createElement("div");hd.className="th";
-  var pri=document.createElement("div");pri.className="tpri";pri.textContent=item.p;
-  var txW=document.createElement("div");txW.className="ttx";
-  var ttl=document.createElement("div");ttl.className="tt-title";
-  if(item.url){var ta=document.createElement("a");ta.href=item.url;ta.target="_blank";ta.rel="noopener noreferrer";ta.textContent=item.title;ttl.appendChild(ta);}else{ttl.textContent=item.title;}
-  txW.appendChild(ttl);
-  if(item.ctx){var ctx=document.createElement("div");ctx.className="tt-ctx";ctx.textContent=item.ctx;txW.appendChild(ctx);}
-  var chev=document.createElement("span");chev.className="tchev";chev.innerHTML="&#8964;";
-  hd.appendChild(pri);hd.appendChild(txW);hd.appendChild(mkBadge(item.id,item.d));hd.appendChild(mkPriBadge(item.id));hd.appendChild(chev);
-  var body=document.createElement("div");body.className="tb";
-  var desc=document.createElement("div");desc.className="tdesc";desc.textContent=item.desc;body.appendChild(desc);
-  var cl=buildChecks(item);if(cl)body.appendChild(cl);
-  var mr=document.createElement("div");mr.style.cssText="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px";
-  var ob=document.createElement("div");ob.style.flex="1";ob.style.minWidth="120px";
-  var ol=document.createElement("div");ol.className="tml";ol.textContent="Owner";
-  var ov2=document.createElement("input");ov2.type="text";ov2.setAttribute("list","owner-opts");
-  ov2.style.cssText="font-family:'DM Sans',sans-serif;font-size:12px;padding:4px 8px;border:1px solid var(--bd2);border-radius:6px;background:var(--sf);color:var(--tx);width:100%;max-width:180px";
-  ov2.value=localStorage.getItem('owner_'+item.id)!=null?localStorage.getItem('owner_'+item.id):item.own||'';
-  ov2.onclick=function(e){e.stopPropagation();};
-  ov2.onchange=function(){localStorage.setItem('owner_'+item.id,ov2.value);};
-  ob.appendChild(ol);ob.appendChild(ov2);mr.appendChild(ob);
-  if(item.deps&&item.deps.length){
-    var db=document.createElement("div");db.style.flex="1";db.style.minWidth="120px";
-    var dl=document.createElement("div");dl.className="tml";dl.textContent="Dependencies";
-    db.appendChild(dl);
-    item.deps.forEach(function(d){var sp=document.createElement("span");sp.className="dep";sp.textContent=d;db.appendChild(sp);});
-    mr.appendChild(db);
-  }
-  body.appendChild(mr);
-  var dueSec=document.createElement("div");dueSec.style.marginBottom="10px";
-  var dueLbl=document.createElement("div");dueLbl.className="tml";dueLbl.textContent="Due date";
-  var dueInp=document.createElement("input");dueInp.type="date";
-  dueInp.style.cssText="font-family:'DM Sans',sans-serif;font-size:12px;padding:4px 8px;border:1px solid var(--bd2);border-radius:6px;background:var(--sf);color:var(--tx);cursor:pointer";
-  dueInp.value=localStorage.getItem('due_'+item.id)||'';
-  var overdueLbl=document.createElement("div");overdueLbl.className="overdue-lbl";overdueLbl.textContent="Overdue";
-  function refreshOverdue(){
-    var d=dueInp.value;var s=gs(item.id,item.d);
-    var od=(d&&s!=="live"&&s!=="complete"&&new Date(d)<new Date(new Date().toDateString()));
-    tile.classList.toggle("overdue",!!od);overdueLbl.style.display=od?"block":"none";
-  }
-  dueInp.onclick=function(e){e.stopPropagation();};
-  dueInp.onchange=function(){localStorage.setItem('due_'+item.id,dueInp.value);refreshOverdue();};
-  refreshOverdue();
-  dueSec.appendChild(dueLbl);dueSec.appendChild(dueInp);dueSec.appendChild(overdueLbl);body.appendChild(dueSec);
-  if(item.rep&&item.rep.length){
-    var rb=document.createElement("div");rb.style.marginBottom="10px";
-    var rl=document.createElement("div");rl.className="tml";rl.textContent="Repurposed assets and formats";rb.appendChild(rl);
-    var rlist=document.createElement("div");rlist.className="rlist";
-    item.rep.forEach(function(r){var p=document.createElement("span");p.className="rpill";p.textContent=r;rlist.appendChild(p);});
-    rb.appendChild(rlist);
-    if(item.blogs&&item.blogs.length){
-      var blbl=document.createElement("div");blbl.className="tml";blbl.style.marginTop="8px";blbl.textContent="Supporting blogs";rb.appendChild(blbl);
-      var bl=document.createElement("ol");bl.className="blog-list";
-      item.blogs.forEach(function(b){var li=document.createElement("li");var a=document.createElement("a");a.href=b.u;a.target="_blank";a.rel="noopener noreferrer";a.textContent=b.t;li.appendChild(a);bl.appendChild(li);});
-      rb.appendChild(bl);
+
+/* ============================================================
+   STATE
+   ============================================================ */
+const LS_KEY = 'spectec-content-engine-v1';
+let state = { assets: [], seoItems: [], checklistState: {} };
+let currentSection = 'dashboard';
+let alertDismissed = false;
+let plannerMonth = new Date(2026, 5, 1); // June 2026
+let registrySortCol = 'title';
+let registrySortDir = 'asc';
+let registrySearch = '';
+let registryFilters = new Set(['all']);
+
+function load() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      state = { assets: parsed.assets || [], seoItems: parsed.seoItems || [], checklistState: parsed.checklistState || {} };
+    } else {
+      state = JSON.parse(JSON.stringify(SEED_DATA));
+      save();
     }
-    body.appendChild(rb);
+  } catch(e) {
+    state = JSON.parse(JSON.stringify(SEED_DATA));
+    save();
   }
-  var csec=document.createElement("div");csec.className="csec";
-  var clbl=document.createElement("div");clbl.className="clbl";clbl.textContent="Comments";
-  var clist=document.createElement("div");clist.id="cl-"+item.id;renderComments(item.id,clist);
-  var crow=document.createElement("div");crow.className="crow";
-  var cinp=document.createElement("textarea");cinp.className="cinp";cinp.placeholder="Add a comment...";
-  cinp.onkeydown=function(e){if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();addComment(item.id,cinp,clist);}};
-  var cbtn=document.createElement("button");cbtn.className="cbtn";cbtn.textContent="Add";cbtn.onclick=function(){addComment(item.id,cinp,clist);};
-  crow.appendChild(cinp);crow.appendChild(cbtn);
-  csec.appendChild(clbl);csec.appendChild(clist);csec.appendChild(crow);body.appendChild(csec);
-  tile.appendChild(hd);tile.appendChild(body);
-  hd.onclick=function(){var o=body.classList.contains("open");body.classList.toggle("open",!o);chev.classList.toggle("open",!o);};
-  return tile;
 }
-function renderComments(id,container){
-  container.innerHTML="";
-  gc(id).forEach(function(c,i){
-    var item=document.createElement("div");item.className="citem";
-    var meta=document.createElement("div");meta.className="cmeta";meta.textContent=c.a+" \u00b7 "+c.d;
-    var txt=document.createElement("div");txt.textContent=c.t;
-    var del=document.createElement("button");del.className="cdel";del.innerHTML="&times;";
-    del.onclick=function(){var cms=gc(id);cms.splice(i,1);st[id+"_c"]=cms;sv();var cl2=document.getElementById("cl-"+id);if(cl2)renderComments(id,cl2);};
-    item.appendChild(meta);item.appendChild(txt);item.appendChild(del);container.appendChild(item);
-  });
+
+function save() {
+  localStorage.setItem(LS_KEY, JSON.stringify(state));
 }
-function addComment(id,inp,container){
-  var t=inp.value.trim();if(!t)return;
-  var a=prompt("Your name or initials:","Team")||"Team";
-  var coms=gc(id);coms.push({t:t,a:a,d:new Date().toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})});
-  st[id+"_c"]=coms;sv();inp.value="";renderComments(id,container);
+
+function genId(prefix) {
+  return prefix + '-' + Date.now() + '-' + Math.floor(Math.random()*9999);
 }
-function renderGrid(secId){
-  var g=document.getElementById("grid-"+secId);if(!g)return;g.innerHTML="";
-  var items=st["ord_"+secId]?st["ord_"+secId].map(function(id){return TILES[secId].find(function(x){return x.id===id;});}).filter(Boolean):TILES[secId];
-  items.forEach(function(item){g.appendChild(mkTile(item));});
+
+/* ============================================================
+   RENDER UTILS
+   ============================================================ */
+const STATUS_ORDER = ['Planned','In progress','Ready for review','Live','Complete'];
+const PRIORITY_ORDER = ['High','Medium','Low'];
+const STATUS_COLORS = { 'Live': '--live', 'In progress': '--inprog', 'Ready for review': '--review', 'Planned': '--planned', 'Complete': '--complete' };
+const STAGE_LABELS = { 'demand-creation':'Demand creation', 'attract-capture':'Attract & capture', 'nurture-qualify':'Nurture & qualify', 'deal-stage':'Deal stage', 'onboarding':'Onboarding', 'lifecycle':'Lifecycle' };
+const STAGE_POS = { 'demand-creation':'TOFU', 'attract-capture':'TOFU', 'nurture-qualify':'MOFU', 'deal-stage':'BOFU', 'onboarding':'Post-sale', 'lifecycle':'Post-sale' };
+const FUNNEL_GROUPS = [
+  { key:'demand-creation', name:'Demand creation', desc:'Upstream visibility before intent. Brand and thought leadership.', pos:'TOFU' },
+  { key:'attract-capture', name:'Attract & capture', desc:'Campaigns and SEO driving qualified contacts into HubSpot.', pos:'TOFU' },
+  { key:'nurture-qualify', name:'Nurture & qualify', desc:'Workflow content moving prospects to SQL.', pos:'MOFU' },
+  { key:'deal-stage', name:'Deal stage', desc:'Sales support across three streams: new, competitor, legacy.', pos:'BOFU' },
+  { key:'onboarding', name:'Onboarding', desc:'Triggered at Closed-Won. Currently no assets exist.', pos:'Post-sale' },
+  { key:'lifecycle', name:'Lifecycle', desc:'Decision maker and user pathways. Renewal and expansion.', pos:'Post-sale' },
+];
+
+function today() {
+  const d = new Date();
+  d.setHours(0,0,0,0);
+  return d;
 }
-function renderAllGrids(){Object.keys(TILES).forEach(function(k){renderGrid(k);});}
-function renderCampaigns(){
-  var g=document.getElementById("campGrid");if(!g)return;g.innerHTML="";
-  CAMPS.forEach(function(camp){
-    var card=document.createElement("div");card.className="ccamp";
-    var bar=document.createElement("div");bar.className="ccamp-bar";bar.style.background=camp.col;
-    var body=document.createElement("div");body.className="ccamp-body";
-    var top=document.createElement("div");top.className="ccamp-top";
-    var ttl=document.createElement("div");ttl.className="ccamp-title";ttl.textContent=camp.title;
-    var badge=document.createElement("span");badge.className="sb "+(camp.status==="Live"?"s-live":"s-planned");
-    badge.innerHTML="<span class='sd'></span>"+camp.status;badge.style.cursor="default";
-    top.appendChild(ttl);top.appendChild(badge);
-    var desc=document.createElement("div");desc.className="ccamp-desc";desc.textContent=camp.desc;
-    var date=document.createElement("div");date.className="ccamp-date";date.textContent=camp.date;
-    var al=document.createElement("div");al.className="ccamp-al";al.textContent="Assets needed to run this campaign";
-    body.appendChild(top);body.appendChild(desc);body.appendChild(date);body.appendChild(al);
-    camp.assets.forEach(function(a,i){
-      var key="ca_"+camp.id+"_"+i;
-      var row=document.createElement("div");row.className="ccamp-asset";
-      var box=document.createElement("div");box.className="ach"+(st[key]?" on":"");box.innerHTML=st[key]?"&#10003;":"";
-      box.onclick=function(){st[key]=!st[key];sv();box.className="ach"+(st[key]?" on":"");box.innerHTML=st[key]?"&#10003;":"";};
-      var lbl=document.createElement("span");lbl.textContent=a;
-      row.appendChild(box);row.appendChild(lbl);body.appendChild(row);
+
+function isOverdue(asset) {
+  if (!asset.dueDate) return false;
+  if (asset.status === 'Live' || asset.status === 'Complete') return false;
+  return new Date(asset.dueDate) < today();
+}
+
+function fmtDate(dateStr) {
+  if (!dateStr) return '—';
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+}
+
+function ownerInitials(owner) {
+  if (!owner || owner === 'Unassigned') return '?';
+  return owner.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+}
+
+function el(tag, props, ...children) {
+  const e = document.createElement(tag);
+  if (props) {
+    for (const [k,v] of Object.entries(props)) {
+      if (k === 'class') e.className = v;
+      else if (k === 'style') e.style.cssText = v;
+      else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+      else e.setAttribute(k, v);
+    }
+  }
+  for (const c of children) {
+    if (c == null) continue;
+    if (typeof c === 'string' || typeof c === 'number') e.appendChild(document.createTextNode(String(c)));
+    else e.appendChild(c);
+  }
+  return e;
+}
+
+function makeStatusPill(status, clickCb) {
+  const cls = 'status-pill ' + status.replace(/ /g,'-');
+  const dot = el('span', { class: 'status-dot dot-' + status.replace(/ /g,'-') });
+  const pill = el('span', { class: cls, onclick: clickCb });
+  pill.appendChild(dot);
+  pill.appendChild(document.createTextNode(' ' + status));
+  return pill;
+}
+
+function makePriorityBadge(priority, clickCb) {
+  const b = el('span', { class: 'priority-badge ' + priority, onclick: clickCb });
+  b.textContent = priority;
+  return b;
+}
+
+function makeStageChip(stage) {
+  const c = el('span', { class: 'stage-chip stage-' + stage });
+  c.textContent = STAGE_LABELS[stage] || stage;
+  return c;
+}
+
+function cycleStatus(asset) {
+  const idx = STATUS_ORDER.indexOf(asset.status);
+  asset.status = STATUS_ORDER[(idx + 1) % STATUS_ORDER.length];
+  save();
+  renderCurrent();
+}
+
+function cyclePriority(asset) {
+  const idx = PRIORITY_ORDER.indexOf(asset.priority);
+  asset.priority = PRIORITY_ORDER[(idx + 1) % PRIORITY_ORDER.length];
+  save();
+  renderCurrent();
+}
+
+function getOverdueAssets() {
+  return state.assets.filter(isOverdue);
+}
+
+/* ============================================================
+   SECTION RENDERERS
+   ============================================================ */
+
+// ---- DASHBOARD ----
+function renderDashboard() {
+  const container = document.getElementById('section-dashboard');
+  while (container.firstChild) container.removeChild(container.firstChild);
+
+  const overdue = getOverdueAssets();
+  const now = today();
+  const weekLater = new Date(now); weekLater.setDate(weekLater.getDate()+7);
+
+  // Alert bar
+  if (overdue.length > 0 && !alertDismissed) {
+    const bar = el('div', { class:'alert-bar' });
+    const txt = el('p');
+    const b = document.createElement('strong');
+    b.textContent = 'Overdue assets: ';
+    txt.appendChild(b);
+    txt.appendChild(document.createTextNode(overdue.map(a=>a.title).join(', ')));
+    const dismiss = el('button', { class:'alert-dismiss', onclick:() => { alertDismissed=true; renderDashboard(); } });
+    dismiss.textContent = '×';
+    bar.appendChild(txt); bar.appendChild(dismiss);
+    container.appendChild(bar);
+  }
+
+  // Metric cards
+  const inprogAssets = state.assets.filter(a => a.status === 'In progress');
+  const inprogSoonCount = inprogAssets.filter(a => a.dueDate && new Date(a.dueDate) >= now && new Date(a.dueDate) <= weekLater).length;
+  const liveThisMonth = state.assets.filter(a => {
+    if (a.status !== 'Live' || !a.dueDate) return false;
+    const d = new Date(a.dueDate);
+    return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+  }).length;
+
+  const metricsRow = el('div', { class:'metrics-row' });
+  const metrics = [
+    { label:'Total assets', value: state.assets.length, cls:'' },
+    { label:'In progress', value: inprogAssets.length, cls: inprogSoonCount>=5 ? 'warn' : '' },
+    { label:'Overdue', value: overdue.length, cls: overdue.length>0 ? 'danger' : '' },
+    { label:'Live this month', value: liveThisMonth, cls:'' },
+  ];
+  for (const m of metrics) {
+    const card = el('div', { class:'metric-card' });
+    const lbl = el('div', { class:'metric-label' }); lbl.textContent = m.label;
+    const val = el('div', { class:'metric-value ' + m.cls }); val.textContent = m.value;
+    card.appendChild(lbl); card.appendChild(val);
+    metricsRow.appendChild(card);
+  }
+  container.appendChild(metricsRow);
+
+  // Velocity chart
+  const chartCard = el('div', { class:'chart-card' });
+  const chartTitle = el('div', { class:'section-heading' }); chartTitle.textContent = 'Publishing velocity';
+  chartCard.appendChild(chartTitle);
+  chartCard.appendChild(buildVelocityChart());
+  container.appendChild(chartCard);
+
+  // Priority assets
+  const heading = el('div', { class:'section-heading' });
+  heading.appendChild(document.createTextNode('Priority assets'));
+  const sub = el('span', { class:'section-sub' }); sub.textContent = 'Top 6 by priority';
+  heading.appendChild(sub);
+  container.appendChild(heading);
+
+  const sorted = [...state.assets].sort((a,b) => {
+    const pi = PRIORITY_ORDER.indexOf(a.priority) - PRIORITY_ORDER.indexOf(b.priority);
+    if (pi !== 0) return pi;
+    if (!a.dueDate && !b.dueDate) return 0;
+    if (!a.dueDate) return 1;
+    if (!b.dueDate) return -1;
+    return new Date(a.dueDate) - new Date(b.dueDate);
+  }).slice(0, 6);
+
+  const grid = el('div', { class:'priority-grid' });
+  for (const asset of sorted) {
+    grid.appendChild(buildAssetCard(asset));
+  }
+  container.appendChild(grid);
+}
+
+function buildVelocityChart() {
+  const months = [];
+  const now = today();
+  for (let i=5; i>=0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth()-i, 1);
+    months.push({ year: d.getFullYear(), month: d.getMonth(), label: d.toLocaleDateString('en-GB',{month:'short'}) });
+  }
+
+  const counts = months.map(m => state.assets.filter(a => {
+    if (!a.dueDate) return false;
+    const d = new Date(a.dueDate);
+    return d.getMonth()===m.month && d.getFullYear()===m.year;
+  }).length);
+
+  const maxCount = Math.max(...counts, 1);
+  const w = 520, h = 160, padL=30, padB=30, padT=10, padR=10;
+  const barW = 50, barGap = (w - padL - padR - months.length*barW) / (months.length+1);
+  const currentMonthIdx = 5;
+
+  const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('width', '100%');
+  svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+  svg.style.overflow = 'visible';
+
+  // y axis grid lines
+  const steps = 4;
+  for (let i=0; i<=steps; i++) {
+    const y = padT + ((h-padT-padB) * (1 - i/steps));
+    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1', padL); line.setAttribute('x2', w-padR);
+    line.setAttribute('y1', y); line.setAttribute('y2', y);
+    line.setAttribute('stroke','#E4E3F0'); line.setAttribute('stroke-width','1');
+    svg.appendChild(line);
+    const val = Math.round(maxCount * i/steps);
+    const txt = document.createElementNS('http://www.w3.org/2000/svg','text');
+    txt.setAttribute('x', padL-4); txt.setAttribute('y', y+4);
+    txt.setAttribute('text-anchor','end'); txt.setAttribute('font-size','9');
+    txt.setAttribute('fill','#9D9BBF'); txt.setAttribute('font-family','Nunito Sans, sans-serif');
+    txt.textContent = val;
+    svg.appendChild(txt);
+  }
+
+  // bars
+  for (let i=0; i<months.length; i++) {
+    const x = padL + barGap*(i+1) + barW*i;
+    const barH = counts[i] > 0 ? ((h-padT-padB) * counts[i]/maxCount) : 2;
+    const y = h - padB - barH;
+    const rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
+    rect.setAttribute('x', x); rect.setAttribute('y', y);
+    rect.setAttribute('width', barW); rect.setAttribute('height', barH);
+    rect.setAttribute('rx','3');
+    rect.setAttribute('fill', i===currentMonthIdx ? '#4A47A3' : '#1C1A5C');
+    svg.appendChild(rect);
+
+    if (counts[i] > 0) {
+      const vt = document.createElementNS('http://www.w3.org/2000/svg','text');
+      vt.setAttribute('x', x + barW/2); vt.setAttribute('y', y-4);
+      vt.setAttribute('text-anchor','middle'); vt.setAttribute('font-size','9');
+      vt.setAttribute('fill','#2D2B55'); vt.setAttribute('font-family','Nunito Sans, sans-serif');
+      vt.setAttribute('font-weight','600');
+      vt.textContent = counts[i];
+      svg.appendChild(vt);
+    }
+
+    const xt = document.createElementNS('http://www.w3.org/2000/svg','text');
+    xt.setAttribute('x', x+barW/2); xt.setAttribute('y', h-padB+14);
+    xt.setAttribute('text-anchor','middle'); xt.setAttribute('font-size','10');
+    xt.setAttribute('fill','#9D9BBF'); xt.setAttribute('font-family','Nunito Sans, sans-serif');
+    xt.textContent = months[i].label;
+    svg.appendChild(xt);
+  }
+
+  return svg;
+}
+
+function buildAssetCard(asset) {
+  const card = el('div', { class:'asset-card' + (isOverdue(asset) ? ' overdue' : '') });
+
+  const top = el('div', { class:'asset-card-top' });
+  const title = el('div', { class:'asset-card-title' }); title.textContent = asset.title;
+  const pbadge = makePriorityBadge(asset.priority, e => { e.stopPropagation(); cyclePriority(asset); });
+  top.appendChild(title); top.appendChild(pbadge);
+
+  const stageWrap = el('div', { class:'asset-card-stage' });
+  stageWrap.appendChild(makeStageChip(asset.stage));
+
+  const pill = makeStatusPill(asset.status, e => { e.stopPropagation(); cycleStatus(asset); });
+
+  const meta = el('div', { class:'asset-card-meta' });
+  const ownerSpan = el('span'); ownerSpan.textContent = '👤 ' + asset.owner;
+  const dueSpan = el('span'); dueSpan.textContent = '📅 ' + fmtDate(asset.dueDate);
+  meta.appendChild(ownerSpan); meta.appendChild(dueSpan);
+
+  const footer = el('div', { class:'asset-card-footer' });
+  const av = el('div', { class:'avatar' }); av.textContent = ownerInitials(asset.owner);
+  const dueText = el('span', { class:'due-date-text' + (isOverdue(asset) ? ' overdue' : '') });
+  dueText.textContent = isOverdue(asset) ? '⚠ ' + fmtDate(asset.dueDate) : fmtDate(asset.dueDate);
+  footer.appendChild(av); footer.appendChild(dueText);
+
+  card.appendChild(top);
+  card.appendChild(stageWrap);
+  card.appendChild(pill);
+  card.appendChild(meta);
+  card.appendChild(footer);
+
+  card.addEventListener('click', () => openPanel(asset.id));
+  return card;
+}
+
+// ---- CONTENT REGISTRY ----
+function renderRegistry() {
+  const container = document.getElementById('section-registry');
+  while (container.firstChild) container.removeChild(container.firstChild);
+
+  // Search
+  const searchRow = el('div', { class:'search-row' });
+  const search = el('input', { class:'search-input', type:'text', placeholder:'Search assets…' });
+  search.value = registrySearch;
+  search.addEventListener('input', e => { registrySearch = e.target.value; renderRegistry(); });
+  searchRow.appendChild(search);
+  container.appendChild(searchRow);
+
+  // Filter chips
+  const chips = el('div', { class:'filter-chips' });
+  const filterDefs = [
+    { id:'all', label:'All' },
+    { id:'high', label:'High priority' },
+    { id:'overdue', label:'Overdue' },
+    { id:'inprog', label:'In progress' },
+    { id:'mine', label:'My assets' },
+  ];
+  for (const f of filterDefs) {
+    const chip = el('div', { class:'filter-chip' + (registryFilters.has(f.id) ? ' active' : '') });
+    chip.textContent = f.label;
+    chip.addEventListener('click', () => {
+      if (f.id === 'all') {
+        registryFilters = new Set(['all']);
+      } else {
+        registryFilters.delete('all');
+        if (registryFilters.has(f.id)) registryFilters.delete(f.id);
+        else registryFilters.add(f.id);
+        if (registryFilters.size === 0) registryFilters.add('all');
+      }
+      renderRegistry();
     });
-    card.appendChild(bar);card.appendChild(body);g.appendChild(card);
+    chips.appendChild(chip);
+  }
+  container.appendChild(chips);
+
+  // Filter assets
+  let filtered = [...state.assets];
+  if (!registryFilters.has('all')) {
+    if (registryFilters.has('high')) filtered = filtered.filter(a => a.priority==='High');
+    if (registryFilters.has('overdue')) filtered = filtered.filter(a => isOverdue(a));
+    if (registryFilters.has('inprog')) filtered = filtered.filter(a => a.status==='In progress');
+    if (registryFilters.has('mine')) filtered = filtered.filter(a => a.owner==='Connor');
+  }
+  if (registrySearch.trim()) {
+    const q = registrySearch.trim().toLowerCase();
+    filtered = filtered.filter(a => a.title.toLowerCase().includes(q));
+  }
+
+  // Sort
+  filtered.sort((a,b) => {
+    let av, bv;
+    switch(registrySortCol) {
+      case 'title': av=a.title; bv=b.title; break;
+      case 'stage': av=a.stage; bv=b.stage; break;
+      case 'priority': av=PRIORITY_ORDER.indexOf(a.priority); bv=PRIORITY_ORDER.indexOf(b.priority); break;
+      case 'status': av=STATUS_ORDER.indexOf(a.status); bv=STATUS_ORDER.indexOf(b.status); break;
+      case 'owner': av=a.owner; bv=b.owner; break;
+      case 'dueDate': av=a.dueDate||'9999'; bv=b.dueDate||'9999'; break;
+      default: av=a.title; bv=b.title;
+    }
+    if (av<bv) return registrySortDir==='asc'?-1:1;
+    if (av>bv) return registrySortDir==='asc'?1:-1;
+    return 0;
   });
-}
-function renderJourney(){
-  var g=document.getElementById("jmap");if(!g)return;g.innerHTML="";
-  JPHASES.forEach(function(ph){
-    var col=document.createElement("div");col.className="jph";
-    var hd=document.createElement("div");hd.className="jph-hd";hd.style.background=ph.col;
-    var lb=document.createElement("div");lb.className="jph-lb";lb.textContent=ph.lbl;
-    var st2=document.createElement("div");st2.className="jph-st";st2.textContent=ph.st;
-    hd.appendChild(lb);hd.appendChild(st2);
-    if(ph.fn){var fn=document.createElement("div");fn.className="jph-fn";fn.textContent=ph.fn;hd.appendChild(fn);}
-    var items=document.createElement("div");items.className="jitems";
-    ph.items.forEach(function(it){var ji=document.createElement("div");ji.className="ji "+(it.live?"ji-live":"ji-plan");ji.textContent=it.t;items.appendChild(ji);});
-    if(ph.gaps&&ph.gaps.length){var gl=document.createElement("div");gl.className="jgap-lb";gl.textContent="Gaps";items.appendChild(gl);ph.gaps.forEach(function(g2){var ji=document.createElement("div");ji.className="ji ji-gap";ji.textContent=g2.t;items.appendChild(ji);});}
-    col.appendChild(hd);col.appendChild(items);g.appendChild(col);
-  });
-}
-function renderTimeline(){
-  var w=document.getElementById("tlwrap");if(!w)return;w.innerHTML="";
-  var MNS_FULL=["May 2026","Jun 2026","Jul 2026","Aug 2026","Sep 2026","Oct 2026","Nov 2026","Dec 2026"];
-  var SECTION_LABELS={setup:"Setup",demand:"Demand Creation",capture:"Attract and Capture",nurture:"Nurture and Qualify",deal:"Deal Stage",onboarding:"Customer Onboarding",lifecycle:"Customer Lifecycle",services:"Service Portfolio",support:"Support Tiers"};
-  var tileMonth={};
-  PL.forEach(function(row){
-    if(row.sect||!row.tid) return;
-    var goLiveIdx=-1;
-    row.m.forEach(function(v,i){if(v===2||v===3) goLiveIdx=i;});
-    if(goLiveIdx>=0) tileMonth[row.tid]=MNS_FULL[goLiveIdx];
-  });
-  var sectionOrder=["setup","demand","capture","nurture","deal","onboarding","lifecycle","services","support"];
-  sectionOrder.forEach(function(sec){
-    var tiles=TILES[sec];if(!tiles||!tiles.length)return;
-    var hdr=document.createElement("div");hdr.className="tl-sec-hdr";hdr.textContent=SECTION_LABELS[sec]||sec;w.appendChild(hdr);
-    tiles.forEach(function(item,i){
-      var row=document.createElement("div");row.className="tli";
-      var dw=document.createElement("div");dw.className="tldw";
-      var s=gs(item.id,item.d);
-      var dt=document.createElement("div");dt.className="tldt "+s;dw.appendChild(dt);
-      var isLast=(i===tiles.length-1);
-      if(!isLast){var ln=document.createElement("div");ln.style.cssText="width:2px;flex:1;background:var(--bd);margin-top:4px";dw.appendChild(ln);}
-      var tc=document.createElement("div");tc.className="tlc";
-      var tr=document.createElement("div");tr.style.cssText="display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:1px";
-      var tt=document.createElement("div");tt.className="tl-title";tt.textContent=item.title;
-      tr.appendChild(tt);tr.appendChild(mkBadge(item.id,item.d));
-      var desc=document.createElement("div");desc.className="tl-desc";desc.textContent=item.ctx||"";
-      var date=document.createElement("div");date.className="tl-date";date.textContent=tileMonth[item.id]||"2026";
-      tc.appendChild(tr);tc.appendChild(desc);tc.appendChild(date);
-      row.appendChild(dw);row.appendChild(tc);w.appendChild(row);
-    });
-  });
-}
-function getPlannerBarStyle(status){
-  if(status==="live") return "background:var(--sl);border-radius:4px;height:14px;display:block";
-  if(status==="complete") return "background:var(--sc);border-radius:4px;height:14px;display:block";
-  if(status==="inprogress") return "background:var(--si);border-radius:4px;height:14px;display:block";
-  return null;
-}
-function renderPlanner(){
-  var t=document.getElementById("plt");if(!t)return;
-  var hc=MNS.map(function(m){return "<th class='mc'>"+m+"</th>";}).join("");
-  var html="<thead><tr><th style='min-width:190px'>Asset / activity</th><th style='min-width:120px'>Owner</th>"+hc+"</tr></thead><tbody>";
-  PL.forEach(function(row){
-    if(row.sect){html+="<tr><td class='sect' colspan='"+(2+MNS.length)+"'>"+row.n+"</td></tr>";return;}
-    var liveStatus=row.tid?gs(row.tid,row.td):null;
-    var overrideStyle=liveStatus?getPlannerBarStyle(liveStatus):null;
-    var cs=row.m.map(function(v){
-      if(v===0) return "<td class='pc'><span class='bar-x'></span></td>";
-      if(overrideStyle) return "<td class='pc'><span style='"+overrideStyle+"'></span></td>";
-      if(v===1) return "<td class='pc'><span class='bar-s'></span></td>";
-      if(v===2) return "<td class='pc'><span class='bar-e'></span></td>";
-      if(v===3) return "<td class='pc'><span class='bar-done'></span></td>";
-      return "<td class='pc'></td>";
-    }).join("");
-    var statusBadge="";
-    if(liveStatus&&liveStatus!=="planned"){var L={live:"Live",complete:"Complete",inprogress:"In progress"};statusBadge=" <span class='sb s-"+liveStatus+"' style='cursor:default;font-size:10px;padding:2px 7px'><span class='sd'></span>"+(L[liveStatus]||liveStatus)+"</span>";}
-    html+="<tr><td class='an'>"+row.n+statusBadge+"</td><td style='font-size:11px;color:var(--tx3);font-family:DM Mono,monospace'>"+row.o+"</td>"+cs+"</tr>";
-  });
-  html+="</tbody>";t.innerHTML=html;
-}
-function updateProgress(){
-  var all=[];Object.values(TILES).forEach(function(arr){arr.forEach(function(x){all.push({id:x.id,d:x.d});});});
-  var live=0,comp=0,prog=0,plan=0;
-  all.forEach(function(x){var s=gs(x.id,x.d);if(s==="live")live++;else if(s==="complete")comp++;else if(s==="inprogress")prog++;else plan++;});
-  document.getElementById("pLive").textContent=live;
-  document.getElementById("pComp").textContent=comp;
-  document.getElementById("pProg").textContent=prog;
-  document.getElementById("pPlan").textContent=plan;
-  document.getElementById("pbf").style.width=all.length>0?Math.round(((live+comp)/all.length)*100)+"%":"0%";
-}
-var dragId=null;
-function ov(e){e.preventDefault();var tile=e.target.closest(".tile");document.querySelectorAll(".tile").forEach(function(t){t.classList.remove("drag-over");});if(tile&&tile.id!=="tile-"+dragId)tile.classList.add("drag-over");}
-function od(e,sec){
-  e.preventDefault();if(!dragId)return;
-  var tgt=e.target.closest(".tile");if(!tgt||tgt.id==="tile-"+dragId){document.querySelectorAll(".tile").forEach(function(t){t.classList.remove("drag-over");});return;}
-  var tid=tgt.id.replace("tile-","");
-  var items=st["ord_"+sec]||TILES[sec].map(function(x){return x.id;});
-  var fi=items.indexOf(dragId),ti=items.indexOf(tid);
-  if(fi===-1||ti===-1)return;
-  items.splice(fi,1);items.splice(ti,0,dragId);st["ord_"+sec]=items;sv();renderGrid(sec);
-  document.querySelectorAll(".tile").forEach(function(t){t.classList.remove("drag-over");});dragId=null;
-}
-function updateJourneyFromManifest(){
-  JPHASES.forEach(function(ph){
-    ph.items.forEach(function(it){
-      var ms=manifestStatusForTitle(it.t);
-      if(ms){var ns=normalizeStatus(ms);it.live=(ns==='live'||ns==='complete');}
-    });
-  });
-}
-function updateFromManifest(manifest){
-  var stageMap={'demand':'demand','capture':'capture','nurture':'nurture','deal':'deal','onboarding':'onboarding','lifecycle':'lifecycle','services':'services','support':'support'};
-  var statusMap={'live':'live','complete':'complete','in_progress':'inprogress','planned':'planned','not_started':'planned'};
-  buildManifestLookup(manifest);
-  if(!manifest||!manifest.stages)return;
-  Object.keys(manifest.stages).forEach(function(stageKey){
-    var tilesKey=stageMap[stageKey]||stageKey;
-    var stageTiles=TILES[tilesKey];
-    if(!stageTiles)return;
-    manifest.stages[stageKey].forEach(function(asset){
-      var match=stageTiles.find(function(tile){
-        return tile.title.toLowerCase().indexOf(asset.title.toLowerCase().substring(0,20))!==-1||asset.title.toLowerCase().indexOf(tile.title.toLowerCase().substring(0,20))!==-1;
+
+  const wrap = el('div', { class:'tbl-wrap' });
+  const table = el('table');
+  const thead = el('thead');
+  const hr = el('tr');
+  const cols = [
+    { id:'title', label:'Title', w:'28%' },
+    { id:'stage', label:'Stage', w:'16%' },
+    { id:'priority', label:'Priority', w:'9%' },
+    { id:'status', label:'Status', w:'15%' },
+    { id:'owner', label:'Owner', w:'13%' },
+    { id:'dueDate', label:'Due date', w:'11%' },
+    { id:'actions', label:'', w:'8%' },
+  ];
+  for (const col of cols) {
+    const th = el('th');
+    th.style.width = col.w;
+    th.textContent = col.label;
+    if (col.id !== 'actions') {
+      const ind = el('span', { class:'sort-ind' });
+      ind.textContent = registrySortCol===col.id ? (registrySortDir==='asc'?'↑':'↓') : '';
+      th.appendChild(ind);
+      th.addEventListener('click', () => {
+        if (registrySortCol===col.id) registrySortDir = registrySortDir==='asc'?'desc':'asc';
+        else { registrySortCol=col.id; registrySortDir='asc'; }
+        renderRegistry();
       });
-      if(match){match.d=statusMap[asset.status]||'planned';}
+    }
+    hr.appendChild(th);
+  }
+  thead.appendChild(hr); table.appendChild(thead);
+
+  const tbody = el('tbody');
+  for (const asset of filtered) {
+    const tr = el('tr', { class: isOverdue(asset) ? 'overdue-row' : '' });
+
+    // Title
+    const tdTitle = el('td', { class:'td-title' }); tdTitle.textContent = asset.title;
+    tdTitle.addEventListener('click', () => openPanel(asset.id));
+
+    // Stage
+    const tdStage = el('td');
+    tdStage.appendChild(makeStageChip(asset.stage));
+
+    // Priority
+    const tdPri = el('td');
+    const dotPri = el('span', { class:'status-dot', style:`background:${asset.priority==='High'?'#791F1F':asset.priority==='Medium'?'#633806':'#27500A'};margin-right:4px` });
+    tdPri.appendChild(dotPri);
+    tdPri.appendChild(document.createTextNode(asset.priority));
+    tdPri.style.cursor='pointer';
+    tdPri.addEventListener('click', () => cyclePriority(asset));
+
+    // Status
+    const tdStatus = el('td');
+    tdStatus.appendChild(makeStatusPill(asset.status, () => cycleStatus(asset)));
+
+    // Owner
+    const tdOwner = el('td'); tdOwner.textContent = asset.owner;
+
+    // Due date
+    const tdDue = el('td');
+    const dueT = el('span');
+    if (isOverdue(asset)) { dueT.style.color='var(--high-txt)'; dueT.style.fontWeight='600'; }
+    dueT.textContent = (isOverdue(asset)?'⚠ ':'') + fmtDate(asset.dueDate);
+    tdDue.appendChild(dueT);
+
+    // Actions
+    const tdAct = el('td');
+    const ddWrap = el('div', { class:'dropdown-wrap' });
+    const btn = el('button', { class:'actions-btn' }); btn.textContent = '⋯';
+    const menu = el('div', { class:'dropdown-menu', style:'display:none' });
+
+    const editBtn = el('button'); editBtn.textContent = 'Edit';
+    editBtn.addEventListener('click', () => { menu.style.display='none'; openPanel(asset.id); });
+
+    const dupBtn = el('button'); dupBtn.textContent = 'Duplicate';
+    dupBtn.addEventListener('click', () => {
+      menu.style.display='none';
+      const copy = JSON.parse(JSON.stringify(asset));
+      copy.id = genId('a');
+      copy.title = copy.title + ' (copy)';
+      state.assets.push(copy); save(); renderRegistry();
+    });
+
+    const delBtn = el('button', { class:'danger' }); delBtn.textContent = 'Delete';
+    delBtn.addEventListener('click', () => {
+      menu.style.display='none';
+      if (window.confirm('Delete "' + asset.title + '"?')) {
+        state.assets = state.assets.filter(a => a.id !== asset.id);
+        save(); renderCurrent();
+      }
+    });
+
+    menu.appendChild(editBtn); menu.appendChild(dupBtn); menu.appendChild(delBtn);
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const wasVisible = menu.style.display !== 'none';
+      document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display='none');
+      menu.style.display = wasVisible ? 'none' : 'block';
+    });
+
+    ddWrap.appendChild(btn); ddWrap.appendChild(menu);
+    tdAct.appendChild(ddWrap);
+
+    tr.appendChild(tdTitle); tr.appendChild(tdStage); tr.appendChild(tdPri);
+    tr.appendChild(tdStatus); tr.appendChild(tdOwner); tr.appendChild(tdDue); tr.appendChild(tdAct);
+    tbody.appendChild(tr);
+  }
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  container.appendChild(wrap);
+
+  // close dropdowns on outside click
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display='none');
+  }, { once:true });
+}
+
+// ---- MONTH PLANNER ----
+function renderPlanner() {
+  const container = document.getElementById('section-planner');
+  while (container.firstChild) container.removeChild(container.firstChild);
+
+  const yr = plannerMonth.getFullYear();
+  const mo = plannerMonth.getMonth();
+  const monthLabel = plannerMonth.toLocaleDateString('en-GB', { month:'long', year:'numeric' });
+
+  // Nav
+  const nav = el('div', { class:'planner-nav' });
+  const prevBtn = el('button'); prevBtn.textContent = '‹';
+  prevBtn.addEventListener('click', () => { plannerMonth = new Date(yr, mo-1, 1); renderPlanner(); });
+  const nextBtn = el('button'); nextBtn.textContent = '›';
+  nextBtn.addEventListener('click', () => { plannerMonth = new Date(yr, mo+1, 1); renderPlanner(); });
+  const lbl = el('div', { class:'planner-month' }); lbl.textContent = monthLabel;
+  nav.appendChild(prevBtn); nav.appendChild(lbl); nav.appendChild(nextBtn);
+  container.appendChild(nav);
+
+  const split = el('div', { class:'planner-split' });
+
+  // LEFT: Production tracker
+  const left = el('div', { class:'planner-panel' });
+  const lh = el('div', { class:'planner-panel-header' });
+  const lt = el('div', { class:'planner-panel-title' }); lt.textContent = 'Production tracker';
+  const ls = el('div', { class:'planner-panel-sub' }); ls.textContent = 'Assets by due date — ' + monthLabel;
+  lh.appendChild(lt); lh.appendChild(ls); left.appendChild(lh);
+
+  // Build weeks
+  const daysInMonth = new Date(yr, mo+1, 0).getDate();
+  const weeks = [];
+  let wStart = 1;
+  while (wStart <= daysInMonth) {
+    const wEnd = Math.min(wStart+6, daysInMonth);
+    weeks.push({ start:wStart, end:wEnd });
+    wStart = wEnd+1;
+  }
+  // group up to 4 weeks
+  const weekCols = el('div', { class:'week-cols' });
+  const weekAssets = weeks.slice(0,4).map(w => {
+    return state.assets.filter(a => {
+      if (!a.dueDate) return false;
+      const d = new Date(a.dueDate);
+      return d.getFullYear()===yr && d.getMonth()===mo && d.getDate()>=w.start && d.getDate()<=w.end;
     });
   });
-  updateJourneyFromManifest();
+
+  for (let i=0; i<4 && i<weeks.length; i++) {
+    const w = weeks[i];
+    const col = el('div');
+    const head = el('div', { class:'week-col-head' });
+    const wn = document.createTextNode('Week ' + (i+1));
+    const wr = el('div', { class:'week-col-range' }); wr.textContent = w.start + '–' + w.end + ' ' + plannerMonth.toLocaleDateString('en-GB',{month:'short'});
+    head.appendChild(wn); head.appendChild(wr);
+    col.appendChild(head);
+    for (const a of weekAssets[i]) {
+      const card = el('div', { class:'planner-card' + (isOverdue(a)?' overdue':'') });
+      const t = el('div', { class:'planner-card-title' }); t.textContent = a.title;
+      const sc = makeStageChip(a.stage);
+      sc.style.fontSize = '9px'; sc.style.padding = '1px 5px';
+      card.appendChild(t); card.appendChild(sc);
+      card.addEventListener('click', () => openPanel(a.id));
+      col.appendChild(card);
+    }
+    weekCols.appendChild(col);
+  }
+  left.appendChild(weekCols);
+
+  // No date row
+  const noDateAssets = state.assets.filter(a => !a.dueDate);
+  if (noDateAssets.length > 0) {
+    const nd = el('div', { class:'planner-no-date' });
+    const ndl = el('div', { class:'planner-no-date-label' }); ndl.textContent = 'No date';
+    nd.appendChild(ndl);
+    for (const a of noDateAssets.slice(0,6)) {
+      const card = el('div', { class:'planner-card' });
+      const t = el('div', { class:'planner-card-title' }); t.textContent = a.title;
+      card.appendChild(t);
+      card.addEventListener('click', () => openPanel(a.id));
+      nd.appendChild(card);
+    }
+    if (noDateAssets.length > 6) {
+      const more = el('div', { style:'font-size:10px;color:#9D9BBF;padding:4px 0' });
+      more.textContent = '+' + (noDateAssets.length-6) + ' more';
+      nd.appendChild(more);
+    }
+    left.appendChild(nd);
+  }
+
+  // RIGHT: Publication calendar (SVG stacked bar)
+  const right = el('div', { class:'planner-panel' });
+  const rh = el('div', { class:'planner-panel-header' });
+  const rt = el('div', { class:'planner-panel-title' }); rt.textContent = 'Publication calendar';
+  const m1 = plannerMonth.toLocaleDateString('en-GB',{month:'short'});
+  const m2 = new Date(yr,mo+1,1).toLocaleDateString('en-GB',{month:'short'});
+  const m3 = new Date(yr,mo+2,1).toLocaleDateString('en-GB',{month:'short'});
+  const rs = el('div', { class:'planner-panel-sub' }); rs.textContent = `Going live — ${m1} to ${m3}`;
+  rh.appendChild(rt); rh.appendChild(rs); right.appendChild(rh);
+
+  right.appendChild(buildPubCalChart(yr, mo));
+
+  split.appendChild(left); split.appendChild(right);
+  container.appendChild(split);
 }
-function showPage(id,btn){
-  document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active");});
-  document.getElementById("page-"+id).classList.add("active");
-  document.querySelectorAll(".nit").forEach(function(b){b.classList.remove("active");});
-  if(btn)btn.classList.add("active");
-  window.scrollTo(0,0);
+
+function buildPubCalChart(yr, mo) {
+  const stages = ['demand-creation','attract-capture','nurture-qualify','deal-stage','onboarding','lifecycle'];
+  const stageLabels = ['Demand','Attract','Nurture','Deal','Onboard','Lifecycle'];
+  const months = [mo, mo+1, mo+2];
+  const statusList = ['Live','In progress','Ready for review','Planned'];
+  const statusColors = { 'Live':'#639922','In progress':'#378ADD','Ready for review':'#EF9F27','Planned':'#B4B2A9' };
+
+  const svgW=420, svgH=220, padL=72, padB=40, padT=10, padR=10;
+  const rowH = (svgH-padT-padB) / stages.length;
+  const grpW = (svgW-padL-padR) / 3;
+
+  const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('width','100%');
+  svg.setAttribute('viewBox',`0 0 ${svgW} ${svgH+40}`);
+
+  // Month headers
+  for (let mi=0; mi<3; mi++) {
+    const mLabel = new Date(yr, months[mi], 1).toLocaleDateString('en-GB',{month:'short',year:'2-digit'});
+    const xt = document.createElementNS('http://www.w3.org/2000/svg','text');
+    xt.setAttribute('x', padL + grpW*mi + grpW/2);
+    xt.setAttribute('y', padT-2);
+    xt.setAttribute('text-anchor','middle');
+    xt.setAttribute('font-size','9');
+    xt.setAttribute('font-weight','700');
+    xt.setAttribute('fill','#7D7BAA');
+    xt.setAttribute('font-family','Nunito Sans, sans-serif');
+    xt.textContent = mLabel;
+    svg.appendChild(xt);
+  }
+
+  for (let si=0; si<stages.length; si++) {
+    const stage = stages[si];
+    const y = padT + si*rowH;
+    // row label
+    const lt = document.createElementNS('http://www.w3.org/2000/svg','text');
+    lt.setAttribute('x', padL-4); lt.setAttribute('y', y+rowH/2+4);
+    lt.setAttribute('text-anchor','end'); lt.setAttribute('font-size','9');
+    lt.setAttribute('fill','#7D7BAA'); lt.setAttribute('font-family','Nunito Sans, sans-serif');
+    lt.textContent = stageLabels[si];
+    svg.appendChild(lt);
+
+    for (let mi=0; mi<3; mi++) {
+      const moAssets = state.assets.filter(a => {
+        if (a.stage !== stage) return false;
+        if (!a.dueDate) return false;
+        const d = new Date(a.dueDate);
+        return d.getMonth() === months[mi] && d.getFullYear() === yr + (months[mi]>11?1:0);
+      });
+      const total = moAssets.length;
+      if (total === 0) continue;
+
+      const barX = padL + grpW*mi + 2;
+      const maxBarW = grpW - 4;
+      const barH = Math.min(rowH-4, 14);
+      const barY = y + (rowH-barH)/2;
+
+      let xOff = 0;
+      for (const s of statusList) {
+        const cnt = moAssets.filter(a => a.status===s).length;
+        if (cnt===0) continue;
+        const segW = maxBarW * cnt/total;
+        const rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
+        rect.setAttribute('x', barX+xOff); rect.setAttribute('y', barY);
+        rect.setAttribute('width', segW); rect.setAttribute('height', barH);
+        rect.setAttribute('fill', statusColors[s]);
+        if (xOff===0) { rect.setAttribute('rx','2'); }
+        svg.appendChild(rect);
+        xOff += segW;
+      }
+
+      const cnt = document.createElementNS('http://www.w3.org/2000/svg','text');
+      cnt.setAttribute('x', barX+maxBarW+3); cnt.setAttribute('y', barY+barH/2+4);
+      cnt.setAttribute('font-size','8'); cnt.setAttribute('fill','#7D7BAA');
+      cnt.setAttribute('font-family','Nunito Sans, sans-serif');
+      cnt.textContent = total;
+      svg.appendChild(cnt);
+    }
+  }
+
+  // Legend
+  const legendY = svgH + 4;
+  let lx = padL;
+  for (const s of statusList) {
+    const rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
+    rect.setAttribute('x', lx); rect.setAttribute('y', legendY);
+    rect.setAttribute('width', 8); rect.setAttribute('height', 8);
+    rect.setAttribute('rx', '2'); rect.setAttribute('fill', statusColors[s]);
+    svg.appendChild(rect);
+    const lt = document.createElementNS('http://www.w3.org/2000/svg','text');
+    lt.setAttribute('x', lx+11); lt.setAttribute('y', legendY+7);
+    lt.setAttribute('font-size','8'); lt.setAttribute('fill','#7D7BAA');
+    lt.setAttribute('font-family','Nunito Sans, sans-serif');
+    lt.textContent = s;
+    svg.appendChild(lt);
+    lx += 10 + s.length*4.5 + 6;
+  }
+
+  return svg;
 }
-fetch('/content-manifest.json')
-  .then(function(r){return r.json();})
-  .then(function(data){manifestData=data;updateFromManifest(data);})
-  .catch(function(){})
-  .then(function(){renderJourney();renderCampaigns();renderAllGrids();renderTimeline();renderPlanner();updateProgress();document.getElementById("saveInd").textContent="Ready";});
+
+// ---- FUNNEL MAP ----
+function renderFunnel() {
+  const container = document.getElementById('section-funnel');
+  while (container.firstChild) container.removeChild(container.firstChild);
+
+  const journeyLabel = el('div', { class:'funnel-journey-label' });
+  journeyLabel.textContent = '→ Prospect journey';
+  container.appendChild(journeyLabel);
+
+  const grid = el('div', { class:'funnel-grid' });
+
+  const prospectStages = ['demand-creation','attract-capture','nurture-qualify','deal-stage'];
+  const customerStages = ['onboarding','lifecycle'];
+
+  for (let i=0; i<FUNNEL_GROUPS.length; i++) {
+    const g = FUNNEL_GROUPS[i];
+    if (i===4) {
+      // insert divider
+      grid.appendChild(el('div', {})); // placeholder to close prev row visually done via CSS
+      const divider = el('div', { class:'funnel-divider', style:'grid-column:1/-1' });
+      const line = el('div', { class:'funnel-divider-line' });
+      const dlbl = el('div', { class:'funnel-divider-label' }); dlbl.textContent = '→ Customer journey';
+      divider.appendChild(line); divider.appendChild(dlbl); divider.appendChild(el('div',{class:'funnel-divider-line'}));
+      // We'll use a different approach - inject before the grid
+    }
+    grid.appendChild(buildFunnelCard(g));
+  }
+
+  // Re-do with divider properly
+  while (container.lastChild !== journeyLabel) container.removeChild(container.lastChild);
+
+  // Prospect row
+  const prospGrid = el('div', { class:'funnel-grid' });
+  for (const g of FUNNEL_GROUPS.filter(g => prospectStages.includes(g.key))) {
+    prospGrid.appendChild(buildFunnelCard(g));
+  }
+  container.appendChild(prospGrid);
+
+  // Divider
+  const div2 = el('div', { class:'funnel-divider', style:'margin:12px 0' });
+  const dl1 = el('div', { class:'funnel-divider-line' });
+  const dlbl2 = el('div', { class:'funnel-divider-label' }); dlbl2.textContent = '→ Customer journey';
+  const dl2 = el('div', { class:'funnel-divider-line' });
+  div2.appendChild(dl1); div2.appendChild(dlbl2); div2.appendChild(dl2);
+  container.appendChild(div2);
+
+  // Customer row
+  const custGrid = el('div', { class:'funnel-grid' });
+  for (const g of FUNNEL_GROUPS.filter(g => customerStages.includes(g.key))) {
+    custGrid.appendChild(buildFunnelCard(g));
+  }
+  container.appendChild(custGrid);
+}
+
+function buildFunnelCard(g) {
+  const stageAssets = state.assets.filter(a => a.stage===g.key);
+  const liveCnt = stageAssets.filter(a=>a.status==='Live').length;
+  const inpCnt = stageAssets.filter(a=>a.status==='In progress').length;
+  const planCnt = stageAssets.filter(a=>a.status==='Planned').length;
+
+  const card = el('div', { class:'funnel-card' });
+  const header = el('div', { class:'funnel-card-header' });
+  const nameRow = el('div', { class:'funnel-card-name' });
+  const nameT = el('span'); nameT.textContent = g.name;
+  const posTag = el('span', { class:'funnel-pos-tag pos-'+g.pos }); posTag.textContent = g.pos;
+  nameRow.appendChild(nameT); nameRow.appendChild(posTag);
+  const desc = el('div', { class:'funnel-card-desc' }); desc.textContent = g.desc;
+  const counts = el('div', { class:'funnel-counts' });
+  const liveS = el('span', { style:'color:var(--live)' }); liveS.textContent = liveCnt + ' live';
+  const inpS = el('span', { style:'color:var(--inprog)' }); inpS.textContent = inpCnt + ' in progress';
+  const planS = el('span', { style:'color:var(--planned)' }); planS.textContent = planCnt + ' planned';
+  counts.appendChild(liveS); counts.appendChild(document.createTextNode(' · ')); counts.appendChild(inpS); counts.appendChild(document.createTextNode(' · ')); counts.appendChild(planS);
+  header.appendChild(nameRow); header.appendChild(desc); header.appendChild(counts);
+  card.appendChild(header);
+
+  const body = el('div', { class:'funnel-body' });
+  for (const a of stageAssets) {
+    const row = el('div', { class:'funnel-row' });
+    if (a.isGap) {
+      const gd = el('span', { class:'gap-dot' }); row.appendChild(gd);
+    } else {
+      const dot = el('span', { class:'status-dot dot-'+a.status.replace(/ /g,'-') }); row.appendChild(dot);
+    }
+    const title = el('span', { class:'funnel-row-title' }); title.textContent = a.title;
+    const pb = makePriorityBadge(a.priority, e => { e.stopPropagation(); cyclePriority(a); });
+    row.appendChild(title); row.appendChild(pb);
+    row.addEventListener('click', () => openPanel(a.id));
+    body.appendChild(row);
+  }
+  // add row
+  const addRow = el('div', { class:'funnel-add-row' });
+  const plusIcon = el('span'); plusIcon.textContent = '+';
+  const addLbl = el('span'); addLbl.textContent = 'Add asset';
+  addRow.appendChild(plusIcon); addRow.appendChild(addLbl);
+  addRow.addEventListener('click', () => openAddModal(g.key));
+  body.appendChild(addRow);
+
+  card.appendChild(body);
+  return card;
+}
+
+// ---- SEO / AEO PILLARS ----
+function renderSEO() {
+  const container = document.getElementById('section-seo');
+  while (container.firstChild) container.removeChild(container.firstChild);
+
+  // SEO pillars
+  const seoPillars = state.seoItems.filter(s => s.type==='seo-pillar' && !s.pillarId);
+  const aeoPillars = state.seoItems.filter(s => s.type==='aeo-pillar' && !s.pillarId);
+  const allPillars = [...seoPillars, ...aeoPillars];
+
+  const grid = el('div', { class:'seo-grid' });
+  for (const pillar of allPillars) {
+    grid.appendChild(buildPillarCard(pillar));
+  }
+  container.appendChild(grid);
+
+  // AEO question bank
+  const aeoHead = el('div', { class:'aeo-section-head' });
+  const aeoRule1 = el('div', { class:'aeo-section-rule' });
+  const aeoLbl = el('div', { class:'aeo-section-label' }); aeoLbl.textContent = 'AEO question bank';
+  const aeoRule2 = el('div', { class:'aeo-section-rule' });
+  aeoHead.appendChild(aeoRule1); aeoHead.appendChild(aeoLbl); aeoHead.appendChild(aeoRule2);
+  container.appendChild(aeoHead);
+
+  const questions = state.seoItems.filter(s => s.type==='aeo-question');
+  const qGrid = el('div', { class:'aeo-q-grid' });
+  for (const q of questions) {
+    const card = el('div', { class:'aeo-q-card' });
+    const qText = el('div', { class:'aeo-q-text' }); qText.textContent = q.name;
+    const footer = el('div', { style:'display:flex;align-items:center;justify-content:space-between' });
+    const typeBadge = el('span', { class:'q-type-badge' }); typeBadge.textContent = q.questionType || '';
+    const dot = el('span', { class:'status-dot dot-'+q.status.replace(/ /g,'-') });
+    footer.appendChild(typeBadge); footer.appendChild(dot);
+    card.appendChild(qText); card.appendChild(footer);
+    qGrid.appendChild(card);
+  }
+  // Add question card
+  const addCard = el('div', { class:'aeo-q-card', style:'border-style:dashed;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#7D7BAA;font-size:11px' });
+  addCard.textContent = '+ Add question';
+  qGrid.appendChild(addCard);
+  container.appendChild(qGrid);
+}
+
+function buildPillarCard(pillar) {
+  const isAEO = pillar.type==='aeo-pillar';
+  const children = state.seoItems.filter(s => s.pillarId===pillar.id);
+  const liveCnt = children.filter(s=>s.status==='Live').length + (pillar.status==='Live'?1:0);
+  const inpCnt = children.filter(s=>s.status==='In progress').length + (pillar.status==='In progress'?1:0);
+
+  const card = el('div', { class:'pillar-card' });
+  const badge = el('div', { class:'pillar-type-badge ' + (isAEO?'badge-aeo':'badge-seo') });
+  badge.textContent = isAEO ? 'AEO pillar' : 'SEO pillar';
+  const name = el('div', { class:'pillar-name' }); name.textContent = pillar.name;
+  const intent = el('div', { class:'pillar-intent' }); intent.textContent = pillar.intent;
+  const counts = el('div', { class:'pillar-counts' });
+  counts.textContent = `${children.length} ${isAEO?'questions':'cluster pages'} · ${liveCnt} live · ${inpCnt} in progress`;
+
+  card.appendChild(badge); card.appendChild(name); card.appendChild(intent); card.appendChild(counts);
+
+  // Pillar itself (as first row)
+  const pillarRow = el('div', { class:'pillar-row' });
+  const pillarDot = el('span', { class:'status-dot dot-'+pillar.status.replace(/ /g,'-') });
+  const pillarName = el('span', { class:'pillar-row-name' }); pillarName.textContent = pillar.name;
+  const pillarType = el('span', { class:'pillar-row-type' }); pillarType.textContent = 'pillar';
+  pillarRow.appendChild(pillarDot); pillarRow.appendChild(pillarName); pillarRow.appendChild(pillarType);
+  card.appendChild(pillarRow);
+
+  for (const child of children) {
+    const row = el('div', { class:'pillar-row' });
+    if (child.isGap) {
+      const gd = el('span', { class:'gap-dot' }); row.appendChild(gd);
+    } else {
+      const dot = el('span', { class:'status-dot dot-'+child.status.replace(/ /g,'-') }); row.appendChild(dot);
+    }
+    const rn = el('span', { class:'pillar-row-name' }); rn.textContent = child.name;
+    const rt = el('span', { class:'pillar-row-type' }); rt.textContent = child.clusterType || '';
+    row.appendChild(rn); row.appendChild(rt);
+    card.appendChild(row);
+  }
+  return card;
+}
+
+// ---- SERVICE PORTFOLIO ----
+function renderPortfolio() {
+  const container = document.getElementById('section-portfolio');
+  while (container.firstChild) container.removeChild(container.firstChild);
+
+  // SPS section
+  const spsHead = el('div', { class:'section-heading' }); spsHead.textContent = 'SPS — AMOS Strategic Project Services';
+  container.appendChild(spsHead);
+
+  const callout = el('div', { class:'callout-box' });
+  callout.textContent = 'Replaces Application Management Services. A structured 12–36 month improvement programme with 8 pillars: Strategic Consultancy, Project Delivery, Platform and Marketplace, Data Services, AMOS Health Check, Root Cause Resolution, Training and Capability, Optimisation.';
+  container.appendChild(callout);
+
+  const spsAssets = state.assets.filter(a => a.serviceArea==='sps');
+  if (spsAssets.length > 0) {
+    const spsWrap = el('div', { class:'card card-pad', style:'margin-bottom:14px' });
+    for (const a of spsAssets) {
+      const row = el('div', { class:'funnel-row' });
+      const dot = el('span', { class:'status-dot dot-'+a.status.replace(/ /g,'-') }); row.appendChild(dot);
+      const title = el('span', { class:'funnel-row-title' }); title.textContent = a.title;
+      const pb = makePriorityBadge(a.priority, e => { e.stopPropagation(); cyclePriority(a); });
+      row.appendChild(title); row.appendChild(pb);
+      row.addEventListener('click', () => openPanel(a.id));
+      spsWrap.appendChild(row);
+    }
+    container.appendChild(spsWrap);
+  }
+
+  // Divider
+  const div = el('div', { class:'portfolio-divider' });
+  container.appendChild(div);
+
+  // Support tiers
+  const stHead = el('div', { class:'section-heading' }); stHead.textContent = 'Support tiers — Silver, Gold, Platinum';
+  container.appendChild(stHead);
+
+  const tierGrid = el('div', { class:'tier-grid' });
+  const tiers = [
+    { name:'Silver', desc:'Default tier. Reactive support and standard SLAs.', target:'Small to mid-size operators' },
+    { name:'Gold', desc:'Recommended. Proactive support with priority response.', target:'Mid-market fleet operators' },
+    { name:'Platinum', desc:'Strategic and enterprise customers. Dedicated support.', target:'Enterprise and strategic accounts' },
+  ];
+  for (const t of tiers) {
+    const tc = el('div', { class:'tier-card' });
+    const tn = el('div', { class:'tier-name' }); tn.textContent = t.name;
+    const td = el('div', { class:'tier-desc' }); td.textContent = t.desc;
+    const tt = el('div', { class:'tier-target' }); tt.textContent = '→ ' + t.target;
+    tc.appendChild(tn); tc.appendChild(td); tc.appendChild(tt);
+    tierGrid.appendChild(tc);
+  }
+  container.appendChild(tierGrid);
+
+  const supportAssets = state.assets.filter(a => a.serviceArea==='support-tiers');
+  if (supportAssets.length > 0) {
+    const stWrap = el('div', { class:'card card-pad' });
+    for (const a of supportAssets) {
+      const row = el('div', { class:'funnel-row' });
+      const dot = el('span', { class:'status-dot dot-'+a.status.replace(/ /g,'-') }); row.appendChild(dot);
+      const title = el('span', { class:'funnel-row-title' }); title.textContent = a.title;
+      const pb = makePriorityBadge(a.priority, e => { e.stopPropagation(); cyclePriority(a); });
+      row.appendChild(title); row.appendChild(pb);
+      row.addEventListener('click', () => openPanel(a.id));
+      stWrap.appendChild(row);
+    }
+    container.appendChild(stWrap);
+  }
+}
+
+// ---- SETUP & CONFIG ----
+function renderSetup() {
+  const container = document.getElementById('section-setup');
+  while (container.firstChild) container.removeChild(container.firstChild);
+
+  // HubSpot routing
+  const h1 = el('div', { class:'section-heading' }); h1.textContent = 'HubSpot lead routing rules';
+  container.appendChild(h1);
+
+  const rules = [
+    { cond: 'Business email + any form submission', outcome: 'SQL', type:'sql' },
+    { cond: 'Non-business email + form submission', outcome: 'MQL', type:'mql' },
+    { cond: 'Book a Demo — regardless of email domain', outcome: 'SQL', type:'sql' },
+  ];
+  const ruleTable = el('div', { class:'rule-table' });
+  for (const r of rules) {
+    const row = el('div', { class:'rule-row' });
+    const cond = el('div', { class:'rule-cond' }); cond.textContent = r.cond;
+    const badge = el('span', { class:'outcome-badge badge-'+r.type }); badge.textContent = r.outcome;
+    row.appendChild(cond); row.appendChild(badge);
+    ruleTable.appendChild(row);
+  }
+  container.appendChild(ruleTable);
+
+  // Config checklist
+  const h2 = el('div', { class:'section-heading' }); h2.textContent = 'Configuration checklist';
+  container.appendChild(h2);
+
+  const checkItems = [
+    { id:'cl1', label:'Contact Category field created in HubSpot' },
+    { id:'cl2', label:'Lead qualification workflow active' },
+    { id:'cl3', label:'Book a Demo form connected to workflow' },
+    { id:'cl4', label:'SQL routing rule tested' },
+    { id:'cl5', label:'MQL nurture sequence live' },
+    { id:'cl6', label:'Deal-stage workflow built' },
+    { id:'cl7', label:'Closed-Won lifecycle trigger active' },
+    { id:'cl8', label:'Contact Category populated at SQL stage' },
+  ];
+  const clCard = el('div', { class:'checklist-card' });
+  for (const item of checkItems) {
+    const checked = !!state.checklistState[item.id];
+    const row = el('div', { class:'checklist-item' + (checked?' checked':'') });
+    const cb = el('input', { type:'checkbox', id:item.id });
+    cb.checked = checked;
+    cb.addEventListener('change', () => {
+      state.checklistState[item.id] = cb.checked;
+      save();
+      renderSetup();
+    });
+    const lbl = el('label', { for:item.id }); lbl.textContent = item.label;
+    row.appendChild(cb); row.appendChild(lbl);
+    clCard.appendChild(row);
+  }
+  container.appendChild(clCard);
+
+  // Contact Category callout
+  const h3 = el('div', { class:'section-heading' }); h3.textContent = 'Contact Category';
+  container.appendChild(h3);
+  const amber = el('div', { class:'amber-callout' });
+  const amberStrong = el('strong'); amberStrong.textContent = 'Contact Category must be completed at SQL stage. This is a required configuration change not yet made.';
+  const ul = el('ul');
+  for (const v of ['Executive','Decision Maker','Product Owner','IT Contact','Influencer','Procurement','User']) {
+    const li = el('li'); li.textContent = v; ul.appendChild(li);
+  }
+  amber.appendChild(amberStrong); amber.appendChild(ul);
+  container.appendChild(amber);
+}
+
+/* ============================================================
+   DETAIL PANEL
+   ============================================================ */
+let panelAssetId = null;
+
+function openPanel(assetId) {
+  panelAssetId = assetId;
+  const asset = state.assets.find(a => a.id===assetId);
+  if (!asset) return;
+
+  const overlay = document.getElementById('panel-overlay');
+  const panel = document.getElementById('detail-panel');
+  const body = document.getElementById('panel-body');
+  while (body.firstChild) body.removeChild(body.firstChild);
+
+  function field(label, child) {
+    const g = el('div', { class:'field-group' });
+    const l = el('div', { class:'field-label' }); l.textContent = label;
+    g.appendChild(l); g.appendChild(child);
+    return g;
+  }
+
+  const titleInput = el('input', { class:'field-input', type:'text' });
+  titleInput.value = asset.title;
+  body.appendChild(field('Title', titleInput));
+
+  const stageSelect = el('select', { class:'field-input' });
+  for (const [k,v] of Object.entries(STAGE_LABELS)) {
+    const opt = el('option', { value:k }); opt.textContent = v;
+    if (k===asset.stage) opt.selected=true;
+    stageSelect.appendChild(opt);
+  }
+  body.appendChild(field('Stage', stageSelect));
+
+  const statusSelect = el('select', { class:'field-input' });
+  for (const s of STATUS_ORDER) {
+    const opt = el('option', { value:s }); opt.textContent = s;
+    if (s===asset.status) opt.selected=true;
+    statusSelect.appendChild(opt);
+  }
+  body.appendChild(field('Status', statusSelect));
+
+  const priSelect = el('select', { class:'field-input' });
+  for (const p of PRIORITY_ORDER) {
+    const opt = el('option', { value:p }); opt.textContent = p;
+    if (p===asset.priority) opt.selected=true;
+    priSelect.appendChild(opt);
+  }
+  body.appendChild(field('Priority', priSelect));
+
+  const ownerSelect = el('select', { class:'field-input' });
+  for (const o of ['Unassigned','Connor','Marketing Team','Agency']) {
+    const opt = el('option', { value:o }); opt.textContent = o;
+    if (o===asset.owner) opt.selected=true;
+    ownerSelect.appendChild(opt);
+  }
+  body.appendChild(field('Owner', ownerSelect));
+
+  const dueDateInput = el('input', { class:'field-input', type:'date' });
+  if (asset.dueDate) dueDateInput.value = asset.dueDate;
+  const dateWrap = el('div');
+  dateWrap.appendChild(dueDateInput);
+  if (isOverdue(asset)) {
+    const warn = el('div', { class:'overdue-warn' }); warn.textContent = '⚠ Overdue';
+    dateWrap.appendChild(warn);
+  }
+  body.appendChild(field('Due date', dateWrap));
+
+  const notesTA = el('textarea', { class:'field-input textarea' });
+  notesTA.value = asset.notes || '';
+  body.appendChild(field('Notes', notesTA));
+
+  // Save
+  document.getElementById('panel-save-btn').onclick = () => {
+    asset.title = titleInput.value.trim() || asset.title;
+    asset.stage = stageSelect.value;
+    asset.status = statusSelect.value;
+    asset.priority = priSelect.value;
+    asset.owner = ownerSelect.value;
+    asset.dueDate = dueDateInput.value || null;
+    asset.notes = notesTA.value;
+    save(); closePanel(); renderCurrent();
+  };
+
+  document.getElementById('panel-delete-btn').onclick = () => {
+    if (window.confirm('Delete "' + asset.title + '"?')) {
+      state.assets = state.assets.filter(a => a.id !== assetId);
+      save(); closePanel(); renderCurrent();
+    }
+  };
+
+  overlay.classList.add('open');
+  panel.classList.add('open');
+}
+
+function closePanel() {
+  document.getElementById('panel-overlay').classList.remove('open');
+  document.getElementById('detail-panel').classList.remove('open');
+  panelAssetId = null;
+}
+
+/* ============================================================
+   ADD ASSET MODAL
+   ============================================================ */
+function openAddModal(preStage) {
+  const body = document.getElementById('modal-body');
+  while (body.firstChild) body.removeChild(body.firstChild);
+
+  function field(label, child) {
+    const g = el('div', { class:'field-group' });
+    const l = el('div', { class:'field-label' }); l.textContent = label;
+    g.appendChild(l); g.appendChild(child);
+    return g;
+  }
+
+  const titleInput = el('input', { class:'field-input', type:'text', placeholder:'Asset title' });
+  body.appendChild(field('Title', titleInput));
+
+  const stageSelect = el('select', { class:'field-input' });
+  for (const [k,v] of Object.entries(STAGE_LABELS)) {
+    const opt = el('option', { value:k }); opt.textContent = v;
+    if (k===preStage) opt.selected=true;
+    stageSelect.appendChild(opt);
+  }
+  body.appendChild(field('Stage', stageSelect));
+
+  const statusSelect = el('select', { class:'field-input' });
+  for (const s of STATUS_ORDER) {
+    const opt = el('option', { value:s }); opt.textContent = s;
+    if (s==='Planned') opt.selected=true;
+    statusSelect.appendChild(opt);
+  }
+  body.appendChild(field('Status', statusSelect));
+
+  const priSelect = el('select', { class:'field-input' });
+  for (const p of PRIORITY_ORDER) {
+    const opt = el('option', { value:p }); opt.textContent = p;
+    if (p==='Medium') opt.selected=true;
+    priSelect.appendChild(opt);
+  }
+  body.appendChild(field('Priority', priSelect));
+
+  const ownerSelect = el('select', { class:'field-input' });
+  for (const o of ['Unassigned','Connor','Marketing Team','Agency']) {
+    const opt = el('option', { value:o }); opt.textContent = o;
+    ownerSelect.appendChild(opt);
+  }
+  body.appendChild(field('Owner', ownerSelect));
+
+  const dueDateInput = el('input', { class:'field-input', type:'date' });
+  body.appendChild(field('Due date', dueDateInput));
+
+  const notesTA = el('textarea', { class:'field-input textarea', placeholder:'Notes…' });
+  body.appendChild(field('Notes', notesTA));
+
+  document.getElementById('modal-save-btn').onclick = () => {
+    const title = titleInput.value.trim();
+    if (!title) { titleInput.focus(); return; }
+    state.assets.push({
+      id: genId('a'), title,
+      stage: stageSelect.value, status: statusSelect.value,
+      priority: priSelect.value, owner: ownerSelect.value,
+      dueDate: dueDateInput.value || null, isGap: false, notes: notesTA.value
+    });
+    save(); closeModal(); renderCurrent();
+  };
+
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+/* ============================================================
+   INTERACTIONS
+   ============================================================ */
+document.getElementById('panel-overlay').addEventListener('click', closePanel);
+document.getElementById('panel-close-btn').addEventListener('click', closePanel);
+document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+document.getElementById('modal-cancel-btn').addEventListener('click', closeModal);
+document.getElementById('modal-overlay').addEventListener('click', e => { if (e.target===document.getElementById('modal-overlay')) closeModal(); });
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+const SECTION_CONFIG = {
+  dashboard:  { title:'Dashboard',        action:{ label:'+ Add asset', fn:()=>openAddModal() } },
+  registry:   { title:'Content Registry', action:{ label:'+ Add asset', fn:()=>openAddModal() } },
+  planner:    { title:'Month Planner',    action:null },
+  funnel:     { title:'Funnel Map',       action:{ label:'+ Add asset', fn:()=>openAddModal() } },
+  seo:        { title:'SEO / AEO Pillars',action:{ label:'+ Add pillar', fn:()=>{} } },
+  portfolio:  { title:'Service Portfolio',action:{ label:'+ Add asset', fn:()=>openAddModal() } },
+  setup:      { title:'Setup & Config',   action:null },
+};
+
+const RENDERERS = {
+  dashboard: renderDashboard,
+  registry:  renderRegistry,
+  planner:   renderPlanner,
+  funnel:    renderFunnel,
+  seo:       renderSEO,
+  portfolio: renderPortfolio,
+  setup:     renderSetup,
+};
+
+function renderCurrent() {
+  RENDERERS[currentSection]();
+}
+
+function showSection(sectionId) {
+  currentSection = sectionId;
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('section-'+sectionId).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.section===sectionId));
+
+  const cfg = SECTION_CONFIG[sectionId];
+  document.getElementById('topbar-title').textContent = cfg.title;
+  const actionEl = document.getElementById('topbar-action');
+  while (actionEl.firstChild) actionEl.removeChild(actionEl.firstChild);
+  if (cfg.action) {
+    const btn = el('button', { class:'btn-primary', onclick: cfg.action.fn });
+    btn.textContent = cfg.action.label;
+    actionEl.appendChild(btn);
+  }
+
+  renderCurrent();
+  closePanel();
+}
+
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', () => showSection(item.dataset.section));
+});
+
+/* ============================================================
+   INIT
+   ============================================================ */
+load();
+showSection('dashboard');
 </script>
 </body>
 </html>
