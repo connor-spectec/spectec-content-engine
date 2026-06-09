@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-29T08:28:03Z",
+  "generated": "2026-06-09T00:00:00Z",
   "summary": {
-    "live": 18,
+    "live": 16,
     "complete": 1,
     "in_progress": 1,
     "planned": 0,
-    "not_started": 49
+    "not_started": 54
   },
   "stages": {
     "demand": [
@@ -196,15 +196,23 @@
         "notes": "Campaign live"
       },
       {
-        "title": "SFI Coding — Compliance guide",
-        "type": "Long-form guide",
+        "title": "SFI Coding — Sales brochure",
+        "type": "Brochure",
         "priority": "Medium",
         "status": "not_started",
         "owner": "Marketing",
         "notes": ""
       },
       {
-        "title": "SFI Coding — Deadline landing page",
+        "title": "SFI Coding — Data sheet (updated)",
+        "type": "Data sheet",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "SFI Coding — Campaign landing page",
         "type": "Landing page",
         "priority": "Medium",
         "status": "not_started",
@@ -212,15 +220,31 @@
         "notes": ""
       },
       {
-        "title": "SFI Coding — Email",
-        "type": "Email",
+        "title": "SFI Coding — Email series (customers with SFI)",
+        "type": "Email sequence",
         "priority": "Medium",
         "status": "not_started",
         "owner": "Marketing",
         "notes": ""
       },
       {
-        "title": "SFI Coding — LinkedIn content",
+        "title": "SFI Coding — Email series (customers without SFI)",
+        "type": "Email sequence",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "SFI Coding — Email series (prospects)",
+        "type": "Email sequence",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "SFI Coding — Organic social posts series (3-5)",
         "type": "Social",
         "priority": "Medium",
         "status": "not_started",
@@ -228,8 +252,24 @@
         "notes": ""
       },
       {
-        "title": "SFI Coding — Sales talking point",
-        "type": "Sales enablement",
+        "title": "SFI Coding — Blog",
+        "type": "Blog post",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "SFI Coding — Thought leadership article",
+        "type": "Article",
+        "priority": "Medium",
+        "status": "not_started",
+        "owner": "Marketing",
+        "notes": ""
+      },
+      {
+        "title": "SFI Coding — Video explainer",
+        "type": "Video",
         "priority": "Medium",
         "status": "not_started",
         "owner": "Marketing",
