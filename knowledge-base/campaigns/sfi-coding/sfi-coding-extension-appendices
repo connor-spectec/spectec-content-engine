@@ -1,0 +1,96 @@
+# SFI Coding — Extension Appendices *
+*Source:** https://sfi-group-system.pages.dev/about*
+*Date:** June 2026 *
+*Status:** Supporting reference — not final content
+SFI Group System v7.12 — Extension Appendices
+Open Classification Extensions
+for Modern Ships
+These appendices extend the official SFI Group System with new codes for emission reduction, energy efficiency, dredging and offshore systems. No existing codes are overwritten. Use the ▼ Comment button under any section to leave specific feedback, or Leave Overall Feedback for general remarks.
+v7.12 base — unassigned code space onlyAPP-V1-001 r4 & APP-V1-002 r4 integratedQ2-2026 public consultation open
+DocumentAPP-V1-001Emission Reduction & Energy EfficiencyAPP-V1-002Offshore & Dredging Expansion
+DocumentAPP-V1-001
+Versionr4 — Q2-2026 Edition
+Status• Integrated
+BaseSFI Group System v7.12
+Target release1 July 2026
+ConsultationOpen
+Description
+This appendix extends the official SFI Group System (v7.12) with a structured classification of equipment and systems for emission reduction and energy efficiency on board ships. It covers equipment mandatory or recommended under MARPOL Annex VI (NOx, SOx), IMO EEXI and CII regulations, EU ETS and FuelEU Maritime.
+No existing official SFI codes are overwritten. All extensions occupy confirmed unassigned code space.
+📌 r4 scope note: This edition covers the Emission reduction and energy efficiency domain only. The following groups are deferred to the Q4-2026 release: Alternative and low-emission fuels (707), Cable laying and cargo handling (328, 454), Shore power OPS/HVSC (868, 875), Ballast water treatment and underwater vehicles (801, 901).
+601Dual-Fuel & EEXI Extension601800–601900
+Engine-mounted fuel gas and pilot fuel systems on dual-fuel main engines. Official range: 601000–601200. New codes from 601800.
+Code	Name	Description
+601800	ME Fuel Gas System	Engine-mounted fuel gas system for dual-fuel main engine
+601810	ME Fuel Gas Injection Valve	Gas admission valves mounted on main engine
+601820	ME Pilot Fuel System	Engine-mounted pilot fuel system for dual-fuel ignition
+601830	ME Pilot Fuel Injection Valve	Pilot fuel injection valves mounted on main engine
+601900	EPL — Engine Power Limitation Unit	Electronic or mechanical power limitation device for EEXI compliance
+Comment on 601 — Dual-Fuel & EEXI Extension
+634Shaft Power Limitation (EEXI)634900
+Official SFI 634 covers CPP plants. Code 634900 covers shaft power limitation for EEXI compliance.
+Code	Name	Description
+634900	SHaPoLi — Shaft Power Limitation System	Shaft power monitoring and limitation device for EEXI compliance
+Comment on 634 — Shaft Power Limitation (EEXI)
+646WHR Steam Extension646100
+WHR steam generators for energy efficiency improvement. Official range: 646001–646039. For WHR systems generating electrical power see group 668.
+Code	Name	Description
+646100	WHR Exhaust Boiler (HRSG)	Heat recovery steam generator from exhaust gas, primarily for energy efficiency improvement
+Comment on 646 — WHR Steam Extension
+668Waste Heat Power Recovery SystemsNew subgroup
+Systems that convert waste heat from exhaust gases directly into electrical power. Distinct from 646 (steam boiler): these systems produce electricity.
+Code	Name	Description
+668001	WHR Power Turbine Unit	Power turbine for electrical power generation from exhaust gas flow
+668010	ORC Energy Recovery Module	Organic Rankine Cycle module for heat-to-power conversion
+668020	WHR Power System Control Unit	Automation and control package for WHR power recovery systems
+Comment on 668 — Waste Heat Power Recovery Systems
+735Air Lubrication SystemsNew subgroup
+Micro-bubble air lubrication systems that reduce hull friction.
+Code	Name	Description
+735001	Air Lubrication Compressors	Dedicated compressors for micro-bubble air supply
+735005	Air Distribution Manifold	Distribution manifold and control valves for underhull air supply
+735010	Underhull Micro-Bubble Plates	Hull-mounted air injection plates and diffusers
+735020	Air Lubrication Control System	Automation and monitoring package for air lubrication system
+Comment on 735 — Air Lubrication Systems
+746Exhaust Gas Treatment SystemsNew subgroup
+SCR, EGR and EGCS/scrubbers for NOx and SOx reduction.
+Code	Name	Description
+746001	SCR Reactor Units	Catalytic reactors for NOx Tier III reduction with catalyst modules
+746005	SCR Urea/Ammonia Injection Module	Injection skid with pumps, valves and control system
+746010	EGR Blower & Cooler Assembly	Blower and cooler assembly for exhaust gas recirculation loop
+746015	EGR Recirculation Valves & Piping	Piping, valves and sensors for EGR recirculation
+746020	EGCS Scrubber Tower	Gas cleaning column (open, closed or hybrid loop)
+746025	EGCS Washwater System	Pumps, filters, sensors and washwater handling system
+746030	EGCS Monitoring & Control Cabinet	PLC unit, analysers and operator console
+Comment on 746 — Exhaust Gas Treatment Systems
+747Maritime Carbon Capture SystemsNew subgroup
+Onboard capture, compression, liquefaction and storage of CO2 from exhaust gases.
+Code	Name	Description
+747001	CO2 Absorber Tower	Absorber column (MEA or equivalent solvent process)
+747010	CO2 Compressor & Liquefier	CO2 compression and liquefaction unit
+747020	CO2 Storage Tanks	Integrated cryogenic CO2 storage tanks
+747030	CO2 Offloading System	CO2 offloading arrangement for shore transfer
+Comment on 747 — Maritime Carbon Capture Systems
+799Emission & Energy Monitoring SystemsNew subgroup
+Real-time monitoring supporting EEXI, CII, EU ETS and MARPOL Annex VI compliance. Note: subgroup 798 is an assigned official SFI code and cannot be used.
+Code	Name	Description
+799001	EEMS — Energy Efficiency Monitoring System	Monitoring of EEXI/CII parameters, shaft loads, SFOC and fuel usage
+799010	CEMS — Continuous Emission Monitoring System	Continuous NOx, SOx and CO2 monitoring on stack
+799020	Mass Flow Fuel Metering (MFM)	Certified mass flow meters for fuel consumption measurement
+799030	Carbon Capture Monitoring System	Monitoring of carbon capture plant and CO2 storage tanks
+Comment on 799 — Emission & Energy Monitoring Systems
+Leave Overall Feedback
+General remarks — not tied to a specific subgroup.
+Goes directly to GitHub Issues. No GitHub account required.
+Appendix *— Select —APP-V1-001 — Emission Reduction & Energy EfficiencyAPP-V1-002 — Offshore & Dredging ExpansionGeneral — applies to both
+Type *
+Title *
+Full description *
+Your name *
+Organisation
+By submitting, your name and feedback will be stored as a GitHub Issue under the SpecTec Privacy Policy. To request erasure email sfi@spectec.net.
+Submit feedback
+ 
+SFI Group System — managed and updated by SpecTecLearn about SpecTec’s SFI Technical Coding Solution ↗
+SFI Group System — Public Appendices  |  Base: SFI v7.12  |  GitHub Repository ↗  |  spectec.net ↗  |  Content provided for public consultation. No official SFI codes are modified by these appendices.  |  Privacy Policy ↗
+
