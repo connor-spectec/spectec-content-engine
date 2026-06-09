@@ -1,0 +1,115 @@
+# AMOS™ SFI Technical Coding: Standardise Fleet Data for Precision and Control
+*Source:** file:///C:/Users/connor.odonnell/Downloads/SFI_Manual_for_Ships.pdf *
+*Date:** June 2026 *
+*Status:** Supporting reference — not final content
+
+
+## Product Overview
+
+In the dynamic maritime industry, consistency is key. Without standardised technical data, managing fleets can become fragmented, inefficient, and prone to error. AMOS™ SFI Technical Coding empowers shipowners, operators, and fleet managers to structure data across vessels using the globally recognised SFI (Ship Functional Information) Group System.
+
+By classifying equipment, components, and documentation with consistent codes, AMOS™ SFI Technical Coding simplifies reporting, enhances compliance, and ensures alignment across maintenance, procurement, and operational workflows. The result is improved decision-making, better cost control, and seamless communication between vessels, departments, and suppliers.
+
+---
+
+## Customer Success
+
+> "By adopting AMOS™ SFI Technical Coding, we've been able to unify our asset structures across the fleet. This has improved reporting, simplified procurement, and given us confidence that our technical data is consistent and audit-ready at all times."
+
+**European Container Operator**
+
+---
+
+# AMOS™: The Future of Fleet Asset Management – Delivered Today
+
+## Key Features
+
+### Full SFI Group System Integration
+Apply the internationally recognised SFI structure to all technical and operational data.
+
+### Customisable Coding Flexibility
+Adapt SFI to suit vessel types, business processes, or regulatory requirements.
+
+### Hierarchical Asset Structuring
+Build clear breakdowns from fleet level to component level, aligned with IMO standards.
+
+### Cross-Module Integration
+Works seamlessly with AMOS™ Maintenance, Inventory, Procurement, and Quality modules.
+
+### ERP and Financial Alignment
+Map SFI to cost centres and accounting codes to synchronise financial reporting.
+
+### Scalable for Growth
+Easily onboard newbuilds or acquisitions into a consistent data framework.
+
+---
+
+## Key Benefits
+
+### Ensure Fleet-Wide Data Consistency
+Standardised structures prevent duplication and simplify communication across ship and shore.
+
+### Synchronise Financial Information
+Link maintenance data to finance systems for accurate cost control and reporting.
+
+### Streamline Procurement & Maintenance
+Align coding across workflows to eliminate inefficiencies.
+
+### Improve Data Quality & Compliance
+Maintain audit-ready records aligned with IMO, Class, and Flag State standards.
+
+### Support Fleet Growth
+Standardisation makes it easy to integrate new vessels into existing operations.
+
+### Accelerate Decision-Making
+Faster data retrieval and clearer reporting provide managers with actionable insights.
+
+---
+
+## Technical Specifications
+
+### Supported Systems
+- Windows OS
+- All major web browsers
+- iOS and Android mobile devices with responsive design
+
+### Integration
+- ERP systems (SAP, Oracle, Microsoft Dynamics)
+- E-procurement platforms
+- Authentication systems (SSO)
+- Condition monitoring systems
+- Warehouse systems via REST APIs
+- Full integration with AMOS™ modules:
+  - Maintenance
+  - Inventory
+  - Procurement
+  - Crew
+  - Quality
+
+### Deployment Options
+- On-premise
+- Cloud
+- Hybrid
+
+### Data Security
+- Encrypted data transfer (TLS)
+- Role-based access control
+- Single Sign-On (SSO)
+- Optional Multi-Factor Authentication (MFA)
+- Replication backups
+- OWASP-tested penetration security
+
+---
+
+# Take Control of Your Fleet Data
+
+AMOS™ SFI Technical Coding gives operators the ability to standardise data across fleets, streamline operations, and ensure compliance with international standards. It's the foundation for smarter reporting, stronger financial control, and more efficient fleet management.
+
+Book a demo today and see how AMOS™ SFI Technical Coding can transform your fleet data.
+
+---
+
+## Contact
+
+- Website: www.SpecTec.net
+- Email: info@SpecTec.net
