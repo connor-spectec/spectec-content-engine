@@ -1,0 +1,176 @@
+# SFI Coding — Wiki *
+*Source:** https://handwiki.org/wiki/SFI_Coding_and_Classification_System#Primary_Group_1_-_General*
+*Date:** June 2026 *
+*Status:** Supporting reference — not final content
+HandWiki
+SFI Coding and Classification System
+From HandWiki
+The SFI Group System is the most widely used classification system for the maritime and offshore industry worldwide. It is an international standard, which provides a functional subdivision of technical and financial ship or rig information.
+SFI consists of a technical account structure covering all aspects of ship/rig specification, and it can be used as a basic standard for all systems in the shipping/offshore industry.
+More than 6000 SFI systems have been installed worldwide.
+SFI is used by shipping and offshore companies, shipyards, consultancies, software suppliers, authorities and classification societies.
+Background, Purpose, and Advantages
+Background
+The SFI Group System was first released in 1972 as the result of a research project undertaken by the Ship Research Institute of Norway (SFI: Skipsteknisk Forskningsinstitutt). Today, sales, marketing and upgrading of the SFI Group System is undertaken by SpecTec.
+Purpose and Advantages
+The main purpose of the SFI Group System is to help shipping and offshore companies control operations by tying together all their procedures such as purchasing, accounting, maintenance, technical records, etc. The SFI Group System provides major advantages for shipping and offshore operations in the following areas:
+•	Communication
+•	Computerisation
+•	Cooperation
+•	Cost Control
+•	Cost Comparison
+•	Development
+•	Education and Training
+•	Quality Control
+•	Standardisation
+Scope
+When the SFI Group System was established, the intention was that it should be capable of accommodating all relevant ship or rig types, and it should be a common code for the flow of information between different enterprises within the maritime and offshore industry.
+The system should be independent of company organization and methods of ship building, ship operation, maintenance and repair. It should further lend itself to be updated with regard to new ship types and new technology. In order to meet the purpose of and the requirements to the system, the ships were divided into functions. The ship functions are common to all parties who are concerned with the specification, building and operation of ships.
+In addition to the Group System with Detail Code, it may be necessary for each user to develop special codes, such as plan of finance accounts for budgeting and cost control of total company operation.
+Shipyards using the SFI Group System for planning and control of production will require a supplementary company internal Work Breakdown Structure (WBS). Shipping companies using the SFI Group System for operation and maintenance planning and control, will require a coding system for consumables.
+The Problems SFI Can Solve
+Controlling Shipping and Offshore Operations
+The SFI Group System improves the control and quality assurance of activities such as maintenance, purchasing, accounting and record keeping within shipping and offshore operations.
+SFI provides shipping and offshore companies, shipyards, authorities, suppliers and consultants with a common plan of technical account/codes in the handling of:
+•	Specifications
+•	Estimates
+•	Drawings
+•	Purchase
+•	Material Administration
+•	Maintenance and Repair Planning
+•	Instruction Material
+•	Budgets and Cost Control
+•	Files
+The areas of system utilization are steadily increasing, and the system has contributed to increased efficiency in the maritime industry. The SFI Group Systemis a particularly useful tool when routines are being established according to the quality loop (ref. ISO 9004, par. 5.1).
+Specifications
+Specifications are normally established at different levels of detail: Outline, Contract, Building, As Built and Repair Specifications. Technical descriptions of components should be part of the As Built Specification and should follow the SFI Detail Code.
+The database version of the Group System lends itself especially well to the development of the various specifications. A report generator makes it easy for the user to edit specifications according to requirements. Specifications may be related to different Group System levels.
+•	Outline specifications to Primary Group level
+•	Functional requirements to Secondary Group level
+•	Functional solutions to Tertiary Group level
+•	Component selections to Detail Code level
+Estimates
+As estimates are based on specifications, they should follow the same breakdown structure. The estimates normally contain cost of material and working hours:
+Code	Name	Hours	Materials
+73	Compressed air systems		
+731	Starting air systems	200	
+731.001	Starting air compressor
+	$150,000
+731.003	Starting air emergency compressor		$98,000
+731.005	Starting air water/oil separator		$17,000
+731.010	Starting air tanks
+	$33,000
+731.012	Starting air bottles		$9,500
+731.014	Starting air coolers		$12,000
+731.016	Starting air compressor silencers		$5,000
+Drawings and Document Handling
+Drawings can easily be numbered according to SFI, and complex drawings in CAD systems may be split into layers to show individual installations according to the SFI Group System.
+Drawing identification may incorporate a SFI Group System number. A standard drawing number may be composed as follows:
+179-731-001 Ship no. – SFI tertiary group no. – Consecutive no.
+Drawings should be numbered according to the group level if possible. The Primary and Secondary Group levels are usually used for system and arrangement drawings:
+•	179-100-000: General arrangement
+•	179-200-001: Profile and deck plan
+•	179-350-000: Loading and discharging system
+•	179-446-001: Engine stores arrangement
+Item lists on arrangement drawings may also be coded according to the SFI Group System.
+Purchasing
+A purchase is normally charged to a finance account (cost type) and to a SFI Group System number, often called a technical account (cost center).
+When purchasing components, a yard may specify the individual item by the SFI Detail Code (6 digits). When a shipping company orders spare parts, these may be identified by the SFI Detail Code + consecutive numbers (total of 9-10 digits).
+Material Administration
+When components are purchased directly to order/ship, the SFI Detail Code may be used as a technical account.
+The spare part manufacturer may have its own numbering system. For a shipping company it is often convenient to establish a spare part numbering system comprising the SFI Detail Code + consecutive numbers:
+•	731.001 - Starting air compressor
+•	731.001.001 - HP cylinder
+•	731.001.002 - LP cylinder
+•	731.001.003 - HP cylinder cover
+•	731.001.004 - LP cylinder cover
+Maintenance
+An operation and maintenance system will often contain a register covering all maintenance units on board. These units are normally identical to the components in the Detail Code:
+731.001.01 - Starting air compressor no. 1 Maker: Type: Serial no.: Capacity:
+Procedures for preventive maintenance and class survey of a maintenance unit will be entered with job identification:
+731.001.01 - Starting air compressor no. 1 Job A - 3000 hours routine Job B - Class survey
+All records of preventive and corrective maintenance should be filed and related to the maintenance unit. The technical accounts of planned maintenance systems such as AMOS Maintenance and Procurement are commonly based on the SFI Group System.
+Repair
+Repair specifications are often based on information from the maintenance system. The repair bill should follow the repair specification structure. It is customary for the yard to quote prices to the shipping company at subgroup level.
+Operation Budget
+The SFI Group System is used for budgeting of maintenance and repair work, and for spare part consumption. In order to make a complete operation budget in a shipping company, it is necessary to link the Group System to a plan of finance accounts. Any suitable plan of finance accounts may be used together with SFI.
+The plan of finance accounts usually covers spare parts and consumable items. Budgeting of spare parts may be performed in great detail using the SFI Group System.
+Cost Control
+Cost control of new building or repair work is normally carried out at the tertiary Group and Detail Code levels. Direct purchases are charged to the SFI Detail Code:
+Materials:
+Code	Name	Planned	Actual	Difference
+731.001	Starting air compressor	150,000	158,000	+8,000
+Reporting of working hours is normally carried out at the tertiary group level. Activities and jobs must be established to follow up work progress.
+Materials:
+Code	Name	Planned	Actual	Difference
+731	Starting air systems	200	210	+10
+Quality Assurance
+In relation to ISO 9000 and IMO requirements for safe operation, it is necessary to establish procedures that ensure that specification requirements and rules and regulations from authorities and classification societies are met, and that the ship/rig is operated safely.
+The following procedures and instructions should be classified according to SFI:
+•	Surveyor’s manual
+•	Installation description
+Filing
+The SFI Group System is often used as a standard filing system for the shipping and offshore industry. SFI gives this industry a well structured and organized filing system for drawings, manuals, reports, and publications.
+•	Testing and commissioning procedures
+•	Operating, start and stop manuals
+•	Maintenance instructions
+•	Faultfinding
+•	Spare parts
+•	Tools
+•	List of drawings
+•	Certificates
+•	Agents
+The Coding Structure of SFI
+SFI Group System (3-digit)
+The SFI Group System is built up as a 3-digit decimal classification system. The ship/rig is divided into 10 Primary Groups from 0 to 9. Only Primary Groups 1 to 8 are in use. The users may use Primary Groups 0 and 9 for classifying other main components that are not covered by the SFI standard.
+Each of the Primary Groups (1st digit) consists of 10 Groups (2nd digit) and each Group is divided further into 10 subgroups (3rd digit). The Primary Groups (1st digit) of SFI for Ships is described below.
+Primary Group 1 - General
+Details and costs that cannot be charged to any specific function on board, e.g. general arrangement, quality assurance, launching, dry-docking and guarantee work.
+Primary Group 2 - Hull Systems
+Hull, superstructure and material protection of the vessel.
+Primary Group 3 - Cargo Equipment
+Cargo equipment and machinery including systems for vessel’s cargo, loading/discharging systems, cargo winches and hatches.
+Primary Group 4 - Ship Equipment
+Ship specific equipment- and machinery. Navigational equipment, manoeuvring machinery, anchoring equipment, and communication equipment. This group also includes special equipment such as equipment for fishing.
+Primary Group 5 - Crew and Passenger Equipment
+Equipment, machinery, systems etc. serving crew and passengers, for example lifesaving equipment, furniture, catering equipment and sanitary systems.
+Primary Group 6 - Machinery Main Components
+Primary components in the engine room, for example main and auxiliary engines, propellers, plant, boilers, and generators.
+Primary Group 7 - Systems for Machinery Main Components
+Systems serving main machinery components, for example fuel and lubrication oil systems, starting air system, exhaust systems and automation systems.
+Primary Group 8 - Common Systems
+Central ship systems, for example ballast and bilge systems, fire fighting and wash down systems, electrical distribution systems etc.
+SFI Detail and Material Codes (6 digit)
+The detail and material codes cover components and materials that may be related to the individual subgroups. In order to reach the component level, it might be necessary to break the subgroups further down by using a detail code. This code has not yet been possible to standardize due to the variety of equipment and numbers onboard different types of ships, and due to slightly different requirements to the code for shipyards and shipping companies.
+Usually there are two different classes of components and material that are used; one class comprises components and material that are ordered directly to a ship, the other comprises components and material that are ordered to stock. Consequently, the codes are divided into two parts:
+Detail Code: Components that are purchased directly to order/ship. The detail code is used to define the individual component and equipment that acts in the sub system function. In the Detail Code the supplementary codes are built up from 001-099.
+Material Code: This code relates to material that is purchased to stock. The relations between these codes are as follows:
+•	SFI Group System + Detail Code: 731.000 – 731.099
+•	SFI Group System + Material Code: 731.100 – 731.999
+User Rights for the SFI Group System
+SFI User License
+An SFI User License Certificate must be purchased from SpecTec to use the SFI Group System. One license fee will be charged for each SFI installation. This means that one license is required for each ship/site/rig that uses the coding structure of SFI. There are additional charges for each book, file or database.
+Formats of the SFI Group System
+SFI Manuals
+The SFI manuals are available in the following formats:
+•	A4
+•	A5
+•	A6
+•	Letter
+The A4, A5, and Letter manuals contain the following parts:
+•	SFI Code Matrix
+•	Summary lists of primary, secondary, and tertiary groups
+•	Detailed descriptions of secondary and tertiary groups
+•	Detail Codes
+•	Material Codes
+•	Keyword register
+The A6 pocket manual contains:
+•	SFI Code Matrix
+•	Summary of primary, secondary, and tertiary groups
+•	Keyword register
+Conclusion
+A classification system such as the SFI Group System will make a substantial contribution to standardized and well-ordered information related to ships/rigs, and will lead to improved communication both within a company and with external parties.
+The SFI Group System will make shipping and offshore operations more efficient because companies will save resources and avoid pitfalls when implementing the SFI standards. SFI can be the common denominator tying together all functions of shipping and offshore operations such as maintenance, purchasing, accounting, filing etc.
+ 
+•	This page was last edited on 19 November 2022, at 17:06.
+
