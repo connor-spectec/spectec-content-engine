@@ -1,0 +1,133 @@
+# SFI Coding — Project Story: Extension Project – March-April 2026 *
+*Source:** https://sfi-group-system.pages.dev/about*
+*Date:** June 2026 *
+*Status:** Supporting reference — not final content
+SFI Group System Extension Project · March – April 2026
+From a gap in the standard
+to a living classification system
+The true story of how a couple of people, a bunch of partners and an AI assistant rewrote the rules of maritime equipment classification — in five weeks, for less than €40.
+Project story
+How it happened
+Every ship in the world carries a list of its equipment, coded to a standard called SFI. But SFI was last updated before the offshore revolution, before emissions regulations rewrote the rules of marine engineering, before anyone had ever classified a carbon capture system or a deep-water ROV. The gap between what ships now carry and what the standard describes had become impossible to ignore.
+📋 Background note
+The SFI Group System was born in 1972 as a Norwegian research project. As it spread globally, the maintenance and ownership of the standard was progressively transferred to SpecTec, which today is its official owner — responsible for development, licensing and rights protection.
+Source: SFI Coding and Classification System — HandWiki ↗
+Hover over any block to read the full story
+The SFI project — how a gap became a standardThe gapSFI v7.12 has no codes for offshore, emissions, dredging or subsea systemsAPP-V1-001 r4Emission Reduction & Energy EfficiencyAPP-V1-002 r4Offshore · Dredging · SubseaFirst partner reviewpisceser1marine.com · aeromarine.es · socius.hrReal-world feedback from engineers and fleet managersGitHub repositorySFI manual · appendicesfeedback · version historyClaude AIProcesses feedback · checks conflictsRefines entries · builds websitePublic consultation websitesfi-group-system.pages.dev · open to all SFI clients · no account requiredVisitor feedbackAny SFI client worldwide30-day reviewClaude consolidatesAppendices updatedAuto-published in 30 sec↻ repeats until 1 July 2026SFI Group System — new edition1 July 2026 · appendices integrated into the main manualProject by Antonino Esposito & Antonino Maione (SFI domain) · March–April 2026
+The consultation opens to the worldA public webpage was built from scratch and deployed on Cloudflare Pages. Any SFI client who receives the link can read both appendices in full and leave feedback on any individual section — without creating an account, without any friction. Every submission lands automatically in the project's GitHub inbox, labelled and ready for the next review cycle.
+________________________________________
+Technical overview
+How the system works
+🌍
+Visitor
+reads & submits
+🌐
+Public Website
+Cloudflare Pages
+⚡
+Relay Server
+Cloudflare Worker
+📋
+GitHub Issues
+feedback inbox
+🤖
+Claude review
+every 30 days
+📖
+Updated Manual
+1 July 2026
+🔒
+Secure & zero infrastructure
+Visitors never interact with GitHub directly. The access key is hidden server-side. No server to maintain, no monthly hosting bill.
+📦
+Everything versioned
+Every edit to the appendices is stored with a date and description. Full audit trail from first draft to the July 2026 release.
+⚡
+30-second publishes
+Edit a file on GitHub → website updates automatically in under a minute, worldwide. No manual deployment steps.
+🌍
+No account required
+Any SFI client with the link can read both appendices and submit feedback using only their name and organisation.
+________________________________________
+Investment
+What this cost to build
+Item	Details	Cost
+Claude Pro subscription
+Anthropic · claude.ai · 2 months
+~90% of monthly usage across peak sessions	Two months of Claude Pro covering all AI work: appendix drafting and hierarchy design for both r4 releases, processing 13+ GitHub Issues from internal SMEs and external partners, building and iterating the public consultation website, Cloudflare Worker deployment, GitHub MCP integration, access control, and this internal overview page. Several sessions hit the Pro usage ceiling.	~€40 total
+Development effort
+~5 weeks · 2 people · est. 20–25h equivalent	Approximately 100+ AI exchanges across 8–10 major working sessions (March – April 2026). Covers: repository architecture, 2 full appendices with 200+ new SFI codes across emission reduction, energy efficiency, dredging and offshore domains, public website with interactive SVG, Cloudflare Worker and feedback pipeline, GitHub Issues workflow, MCP server integration, access control, and this overview page. Equivalent external developer + domain expert rate: €80/h blended.	€1,800 equiv.
+GitHub	Free tier. Repository hosting, Issues tracker (used as feedback inbox), version history, file storage, auto-deploy trigger for Cloudflare Pages.	€0
+Cloudflare Pages	Free tier. Unlimited bandwidth, automatic deploys from GitHub on every commit, SSL, global CDN across 300+ locations. Avg deploy time: ~30 seconds.	€0
+Cloudflare Workers	Free tier. Proxies public feedback submissions to GitHub Issues without exposing API keys. 100,000 requests/day included — sufficient for all consultation traffic.	€0
+Total cash outlay (to date)	~€40
+Equivalent external development value	~€1,840
+* Developer equivalent estimated at €80/h blended rate (technology + SFI domain expertise). Actual AI-assisted cash cost was €40 over two months — a 97% saving on comparable manual development. Ongoing running cost: €20/month (Claude Pro only; all infrastructure remains free).
+________________________________________
+Business opportunity
+What this opens up
+1
+Licence revenue — immediate · existing model
+6,000+
+vessels licensed
+1972
+year established
+#1
+industry reference
+0
+updates since purchase
+The current SFI model is perpetual — once purchased, clients receive no updates. The new edition is a mandatory refresh: every active user must acquire a new manual or subscribe to stay current. This is not an optional upsell.
+SFI has been sold to more than 6,000 vessels over its lifetime and remains the reference standard for maritime equipment classification worldwide. Each client holds a one-time perpetual licence with no update path. The new edition — the first major revision in years — changes the model entirely: existing clients must acquire the updated manual or subscribe to an annual maintenance plan to stay current with the new codes.
+Licence type	Applies to	List price (USD)
+Yard installation licence	Shipyard — alternative to vessel licence	$5,600
+Vessel / site licence	Per vessel or site — alternative to yard	$2,100
+SFI 3-digit A5 book	Printed add-on (optional)	$2,700
+SFI 3-digit A5 PDF — most common	Digital add-on — most clients purchase this	$2,500
+SFI for Excel	Excel format add-on (optional)	$10,100
+2026 revenue projection
+Segment	Licence	Add-on	Clients	Per client	Total
+Existing clients
+New manual — mandatory update	Vessel — $2,100	PDF — $2,500	20	$4,600	$92,000
+New clients
+Target by 1 July 2026	Vessel — $2,100	PDF — $2,500	5	$4,600	$23,000
+Licence revenue target — 1 July 2026	$115,000
+Annual subscription upsell — existing base (future model)	Annual plan	20	$2,000/yr	+$40,000/yr
+2
+Professional services — high-value · per engagement
+The new edition is not just a document update — it is a service trigger. Every client who upgrades needs to remap their equipment registers. Every operator moving to function-based management needs a data model redesign. Every team needs training. These engagements are not optional add-ons: they are the natural consequence of adopting a revised standard across a live fleet or shipyard. With 6,000+ vessels in the installed base, the addressable PS market is substantial.
+REMAPPING
+Equipment register recoding
+Every client upgrading to the new edition needs to reclassify their existing component lists. The r4 migration from retired PG9 codes (972–992) to 483xxx creates a concrete, non-deferrable remapping requirement for every dredging and offshore client. Managed as a structured PS engagement per vessel or fleet, with clear scope and deliverables.
+$5,000 – 20,000 / engagement
+TRANSFORMATION
+Component-unit to function management
+Many clients still manage equipment at component level — a model that limits predictive maintenance, compliance reporting and lifecycle analysis. The extended SFI structure enables function-based management cleanly. SpecTec is uniquely positioned to lead this transformation: data model redesign, system reconfiguration, AMOS migration and change management.
+$15,000 – 60,000 / project
+TRAINING
+Training & best practices
+Maintenance engineers, classification specialists and fleet managers all need structured training on the new code domains. Online or in-person programmes covering emission reduction, dredging and offshore classification, correct application methodology, and SFI best practices for AMOS and AMOS Web. Scalable from individual certification to fleet-wide rollout.
+$800 – 2,000 / participant
+3
+Model evolution — recurring · platform play
+The infrastructure already built — public consultation site, GitHub-backed version control, live deployment pipeline — is the foundation of a much larger opportunity. The commercial model can evolve from one-time licence sales into a recurring subscription, and the consultation platform can grow into a full SFI portal. A Q4-2026 release is already planned, adding alternative fuels, shore power, ballast water treatment and ROV systems.
+SUBSCRIPTION MODEL
+Annual SFI subscription
+Replace one-time perpetual licences with an annual subscription covering every future update — Q4-2026 and beyond — plus early access to new appendices and priority participation in consultations. Converts a transactional relationship into a predictable recurring revenue stream, eliminates the "buy and forget" dynamic, and keeps clients engaged year-round.
+$1,500 – 4,000 / client / year
+PLATFORM
+SFI portal
+A dedicated web portal for SFI users: full searchable code database, vessel-specific code lookup, proposal submission for new codes, participation in active consultations, and access to classification guidance. Built on top of the existing public site and GitHub infrastructure already in place. Tiered access — free read-only for all, paid tiers for write access, early drafts and API access.
+$500 – 2,000 / org / year
+Total cash invested
+€40
+two months Claude Pro · all infra free
+2026 licence target
+$115,000
+20 existing + 5 new · vessel + PDF
+PS upside (3 engagements)
+$75,000+
+recoding + transformation + training
+💡
+6,000 vessels. Zero updates. Until now. The r4 release is the first meaningful update to SFI in years, and it lands on a client base that has had no update path — ever. Every one of those 6,000+ vessels is a potential licence refresh, a remapping engagement, a training programme. The immediate target — $115,000 from 25 clients on the new manual — is just the entry point. The professional services opportunity multiplies per-client value significantly: register recoding, function management transformation and training together add $75,000+ per engagement cluster. And beneath both is a platform already live, ready to evolve into a subscription model and a full SFI portal whenever the decision is made.
+________________________________________
+SFI Group System — Internal Overview  |  April 2026  |  github.com/AntoninoMaione/SFI-Group-System  |  sfi-group-system.pages.dev  |  Not for external distribution
